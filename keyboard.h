@@ -8,14 +8,15 @@
 #ifndef KEYBOARD_H
 #define	KEYBOARD_H
 
-#define col_1 RB0
-#define col_2 RB1
-#define col_3 RB2
-#define linha_1 RB3
-#define linha_2 RB4
-#define linha_3 RB5
-#define linha_4 RB6
+#define col_1 PORTBbits.RB0
+#define col_2 PORTBbits.RB1
+#define col_3 PORTBbits.RB2
+#define linha_1 PORTBbits.RB4
+#define linha_2 PORTBbits.RB5
+#define linha_3 PORTBbits.RB6
+#define linha_4 PORTBbits.RB7
 
+unsigned char controle = 1;
 
 typedef struct {
     char U:1;

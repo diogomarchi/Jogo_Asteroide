@@ -12,6 +12,7 @@
 #pragma config MCLRE = ON, WDT = OFF, OSC = HS
 
 #define _XTAL_FREQ 16000000
+#define ENABLE_TIMER T0CONbits.TMR0ON
 
 #endif	/* CONFIG_H */
 

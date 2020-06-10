@@ -9,7 +9,9 @@
 # 1 "keyboard.c" 2
 
 # 1 "./keyboard.h" 1
-# 20 "./keyboard.h"
+# 19 "./keyboard.h"
+unsigned char controle = 1;
+
 typedef struct {
     char U:1;
     char D:1;
@@ -18,7 +20,7 @@ typedef struct {
     char Enter:1;
     char Esc:1;
 }t_botoes;
-# 36 "./keyboard.h"
+# 37 "./keyboard.h"
 void le_entrada();
 # 2 "keyboard.c" 2
 
@@ -4575,54 +4577,59 @@ void return_home(t_display_port *lcd);
 
 t_display_port *lcd;
 void le_entrada(){
-    char control = 0x01;
-    if(RB0 && control == 0x01){
-        control = 0x02;
-        RB0 = 0x00;
-        RB1 = 0x01;
-        RB2 = 0x01;
-
-        if(!RB4){
-            goto_XY(lcd,1,1);
-            write_char(lcd,'<');
-        }
-        if(!RB6){
-            goto_XY(lcd,2,1);
-            write_char(lcd,'E');
-        }
-    }
-
-    else if(RB1 && control == 0x02){
-        control = 0x03;
-        RB0 = 0x01;
-        RB1 = 0x00;
-        RB2 = 0x01;
-
-        if(!RB3){
+    clear_display(lcd);
+    if(PORTBbits.RB0 && controle == 1){
+        PORTBbits.RB0 = 0x00;
+        PORTBbits.RB1 = 0x01;
+        PORTBbits.RB2 = 0x01;
+        controle = 2;
+        if(PORTBbits.RB5 == 0){
             goto_XY(lcd,3,1);
-            write_char(lcd,'/');
+            write_char(lcd,'<');
+
+            clear_display(lcd);
         }
-        if(!RB5){
-            goto_XY(lcd,4,1);
-            write_char(lcd,'\\');
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
+        if(PORTBbits.RB7 == 0){
+            goto_XY(lcd,3,1);
+            write_char(lcd,'E');
+
             clear_display(lcd);
         }
     }
+    if(PORTBbits.RB1 && controle == 2){
+        PORTBbits.RB0 = 0x01;
+        PORTBbits.RB1 = 0x00;
+        PORTBbits.RB2 = 0x01;
+        controle = 3;
+        if(PORTBbits.RB4 == 0){
+            goto_XY(lcd,3,1);
+            write_char(lcd,'C');
 
-    else if(RB2 && control == 0x03){
-        control = 0x01;
-        RB0 = 0x01;
-        RB1 = 0x01;
-        RB2 = 0x00;
-
-        if(!RB4){
-            goto_XY(lcd,1,1);
-            write_char(lcd,'>');
+            clear_display(lcd);
         }
-        if(!RB6){
-            goto_XY(lcd,2,1);
+        if(PORTBbits.RB6 == 0){
+            goto_XY(lcd,3,1);
+            write_char(lcd,'B');
+
+            clear_display(lcd);
+        }
+    }
+    if(PORTBbits.RB2 && controle == 3){
+        PORTBbits.RB0 = 0x01;
+        PORTBbits.RB1 = 0x01;
+        PORTBbits.RB2 = 0x00;
+        controle = 1;
+        if(PORTBbits.RB5 == 0){
+            goto_XY(lcd,3,1);
+            write_char(lcd,'>');
+
+            clear_display(lcd);
+        }
+        if(PORTBbits.RB7 == 0){
+            goto_XY(lcd,3,1);
             write_char(lcd,'S');
+
+            clear_display(lcd);
         }
     }
 }

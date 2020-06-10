@@ -35,34 +35,23 @@
 [v _le_entrada le_entrada `(v  1 e 1 0 ]
 "11 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
 [v _pulso pulso `(v  1 e 1 0 ]
-[v i2_pulso pulso `(v  1 e 1 0 ]
 "22
 [v _function_set function_set `(v  1 e 1 0 ]
 "48
 [v _display_onoff_control display_onoff_control `(v  1 e 1 0 ]
 "68
 [v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
-[v i2_lcd_cmd lcd_cmd `(v  1 e 1 0 ]
 "79
 [v _goto_XY goto_XY `(v  1 e 1 0 ]
-[v i2_goto_XY goto_XY `(v  1 e 1 0 ]
 "120
 [v _entry_mode_set entry_mode_set `(v  1 e 1 0 ]
 "137
 [v _write_char write_char `(v  1 e 1 0 ]
-[v i2_write_char write_char `(v  1 e 1 0 ]
 "156
 [v _clear_display clear_display `(v  1 e 1 0 ]
-[v i2_clear_display clear_display `(v  1 e 1 0 ]
-"24 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-[v _int_handler int_handler `IIH(v  1 e 1 0 ]
-"37
+"36 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"19 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X/keyboard.h
-[v _controle controle `uc  1 e 1 0 ]
-"271 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S84 . 1 `uc 1 RB0 1 0 :1:0 
+[s S358 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -71,8 +60,8 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-"315
-[s S93 . 1 `uc 1 INT0 1 0 :1:0 
+"315 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+[s S367 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -81,7 +70,7 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S102 . 1 `uc 1 AN12 1 0 :1:0 
+[s S376 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -90,13 +79,13 @@
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S111 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S385 . 1 `uc 1 FLT0 1 0 :1:0 
 ]
-[s S113 . 1 `uc 1 . 1 0 :3:0 
+[s S387 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S116 . 1 `S84 1 . 1 0 `S93 1 . 1 0 `S102 1 . 1 0 `S111 1 . 1 0 `S113 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES116  1 e 1 @3969 ]
+[u S390 . 1 `S358 1 . 1 0 `S367 1 . 1 0 `S376 1 . 1 0 `S385 1 . 1 0 `S387 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES390  1 e 1 @3969 ]
 "632
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 "1699
@@ -107,7 +96,7 @@
 [v _CMCON CMCON `VEuc  1 e 1 @4020 ]
 "4690
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
-[s S184 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S108 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -115,18 +104,18 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "6191
-[s S191 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S115 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 `uc 1 . 1 0 :2:4 
 `uc 1 T016BIT 1 0 :1:6 
 ]
-[u S198 . 1 `S184 1 . 1 0 `S191 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES198  1 e 1 @4053 ]
+[u S122 . 1 `S108 1 . 1 0 `S115 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES122  1 e 1 @4053 ]
 "6251
 [v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
-[s S30 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S31 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -136,7 +125,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "6724
-[s S39 . 1 `uc 1 . 1 0 :1:0 
+[s S40 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -145,12 +134,12 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S48 . 1 `uc 1 . 1 0 :6:0 
+[s S49 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S52 . 1 `S30 1 . 1 0 `S39 1 . 1 0 `S48 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES52  1 e 1 @4082 ]
+[u S53 . 1 `S31 1 . 1 0 `S40 1 . 1 0 `S49 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES53  1 e 1 @4082 ]
 [s S24 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
@@ -159,38 +148,38 @@
 ]
 "5 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
 [v _lcd lcd `*.39S24  1 e 2 0 ]
-"37 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+"36 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"60
+"62
 } 0
 "113 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\funcionamento.c
 [v _menu menu `(v  1 e 1 0 ]
 {
 "139
-[v menu@i_362 i `i  1 a 2 91 ]
+[v menu@i_266 i `i  1 a 2 99 ]
 "135
-[v menu@i_361 i `i  1 a 2 89 ]
+[v menu@i_265 i `i  1 a 2 97 ]
 "131
-[v menu@i_360 i `i  1 a 2 87 ]
+[v menu@i_264 i `i  1 a 2 95 ]
 "127
-[v menu@i i `i  1 a 2 85 ]
+[v menu@i i `i  1 a 2 93 ]
 "123
-[v menu@palavra4 palavra4 `[16]uc  1 a 16 59 ]
+[v menu@palavra4 palavra4 `[16]uc  1 a 16 67 ]
 "120
-[v menu@palavra3 palavra3 `[16]uc  1 a 16 43 ]
+[v menu@palavra3 palavra3 `[16]uc  1 a 16 51 ]
 "117
-[v menu@palavra2 palavra2 `[16]uc  1 a 16 27 ]
+[v menu@palavra2 palavra2 `[16]uc  1 a 16 35 ]
 "114
-[v menu@palavra palavra `[16]uc  1 a 16 11 ]
+[v menu@palavra palavra `[16]uc  1 a 16 19 ]
 "124
-[v menu@tamanho4 tamanho4 `i  1 a 2 81 ]
+[v menu@tamanho4 tamanho4 `i  1 a 2 89 ]
 "121
-[v menu@tamanho3 tamanho3 `i  1 a 2 79 ]
+[v menu@tamanho3 tamanho3 `i  1 a 2 87 ]
 "118
-[v menu@tamanho2 tamanho2 `i  1 a 2 77 ]
+[v menu@tamanho2 tamanho2 `i  1 a 2 85 ]
 "115
-[v menu@tamanho tamanho `i  1 a 2 75 ]
+[v menu@tamanho tamanho `i  1 a 2 83 ]
 [s S24 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
@@ -198,7 +187,7 @@
 `uc 1 data 1 0 :4:4 
 ]
 "113
-[v menu@lcd lcd `*.39S24  1 p 2 7 ]
+[v menu@lcd lcd `*.39S24  1 p 2 15 ]
 [v menu@F3101 F3101 `[16]uc  1 s 16 F3101 ]
 "115
 [v menu@F3104 F3104 `[16]uc  1 s 16 F3104 ]
@@ -207,6 +196,20 @@
 "121
 [v menu@F3110 F3110 `[16]uc  1 s 16 F3110 ]
 "166
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"7
+[v strlen@a a `*.39Cuc  1 a 2 2 ]
+"5
+[v strlen@s s `*.39Cuc  1 p 2 0 ]
+"12
+} 0
+"6 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+[v _le_entrada le_entrada `(v  1 e 1 0 ]
+{
+"67
 } 0
 "137 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
 [v _write_char write_char `(v  1 e 1 0 ]
@@ -217,26 +220,17 @@
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v write_char@lcd lcd `*.39S24  1 p 2 20 ]
-[v write_char@c c `uc  1 p 1 22 ]
+[v write_char@lcd lcd `*.39S24  1 p 2 3 ]
+[v write_char@c c `uc  1 p 1 5 ]
 "154
 } 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
-{
-"7
-[v strlen@a a `*.39Cuc  1 a 2 19 ]
-"5
-[v strlen@s s `*.39Cuc  1 p 2 17 ]
-"12
-} 0
-"79 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+"79
 [v _goto_XY goto_XY `(v  1 e 1 0 ]
 {
 "80
-[v goto_XY@temp temp `uc  1 a 1 6 ]
-[v goto_XY@a a `uc  1 a 1 5 ]
-[v goto_XY@z z `uc  1 a 1 4 ]
+[v goto_XY@temp temp `uc  1 a 1 14 ]
+[v goto_XY@a a `uc  1 a 1 13 ]
+[v goto_XY@z z `uc  1 a 1 12 ]
 [s S24 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
@@ -244,9 +238,9 @@
 `uc 1 data 1 0 :4:4 
 ]
 "79
-[v goto_XY@lcd lcd `*.39S24  1 p 2 0 ]
-[v goto_XY@x x `uc  1 p 1 2 ]
-[v goto_XY@y y `uc  1 p 1 3 ]
+[v goto_XY@lcd lcd `*.39S24  1 p 2 7 ]
+[v goto_XY@x x `uc  1 p 1 9 ]
+[v goto_XY@y y `uc  1 p 1 10 ]
 "117
 } 0
 "68
@@ -258,8 +252,8 @@
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v lcd_cmd@lcd lcd `*.39S24  1 p 2 20 ]
-[v lcd_cmd@a a `uc  1 p 1 22 ]
+[v lcd_cmd@lcd lcd `*.39S24  1 p 2 3 ]
+[v lcd_cmd@a a `uc  1 p 1 5 ]
 "74
 } 0
 "156
@@ -271,7 +265,7 @@
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v clear_display@lcd lcd `*.39S24  1 p 2 20 ]
+[v clear_display@lcd lcd `*.39S24  1 p 2 3 ]
 "172
 } 0
 "22
@@ -283,11 +277,11 @@
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v function_set@lcd lcd `*.39S24  1 p 2 20 ]
-[v function_set@data_lenght data_lenght `uc  1 p 1 22 ]
+[v function_set@lcd lcd `*.39S24  1 p 2 3 ]
+[v function_set@data_lenght data_lenght `uc  1 p 1 5 ]
 "23
-[v function_set@num_lines num_lines `uc  1 p 1 23 ]
-[v function_set@char_font char_font `uc  1 p 1 24 ]
+[v function_set@num_lines num_lines `uc  1 p 1 6 ]
+[v function_set@char_font char_font `uc  1 p 1 7 ]
 "46
 } 0
 "120
@@ -299,9 +293,9 @@
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v entry_mode_set@lcd lcd `*.39S24  1 p 2 20 ]
-[v entry_mode_set@move_direction move_direction `uc  1 p 1 22 ]
-[v entry_mode_set@display_shift display_shift `uc  1 p 1 23 ]
+[v entry_mode_set@lcd lcd `*.39S24  1 p 2 3 ]
+[v entry_mode_set@move_direction move_direction `uc  1 p 1 5 ]
+[v entry_mode_set@display_shift display_shift `uc  1 p 1 6 ]
 "135
 } 0
 "48
@@ -313,11 +307,11 @@
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v display_onoff_control@lcd lcd `*.39S24  1 p 2 20 ]
-[v display_onoff_control@display_on display_on `uc  1 p 1 22 ]
+[v display_onoff_control@lcd lcd `*.39S24  1 p 2 3 ]
+[v display_onoff_control@display_on display_on `uc  1 p 1 5 ]
 "49
-[v display_onoff_control@cursor_on cursor_on `uc  1 p 1 23 ]
-[v display_onoff_control@blink blink `uc  1 p 1 24 ]
+[v display_onoff_control@cursor_on cursor_on `uc  1 p 1 6 ]
+[v display_onoff_control@blink blink `uc  1 p 1 7 ]
 "66
 } 0
 "11
@@ -329,83 +323,6 @@
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v pulso@lcd lcd `*.39S24  1 p 2 17 ]
-"20
-} 0
-"24 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-[v _int_handler int_handler `IIH(v  1 e 1 0 ]
-{
-"33
-} 0
-"6 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-[v _le_entrada le_entrada `(v  1 e 1 0 ]
-{
-"62
-} 0
-"137 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-[v i2_write_char write_char `(v  1 e 1 0 ]
-{
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
-`uc 1 R_W 1 0 :1:1 
-`uc 1 E 1 0 :1:2 
-`uc 1 NA 1 0 :1:3 
-`uc 1 data 1 0 :4:4 
-]
-[v i2write_char@lcd lcd `*.39S24  1 p 2 3 ]
-[v i2write_char@c c `uc  1 p 1 5 ]
-"154
-} 0
-"79
-[v i2_goto_XY goto_XY `(v  1 e 1 0 ]
-{
-[v i2goto_XY@temp goto_XY `uc  1 a 1 14 ]
-[v i2goto_XY@a goto_XY `uc  1 a 1 13 ]
-[v i2goto_XY@z goto_XY `uc  1 a 1 12 ]
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
-`uc 1 R_W 1 0 :1:1 
-`uc 1 E 1 0 :1:2 
-`uc 1 NA 1 0 :1:3 
-`uc 1 data 1 0 :4:4 
-]
-[v i2goto_XY@lcd lcd `*.39S24  1 p 2 7 ]
-[v i2goto_XY@x x `uc  1 p 1 9 ]
-[v i2goto_XY@y y `uc  1 p 1 10 ]
-"117
-} 0
-"68
-[v i2_lcd_cmd lcd_cmd `(v  1 e 1 0 ]
-{
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
-`uc 1 R_W 1 0 :1:1 
-`uc 1 E 1 0 :1:2 
-`uc 1 NA 1 0 :1:3 
-`uc 1 data 1 0 :4:4 
-]
-[v i2lcd_cmd@lcd lcd `*.39S24  1 p 2 3 ]
-[v i2lcd_cmd@a a `uc  1 p 1 5 ]
-"74
-} 0
-"156
-[v i2_clear_display clear_display `(v  1 e 1 0 ]
-{
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
-`uc 1 R_W 1 0 :1:1 
-`uc 1 E 1 0 :1:2 
-`uc 1 NA 1 0 :1:3 
-`uc 1 data 1 0 :4:4 
-]
-[v i2clear_display@lcd lcd `*.39S24  1 p 2 3 ]
-"172
-} 0
-"11
-[v i2_pulso pulso `(v  1 e 1 0 ]
-{
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
-`uc 1 R_W 1 0 :1:1 
-`uc 1 E 1 0 :1:2 
-`uc 1 NA 1 0 :1:3 
-`uc 1 data 1 0 :4:4 
-]
-[v i2pulso@lcd lcd `*.39S24  1 p 2 0 ]
+[v pulso@lcd lcd `*.39S24  1 p 2 0 ]
 "20
 } 0

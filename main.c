@@ -21,39 +21,42 @@ t_display_port *lcd;
 
 
 
-void __interrupt() int_handler(void){
-     if(INTCONbits.TMR0IF){
-        INTCONbits.TMR0IF = 0x00;    //limpa flag
-        TMR0 = 0x6C;    //reinicia timer0
-        le_entrada();   
-    }
-}
+//void __interrupt() int_handler(void){
+////    if(INTCONbits.INT0IF)
+////        INTCONbits.INT0IF = 0;
+//     if(INTCONbits.TMR0IF == 1){
+//        INTCONbits.TMR0IF = 0;    //limpa flag
+//        TMR0 = 0x6C;    //reinicia timer0
+////        le_entrada(); 
+////        col_1 = 0x01;  
+//    }
+//}
 
 
 
 void main(void) {
     CMCON = 0x07;     //desabilita os comparadores
-    INTCONbits.GIE = 1;   //habilita interrupção global
     INTCONbits.PEIE = 0x01;  //habilita interrupção por perifericos
     INTCONbits.T0IE = 0x01;  //habilita interrupção do timer0
     
     TMR0 = 0x6C;       //inicia timer0
-    TRISB = 0xFF;      //entrada em todos do RB, menos rb7
-    PORTB = 0xFF;     //iniciam em high
+    TRISB = 0xF0;      //linha como saida e coluna como entrada
+    PORTB = 0xF0;
     ADCON1 = 0x0F;
-    TRISD = 0x0;
+    TRISD = 0x00;
+    INTCONbits.GIE = 1;   //habilita interrupção global
         
     lcd = &PORTD;
             
     function_set(lcd, 0, 1, 0);
     display_onoff_control(lcd, 1, 1, 0);
     entry_mode_set(lcd, 1,0);
-    //menu(lcd);
-        
+    ENABLE_TIMER = 1;
+    menu(lcd);
+     __delay_ms(1000);    
     
-    
-    while(1){    
-       // __delay_ms(500);    
-    }
-    
+    while(1){  
+        le_entrada(); 
+        col_1 = 0x01;  
+    }   
 }

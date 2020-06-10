@@ -4,54 +4,59 @@
 
 t_display_port *lcd;
 void le_entrada(){
-    char control = 0x01;
-    if(col_1 && control == 0x01){
-        control = 0x02;
+    clear_display(lcd);
+    if(col_1 && controle == 1){
         col_1 = 0x00;
         col_2 = 0x01;
         col_3 = 0x01;
-
-        if(!linha_2){//foi apertado a tecla "<"
-            goto_XY(lcd,1,1);
-            write_char(lcd,'<');
-        }
-        if(!linha_4){//foi apertado a tecla "enter"
-            goto_XY(lcd,2,1);
-            write_char(lcd,'E');
-        }
-    }
-
-    else if(col_2 && control == 0x02){
-        control = 0x03;
-        col_1 = 0x01;
-        col_2 = 0x00;
-        col_3 = 0x01;
-
-        if(!linha_1){//foi apertado a tecla "/\"
+        controle = 2;
+        if(linha_2 == 0){
             goto_XY(lcd,3,1);
-            write_char(lcd,'/');
+            write_char(lcd,'<');//entrou
+            //__delay_ms(1000);
+            clear_display(lcd);
         }
-        if(!linha_3){//foi apertado a tecla "\/"
-            goto_XY(lcd,4,1);
-            write_char(lcd,'\\');
-            __delay_ms(1000);
+        if(linha_4 == 0){
+            goto_XY(lcd,3,1);
+            write_char(lcd,'E');//entrou
+            //__delay_ms(1000);
             clear_display(lcd);
         }
     }
-
-    else if(col_3 && control == 0x03){
-        control = 0x01;
+    if(col_2 && controle == 2){
+        col_1 = 0x01;
+        col_2 = 0x00;
+        col_3 = 0x01;
+        controle = 3;
+        if(linha_1 == 0){
+            goto_XY(lcd,3,1);
+            write_char(lcd,'C');//entrou
+            //__delay_ms(1000);
+            clear_display(lcd);
+        }
+        if(linha_3 == 0){
+            goto_XY(lcd,3,1);
+            write_char(lcd,'B');//entrou
+            //__delay_ms(1000);
+            clear_display(lcd);
+        }
+    }
+    if(col_3 && controle == 3){
         col_1 = 0x01;
         col_2 = 0x01;
         col_3 = 0x00;
-
-        if(!linha_2){//foi apertado a tecla ">"
-            goto_XY(lcd,1,1);
-            write_char(lcd,'>');
+        controle = 1;
+        if(linha_2 == 0){
+            goto_XY(lcd,3,1);
+            write_char(lcd,'>');//entrou
+            //__delay_ms(1000);
+            clear_display(lcd);
         }
-        if(!linha_4){//foi apertado a tecla "escape"
-            goto_XY(lcd,2,1);
-            write_char(lcd,'S');
+        if(linha_4 == 0){
+            goto_XY(lcd,3,1);
+            write_char(lcd,'S');//entrou
+            //__delay_ms(1000);
+            clear_display(lcd);
         }
-    }     
+    }
 }

@@ -4521,9 +4521,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 12 "main.c" 2
 
 # 1 "./keyboard.h" 1
-# 19 "./keyboard.h"
-unsigned char controle = 1;
-
+# 21 "./keyboard.h"
 typedef struct {
     char U:1;
     char D:1;
@@ -4798,31 +4796,15 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 t_display_port *lcd;
-
-
-
-
-void __attribute__((picinterrupt(("")))) int_handler(void){
-
-
-     if(INTCONbits.TMR0IF == 1){
-        INTCONbits.TMR0IF = 0;
-        TMR0 = 0x6C;
-        le_entrada();
-        PORTBbits.RB0 = 0x01;
-    }
-}
-
-
-
+# 36 "main.c"
 void main(void) {
     CMCON = 0x07;
     INTCONbits.PEIE = 0x01;
     INTCONbits.T0IE = 0x01;
 
     TMR0 = 0x6C;
-    TRISB = 0xF0;
-    PORTB = 0xF0;
+    TRISB = 0x0F;
+
     ADCON1 = 0x0F;
     TRISD = 0x00;
     INTCONbits.GIE = 1;
@@ -4834,8 +4816,11 @@ void main(void) {
     entry_mode_set(lcd, 1,0);
     T0CONbits.TMR0ON = 1;
     menu(lcd);
-     _delay((unsigned long)((1000)*(16000000/4000.0)));
+
 
     while(1){
+        le_entrada();
+
     }
+
 }

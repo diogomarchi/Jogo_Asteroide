@@ -3,48 +3,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./lcd.h: 18: typedef struct {
 [s S282 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
 [n S282 . RS R_W E NA data ]
-[t ~ __deprecated__ ]
-[t T1 __deprecated__ ]
-"8089 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8089: extern volatile __bit __attribute__((__deprecated__)) RB0 __attribute__((address(0x7C08)));
-[v _RB0 `Vb ~T1 @X0 0 e@31752 ]
-[t T1 __deprecated__ ]
-"8092
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8092: extern volatile __bit __attribute__((__deprecated__)) RB1 __attribute__((address(0x7C09)));
-[v _RB1 `Vb ~T1 @X0 0 e@31753 ]
-[t T1 __deprecated__ ]
-"8095
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8095: extern volatile __bit __attribute__((__deprecated__)) RB2 __attribute__((address(0x7C0A)));
-[v _RB2 `Vb ~T1 @X0 0 e@31754 ]
-[t T1 __deprecated__ ]
-"8101
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8101: extern volatile __bit __attribute__((__deprecated__)) RB4 __attribute__((address(0x7C0C)));
-[v _RB4 `Vb ~T1 @X0 0 e@31756 ]
+"104
+[; ;./lcd.h: 104: void clear_display(t_display_port *lcd);
+[v _clear_display `(v ~T0 @X0 0 ef1`*S282 ]
+"277 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 277:     struct {
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"287
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 287:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"297
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 297:     struct {
+[s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S20 . AN12 AN10 AN8 AN9 AN11 PGM PGC PGD ]
+"307
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 307:     struct {
+[s S21 :1 `uc 1 ]
+[n S21 . FLT0 ]
+"310
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 310:     struct {
+[s S22 :3 `uc 1 :1 `uc 1 ]
+[n S22 . . CCP2_PA2 ]
+"276
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 276: typedef union {
+[u S17 `S18 1 `S19 1 `S20 1 `S21 1 `S22 1 ]
+[n S17 . . . . . . ]
+"315
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 315: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS17 ~T0 @X0 0 e@3969 ]
 "75 ./lcd.h
 [; ;./lcd.h: 75: void goto_XY(t_display_port *lcd,
 [v _goto_XY `(v ~T0 @X0 0 ef3`*S282`uc`uc ]
 "96
 [; ;./lcd.h: 96: void write_char(t_display_port *lcd, char c);
 [v _write_char `(v ~T0 @X0 0 ef2`*S282`uc ]
-[t T1 __deprecated__ ]
-"8107 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8107: extern volatile __bit __attribute__((__deprecated__)) RB6 __attribute__((address(0x7C0E)));
-[v _RB6 `Vb ~T1 @X0 0 e@31758 ]
-[t T1 __deprecated__ ]
-"8098
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8098: extern volatile __bit __attribute__((__deprecated__)) RB3 __attribute__((address(0x7C0B)));
-[v _RB3 `Vb ~T1 @X0 0 e@31755 ]
-[t T1 __deprecated__ ]
-"8104
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 8104: extern volatile __bit __attribute__((__deprecated__)) RB5 __attribute__((address(0x7C0D)));
-[v _RB5 `Vb ~T1 @X0 0 e@31757 ]
-[v F2527 `(v ~T0 @X0 1 tf1`ul ]
-"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF2527 ~T0 @X0 0 e ]
-[p i __delay ]
-"104 ./lcd.h
-[; ;./lcd.h: 104: void clear_display(t_display_port *lcd);
-[v _clear_display `(v ~T0 @X0 0 ef1`*S282 ]
+"19 ./keyboard.h
+[; ;./keyboard.h: 19: unsigned char controle = 1;
+[v _controle `uc ~T0 @X0 1 e ]
+[i _controle
+-> -> 1 `i `uc
+]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -471,164 +471,171 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _le_entrada ]
 [f ]
 "7
-[; ;keyboard.c: 7:     char control = 0x01;
-[v _control `uc ~T0 @X0 1 a ]
-[e = _control -> -> 1 `i `uc ]
+[; ;keyboard.c: 7:     clear_display(lcd);
+[e ( _clear_display (1 _lcd ]
 "8
-[; ;keyboard.c: 8:     if(RB0 && control == 0x01){
-[e $ ! && _RB0 == -> _control `i -> 1 `i 284  ]
+[; ;keyboard.c: 8:     if(PORTBbits.RB0 && controle == 1){
+[e $ ! && != -> . . _PORTBbits 0 0 `i -> 0 `i == -> _controle `i -> 1 `i 284  ]
 {
 "9
-[; ;keyboard.c: 9:         control = 0x02;
-[e = _control -> -> 2 `i `uc ]
+[; ;keyboard.c: 9:         PORTBbits.RB0 = 0x00;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
 "10
-[; ;keyboard.c: 10:         RB0 = 0x00;
-[e = _RB0 -> -> 0 `i `b ]
+[; ;keyboard.c: 10:         PORTBbits.RB1 = 0x01;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
 "11
-[; ;keyboard.c: 11:         RB1 = 0x01;
-[e = _RB1 -> -> 1 `i `b ]
+[; ;keyboard.c: 11:         PORTBbits.RB2 = 0x01;
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
 "12
-[; ;keyboard.c: 12:         RB2 = 0x01;
-[e = _RB2 -> -> 1 `i `b ]
-"14
-[; ;keyboard.c: 14:         if(!RB4){
-[e $ ! ! _RB4 285  ]
+[; ;keyboard.c: 12:         controle = 2;
+[e = _controle -> -> 2 `i `uc ]
+"13
+[; ;keyboard.c: 13:         if(PORTBbits.RB5 == 0){
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 285  ]
 {
+"14
+[; ;keyboard.c: 14:             goto_XY(lcd,3,1);
+[e ( _goto_XY (3 , , _lcd -> -> 3 `i `uc -> -> 1 `i `uc ]
 "15
-[; ;keyboard.c: 15:             goto_XY(lcd,1,1);
-[e ( _goto_XY (3 , , _lcd -> -> 1 `i `uc -> -> 1 `i `uc ]
-"16
-[; ;keyboard.c: 16:             write_char(lcd,'<');
+[; ;keyboard.c: 15:             write_char(lcd,'<');
 [e ( _write_char (2 , _lcd -> -> 60 `ui `uc ]
 "17
-[; ;keyboard.c: 17:         }
+[; ;keyboard.c: 17:             clear_display(lcd);
+[e ( _clear_display (1 _lcd ]
+"18
+[; ;keyboard.c: 18:         }
 }
 [e :U 285 ]
-"18
-[; ;keyboard.c: 18:         if(!RB6){
-[e $ ! ! _RB6 286  ]
-{
 "19
-[; ;keyboard.c: 19:             goto_XY(lcd,2,1);
-[e ( _goto_XY (3 , , _lcd -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;keyboard.c: 19:         if(PORTBbits.RB7 == 0){
+[e $ ! == -> . . _PORTBbits 0 7 `i -> 0 `i 286  ]
+{
 "20
-[; ;keyboard.c: 20:             write_char(lcd,'E');
-[e ( _write_char (2 , _lcd -> -> 69 `ui `uc ]
+[; ;keyboard.c: 20:             goto_XY(lcd,3,1);
+[e ( _goto_XY (3 , , _lcd -> -> 3 `i `uc -> -> 1 `i `uc ]
 "21
-[; ;keyboard.c: 21:         }
+[; ;keyboard.c: 21:             write_char(lcd,'E');
+[e ( _write_char (2 , _lcd -> -> 69 `ui `uc ]
+"23
+[; ;keyboard.c: 23:             clear_display(lcd);
+[e ( _clear_display (1 _lcd ]
+"24
+[; ;keyboard.c: 24:         }
 }
 [e :U 286 ]
-"22
-[; ;keyboard.c: 22:     }
-}
-[e $U 287  ]
-"24
-[; ;keyboard.c: 24:     else if(RB1 && control == 0x02){
-[e :U 284 ]
-[e $ ! && _RB1 == -> _control `i -> 2 `i 288  ]
-{
 "25
-[; ;keyboard.c: 25:         control = 0x03;
-[e = _control -> -> 3 `i `uc ]
+[; ;keyboard.c: 25:     }
+}
+[e :U 284 ]
 "26
-[; ;keyboard.c: 26:         RB0 = 0x01;
-[e = _RB0 -> -> 1 `i `b ]
-"27
-[; ;keyboard.c: 27:         RB1 = 0x00;
-[e = _RB1 -> -> 0 `i `b ]
-"28
-[; ;keyboard.c: 28:         RB2 = 0x01;
-[e = _RB2 -> -> 1 `i `b ]
-"30
-[; ;keyboard.c: 30:         if(!RB3){
-[e $ ! ! _RB3 289  ]
+[; ;keyboard.c: 26:     if(PORTBbits.RB1 && controle == 2){
+[e $ ! && != -> . . _PORTBbits 0 1 `i -> 0 `i == -> _controle `i -> 2 `i 287  ]
 {
+"27
+[; ;keyboard.c: 27:         PORTBbits.RB0 = 0x01;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+"28
+[; ;keyboard.c: 28:         PORTBbits.RB1 = 0x00;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"29
+[; ;keyboard.c: 29:         PORTBbits.RB2 = 0x01;
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+"30
+[; ;keyboard.c: 30:         controle = 3;
+[e = _controle -> -> 3 `i `uc ]
 "31
-[; ;keyboard.c: 31:             goto_XY(lcd,3,1);
-[e ( _goto_XY (3 , , _lcd -> -> 3 `i `uc -> -> 1 `i `uc ]
+[; ;keyboard.c: 31:         if(PORTBbits.RB4 == 0){
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 288  ]
+{
 "32
-[; ;keyboard.c: 32:             write_char(lcd,'/');
-[e ( _write_char (2 , _lcd -> -> 47 `ui `uc ]
+[; ;keyboard.c: 32:             goto_XY(lcd,3,1);
+[e ( _goto_XY (3 , , _lcd -> -> 3 `i `uc -> -> 1 `i `uc ]
 "33
-[; ;keyboard.c: 33:         }
+[; ;keyboard.c: 33:             write_char(lcd,'C');
+[e ( _write_char (2 , _lcd -> -> 67 `ui `uc ]
+"35
+[; ;keyboard.c: 35:             clear_display(lcd);
+[e ( _clear_display (1 _lcd ]
+"36
+[; ;keyboard.c: 36:         }
+}
+[e :U 288 ]
+"37
+[; ;keyboard.c: 37:         if(PORTBbits.RB6 == 0){
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 289  ]
+{
+"38
+[; ;keyboard.c: 38:             goto_XY(lcd,3,1);
+[e ( _goto_XY (3 , , _lcd -> -> 3 `i `uc -> -> 1 `i `uc ]
+"39
+[; ;keyboard.c: 39:             write_char(lcd,'B');
+[e ( _write_char (2 , _lcd -> -> 66 `ui `uc ]
+"41
+[; ;keyboard.c: 41:             clear_display(lcd);
+[e ( _clear_display (1 _lcd ]
+"42
+[; ;keyboard.c: 42:         }
 }
 [e :U 289 ]
-"34
-[; ;keyboard.c: 34:         if(!RB5){
-[e $ ! ! _RB5 290  ]
-{
-"35
-[; ;keyboard.c: 35:             goto_XY(lcd,4,1);
-[e ( _goto_XY (3 , , _lcd -> -> 4 `i `uc -> -> 1 `i `uc ]
-"36
-[; ;keyboard.c: 36:             write_char(lcd,'\\');
-[e ( _write_char (2 , _lcd -> -> 92 `ui `uc ]
-"37
-[; ;keyboard.c: 37:             _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"38
-[; ;keyboard.c: 38:             clear_display(lcd);
-[e ( _clear_display (1 _lcd ]
-"39
-[; ;keyboard.c: 39:         }
-}
-[e :U 290 ]
-"40
-[; ;keyboard.c: 40:     }
-}
-[e $U 291  ]
-"42
-[; ;keyboard.c: 42:     else if(RB2 && control == 0x03){
-[e :U 288 ]
-[e $ ! && _RB2 == -> _control `i -> 3 `i 292  ]
-{
 "43
-[; ;keyboard.c: 43:         control = 0x01;
-[e = _control -> -> 1 `i `uc ]
+[; ;keyboard.c: 43:     }
+}
+[e :U 287 ]
 "44
-[; ;keyboard.c: 44:         RB0 = 0x01;
-[e = _RB0 -> -> 1 `i `b ]
+[; ;keyboard.c: 44:     if(PORTBbits.RB2 && controle == 3){
+[e $ ! && != -> . . _PORTBbits 0 2 `i -> 0 `i == -> _controle `i -> 3 `i 290  ]
+{
 "45
-[; ;keyboard.c: 45:         RB1 = 0x01;
-[e = _RB1 -> -> 1 `i `b ]
+[; ;keyboard.c: 45:         PORTBbits.RB0 = 0x01;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "46
-[; ;keyboard.c: 46:         RB2 = 0x00;
-[e = _RB2 -> -> 0 `i `b ]
+[; ;keyboard.c: 46:         PORTBbits.RB1 = 0x01;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"47
+[; ;keyboard.c: 47:         PORTBbits.RB2 = 0x00;
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
 "48
-[; ;keyboard.c: 48:         if(!RB4){
-[e $ ! ! _RB4 293  ]
-{
+[; ;keyboard.c: 48:         controle = 1;
+[e = _controle -> -> 1 `i `uc ]
 "49
-[; ;keyboard.c: 49:             goto_XY(lcd,1,1);
-[e ( _goto_XY (3 , , _lcd -> -> 1 `i `uc -> -> 1 `i `uc ]
-"50
-[; ;keyboard.c: 50:             write_char(lcd,'>');
-[e ( _write_char (2 , _lcd -> -> 62 `ui `uc ]
-"51
-[; ;keyboard.c: 51:         }
-}
-[e :U 293 ]
-"52
-[; ;keyboard.c: 52:         if(!RB6){
-[e $ ! ! _RB6 294  ]
+[; ;keyboard.c: 49:         if(PORTBbits.RB5 == 0){
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 291  ]
 {
+"50
+[; ;keyboard.c: 50:             goto_XY(lcd,3,1);
+[e ( _goto_XY (3 , , _lcd -> -> 3 `i `uc -> -> 1 `i `uc ]
+"51
+[; ;keyboard.c: 51:             write_char(lcd,'>');
+[e ( _write_char (2 , _lcd -> -> 62 `ui `uc ]
 "53
-[; ;keyboard.c: 53:             goto_XY(lcd,2,1);
-[e ( _goto_XY (3 , , _lcd -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;keyboard.c: 53:             clear_display(lcd);
+[e ( _clear_display (1 _lcd ]
 "54
-[; ;keyboard.c: 54:             write_char(lcd,'S');
-[e ( _write_char (2 , _lcd -> -> 83 `ui `uc ]
-"55
-[; ;keyboard.c: 55:         }
+[; ;keyboard.c: 54:         }
 }
-[e :U 294 ]
+[e :U 291 ]
+"55
+[; ;keyboard.c: 55:         if(PORTBbits.RB7 == 0){
+[e $ ! == -> . . _PORTBbits 0 7 `i -> 0 `i 292  ]
+{
 "56
-[; ;keyboard.c: 56:     }
+[; ;keyboard.c: 56:             goto_XY(lcd,3,1);
+[e ( _goto_XY (3 , , _lcd -> -> 3 `i `uc -> -> 1 `i `uc ]
+"57
+[; ;keyboard.c: 57:             write_char(lcd,'S');
+[e ( _write_char (2 , _lcd -> -> 83 `ui `uc ]
+"59
+[; ;keyboard.c: 59:             clear_display(lcd);
+[e ( _clear_display (1 _lcd ]
+"60
+[; ;keyboard.c: 60:         }
 }
 [e :U 292 ]
-[e :U 291 ]
-[e :U 287 ]
-"57
-[; ;keyboard.c: 57: }
+"61
+[; ;keyboard.c: 61:     }
+}
+[e :U 290 ]
+"62
+[; ;keyboard.c: 62: }
 [e :UE 283 ]
 }
