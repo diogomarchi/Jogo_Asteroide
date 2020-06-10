@@ -13,13 +13,13 @@ void le_entrada(){
         if(linha_2 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'<');//entrou
-            //__delay_ms(1000);
+            __delay_ms(1000);
             clear_display(lcd);
         }
         if(linha_4 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'E');//entrou
-            //__delay_ms(1000);
+            __delay_ms(1000);
             clear_display(lcd);
         }
     }
@@ -31,13 +31,13 @@ void le_entrada(){
         if(linha_1 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'C');//entrou
-            //__delay_ms(1000);
+            __delay_ms(1000);
             clear_display(lcd);
         }
         if(linha_3 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'B');//entrou
-            //__delay_ms(1000);
+            __delay_ms(1000);
             clear_display(lcd);
         }
     }
@@ -49,13 +49,13 @@ void le_entrada(){
         if(linha_2 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'>');//entrou
-            //__delay_ms(1000);
+            __delay_ms(1000);
             clear_display(lcd);
         }
         if(linha_4 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'S');//entrou
-            //__delay_ms(1000);
+            __delay_ms(1000);
             clear_display(lcd);
         }
     }

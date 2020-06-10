@@ -39,6 +39,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "96
 [; ;./lcd.h: 96: void write_char(t_display_port *lcd, char c);
 [v _write_char `(v ~T0 @X0 0 ef2`*S282`uc ]
+[v F2528 `(v ~T0 @X0 1 tf1`ul ]
+"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v __delay `JF2528 ~T0 @X0 0 e ]
+[p i __delay ]
 "19 ./keyboard.h
 [; ;./keyboard.h: 19: unsigned char controle = 1;
 [v _controle `uc ~T0 @X0 1 e ]
@@ -499,6 +503,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15
 [; ;keyboard.c: 15:             write_char(lcd,'<');
 [e ( _write_char (2 , _lcd -> -> 60 `ui `uc ]
+"16
+[; ;keyboard.c: 16:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "17
 [; ;keyboard.c: 17:             clear_display(lcd);
 [e ( _clear_display (1 _lcd ]
@@ -516,6 +523,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21
 [; ;keyboard.c: 21:             write_char(lcd,'E');
 [e ( _write_char (2 , _lcd -> -> 69 `ui `uc ]
+"22
+[; ;keyboard.c: 22:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "23
 [; ;keyboard.c: 23:             clear_display(lcd);
 [e ( _clear_display (1 _lcd ]
@@ -553,6 +563,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33
 [; ;keyboard.c: 33:             write_char(lcd,'C');
 [e ( _write_char (2 , _lcd -> -> 67 `ui `uc ]
+"34
+[; ;keyboard.c: 34:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "35
 [; ;keyboard.c: 35:             clear_display(lcd);
 [e ( _clear_display (1 _lcd ]
@@ -570,6 +583,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39
 [; ;keyboard.c: 39:             write_char(lcd,'B');
 [e ( _write_char (2 , _lcd -> -> 66 `ui `uc ]
+"40
+[; ;keyboard.c: 40:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "41
 [; ;keyboard.c: 41:             clear_display(lcd);
 [e ( _clear_display (1 _lcd ]
@@ -607,6 +623,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51
 [; ;keyboard.c: 51:             write_char(lcd,'>');
 [e ( _write_char (2 , _lcd -> -> 62 `ui `uc ]
+"52
+[; ;keyboard.c: 52:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "53
 [; ;keyboard.c: 53:             clear_display(lcd);
 [e ( _clear_display (1 _lcd ]
@@ -624,6 +643,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [; ;keyboard.c: 57:             write_char(lcd,'S');
 [e ( _write_char (2 , _lcd -> -> 83 `ui `uc ]
+"58
+[; ;keyboard.c: 58:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "59
 [; ;keyboard.c: 59:             clear_display(lcd);
 [e ( _clear_display (1 _lcd ]

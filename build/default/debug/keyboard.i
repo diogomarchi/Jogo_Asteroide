@@ -4586,13 +4586,13 @@ void le_entrada(){
         if(PORTBbits.RB5 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'<');
-
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
             clear_display(lcd);
         }
         if(PORTBbits.RB7 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'E');
-
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
             clear_display(lcd);
         }
     }
@@ -4604,13 +4604,13 @@ void le_entrada(){
         if(PORTBbits.RB4 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'C');
-
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
             clear_display(lcd);
         }
         if(PORTBbits.RB6 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'B');
-
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
             clear_display(lcd);
         }
     }
@@ -4622,13 +4622,13 @@ void le_entrada(){
         if(PORTBbits.RB5 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'>');
-
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
             clear_display(lcd);
         }
         if(PORTBbits.RB7 == 0){
             goto_XY(lcd,3,1);
             write_char(lcd,'S');
-
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
             clear_display(lcd);
         }
     }

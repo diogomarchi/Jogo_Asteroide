@@ -4804,27 +4804,29 @@ t_display_port *lcd;
 
 void __attribute__((picinterrupt(("")))) int_handler(void){
 
-
      if(INTCONbits.TMR0IF == 1){
         INTCONbits.TMR0IF = 0;
-        TMR0 = 0x6C;
+        TMR0 = 0xC2F7;
         le_entrada();
         PORTBbits.RB0 = 0x01;
     }
 }
 
-
-
 void main(void) {
-    CMCON = 0x07;
-    INTCONbits.PEIE = 0x01;
-    INTCONbits.T0IE = 0x01;
-
-    TMR0 = 0x6C;
+    ADCON1 = 0x0F;
     TRISB = 0xF0;
     PORTB = 0xF0;
-    ADCON1 = 0x0F;
     TRISD = 0x00;
+
+
+    INTCONbits.INT0IF = 0;
+    INTCONbits.INT0IE = 1;
+
+    T0CON = 0x07;
+    TMR0 = 0xC2F7;
+
+
+    INTCONbits.TMR0IE = 1;
     INTCONbits.GIE = 1;
 
     lcd = &PORTD;
@@ -4832,10 +4834,12 @@ void main(void) {
     function_set(lcd, 0, 1, 0);
     display_onoff_control(lcd, 1, 1, 0);
     entry_mode_set(lcd, 1,0);
+
+
     T0CONbits.TMR0ON = 1;
-    menu(lcd);
      _delay((unsigned long)((1000)*(16000000/4000.0)));
 
     while(1){
+
     }
 }
