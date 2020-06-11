@@ -8,15 +8,12 @@
 #ifndef KEYBOARD_H
 #define	KEYBOARD_H
 
-#define col_1 PORTBbits.RB0
-#define col_2 PORTBbits.RB1
-#define col_3 PORTBbits.RB2
-#define linha_1 PORTBbits.RB4
-#define linha_2 PORTBbits.RB5
-#define linha_3 PORTBbits.RB6
-#define linha_4 PORTBbits.RB7
+#include <pic18f4520.h>
 
-unsigned char controle = 1;
+#define linha_4 PORTBbits.RB4
+#define linha_3 PORTBbits.RB5
+#define linha_2 PORTBbits.RB6
+#define linha_1 PORTBbits.RB7
 
 typedef struct {
     char U:1;
@@ -34,7 +31,7 @@ typedef struct {
     @Parameters : nenhum
     @Returns    : Void      
  */
-void le_entrada();
+void le_entrada(t_botoes *botoes);
 
 #endif	/* KEYBOARD_H */
 

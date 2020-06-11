@@ -3,11 +3,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./lcd.h: 18: typedef struct {
 [s S282 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
 [n S282 . RS R_W E NA data ]
-[p mainexit ]
-"3752 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 3752: extern volatile unsigned char CMCON __attribute__((address(0xFB4)));
-[v _CMCON `Vuc ~T0 @X0 0 e@4020 ]
-"6698
+"18 ./keyboard.h
+[; ;./keyboard.h: 18: typedef struct {
+[s S281 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S281 . U D L R Enter Esc ]
+[t ~ __interrupt . k ]
+[t T41 __interrupt ]
+"6698 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6698:     struct {
 [s S275 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S275 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -26,18 +28,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6724
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6724: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS274 ~T0 @X0 0 e@4082 ]
-"6251
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6251: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
-[v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
+"6258
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6258: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"34 ./keyboard.h
+[; ;./keyboard.h: 34: void le_entrada(t_botoes *botoes);
+[v _le_entrada `(v ~T0 @X0 0 ef1`*S281 ]
+[p mainexit ]
+"4690 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4690: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
 "1699
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1699: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"4690
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4690: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
-[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"271
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 271: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
 "2143
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2143: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"6168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6168: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
+[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
 "632
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 632: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
 [v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
@@ -65,12 +77,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6191
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 6191: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
 [v _T0CONbits `VS261 ~T0 @X0 0 e@4053 ]
-"19 ./funcionamento.h
-[; ;./funcionamento.h: 19: void menu(t_display_port *lcd);
-[v _menu `(v ~T0 @X0 0 ef1`*S282 ]
-"37 ./keyboard.h
-[; ;./keyboard.h: 37: void le_entrada();
-[v _le_entrada `(v ~T0 @X0 0 e? ]
+"96 ./lcd.h
+[; ;./lcd.h: 96: void write_char(t_display_port *lcd, char c);
+[v _write_char `(v ~T0 @X0 0 ef2`*S282`uc ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -490,69 +499,108 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 main.c
 [; ;main.c: 19: t_display_port *lcd;
 [v _lcd `*S282 ~T0 @X0 1 e ]
+"20
+[; ;main.c: 20: t_botoes *botoes;
+[v _botoes `*S281 ~T0 @X0 1 e ]
+[v $root$_int_handler `(v ~T0 @X0 0 e ]
+"22
+[; ;main.c: 22: void __attribute__((picinterrupt(("")))) int_handler(void){
+[v _int_handler `(v ~T41 @X0 1 ef ]
+{
+[e :U _int_handler ]
+[f ]
+"24
+[; ;main.c: 24:      if(INTCONbits.TMR0IF == 1){
+[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 287  ]
+{
+"25
+[; ;main.c: 25:         TMR0L = 0x00;
+[e = _TMR0L -> -> 0 `i `uc ]
+"26
+[; ;main.c: 26:         le_entrada(botoes);
+[e ( _le_entrada (1 _botoes ]
+"27
+[; ;main.c: 27:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"28
+[; ;main.c: 28:     }
+}
+[e :U 287 ]
+"29
+[; ;main.c: 29: }
+[e :UE 286 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"36
-[; ;main.c: 36: void main(void) {
+"31
+[; ;main.c: 31: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"37
-[; ;main.c: 37:     CMCON = 0x07;
-[e = _CMCON -> -> 7 `i `uc ]
-"38
-[; ;main.c: 38:     INTCONbits.PEIE = 0x01;
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"39
-[; ;main.c: 39:     INTCONbits.T0IE = 0x01;
-[e = . . _INTCONbits 1 5 -> -> 1 `i `uc ]
-"41
-[; ;main.c: 41:     TMR0 = 0x6C;
-[e = _TMR0 -> -> 108 `i `us ]
-"42
-[; ;main.c: 42:     TRISB = 0x0F;
-[e = _TRISB -> -> 15 `i `uc ]
-"44
-[; ;main.c: 44:     ADCON1 = 0x0F;
+"33
+[; ;main.c: 33:     ADCON1 = 0x0F;
 [e = _ADCON1 -> -> 15 `i `uc ]
-"45
-[; ;main.c: 45:     TRISD = 0x00;
+"38
+[; ;main.c: 38:     TRISB = 0x0F;
+[e = _TRISB -> -> 15 `i `uc ]
+"41
+[; ;main.c: 41:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
+"44
+[; ;main.c: 44:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"48
-[; ;main.c: 48:     lcd = &PORTD;
-[e = _lcd -> &U _PORTD `*S282 ]
+"47
+[; ;main.c: 47:     T0CON = 0x47;
+[e = _T0CON -> -> 71 `i `uc ]
 "50
-[; ;main.c: 50:     function_set(lcd, 0, 1, 0);
-[e ( _function_set (4 , , , _lcd -> -> 0 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
-"51
-[; ;main.c: 51:     display_onoff_control(lcd, 1, 1, 0);
-[e ( _display_onoff_control (4 , , , _lcd -> -> 1 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
-"52
-[; ;main.c: 52:     entry_mode_set(lcd, 1,0);
-[e ( _entry_mode_set (3 , , _lcd -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 50:     TMR0L = 0x00;
+[e = _TMR0L -> -> 0 `i `uc ]
 "53
-[; ;main.c: 53:     T0CONbits.TMR0ON = 1;
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 53:     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "54
-[; ;main.c: 54:     menu(lcd);
-[e ( _menu (1 _lcd ]
+[; ;main.c: 54:     INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"55
+[; ;main.c: 55:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "57
-[; ;main.c: 57:     while(1){
-[e :U 288 ]
-{
-"58
-[; ;main.c: 58:         le_entrada();
-[e ( _le_entrada ..  ]
+[; ;main.c: 57:     lcd = &PORTD;
+[e = _lcd -> &U _PORTD `*S282 ]
+"59
+[; ;main.c: 59:     function_set(lcd, 0, 1, 0);
+[e ( _function_set (4 , , , _lcd -> -> 0 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
 "60
-[; ;main.c: 60:     }
+[; ;main.c: 60:     display_onoff_control(lcd, 1, 1, 0);
+[e ( _display_onoff_control (4 , , , _lcd -> -> 1 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
+"61
+[; ;main.c: 61:     entry_mode_set(lcd, 1,0);
+[e ( _entry_mode_set (3 , , _lcd -> -> 1 `i `uc -> -> 0 `i `uc ]
+"63
+[; ;main.c: 63:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"65
+[; ;main.c: 65:     while(1){
+[e :U 290 ]
+{
+"66
+[; ;main.c: 66:         if(botoes->Enter){
+[e $ ! != -> . *U _botoes 4 `i -> 0 `i 292  ]
+{
+"67
+[; ;main.c: 67:             write_char(lcd,'E');
+[e ( _write_char (2 , _lcd -> -> 69 `ui `uc ]
+"68
+[; ;main.c: 68:         }
 }
-[e :U 287 ]
-[e $U 288  ]
+[e :U 292 ]
+"69
+[; ;main.c: 69:     }
+}
 [e :U 289 ]
-"62
-[; ;main.c: 62: }
-[e :UE 286 ]
+[e $U 290  ]
+[e :U 291 ]
+"70
+[; ;main.c: 70: }
+[e :UE 288 ]
 }

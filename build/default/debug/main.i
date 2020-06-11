@@ -4521,9 +4521,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 12 "main.c" 2
 
 # 1 "./keyboard.h" 1
-# 19 "./keyboard.h"
-unsigned char controle = 1;
-
+# 18 "./keyboard.h"
 typedef struct {
     char U:1;
     char D:1;
@@ -4532,8 +4530,8 @@ typedef struct {
     char Enter:1;
     char Esc:1;
 }t_botoes;
-# 37 "./keyboard.h"
-void le_entrada();
+# 34 "./keyboard.h"
+void le_entrada(t_botoes *botoes);
 # 13 "main.c" 2
 
 # 1 "./lcd.h" 1
@@ -4798,34 +4796,40 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 t_display_port *lcd;
-
-
-
+t_botoes *botoes;
 
 void __attribute__((picinterrupt(("")))) int_handler(void){
 
      if(INTCONbits.TMR0IF == 1){
+        TMR0L = 0x63;
+        le_entrada(botoes);
         INTCONbits.TMR0IF = 0;
-        TMR0 = 0xC2F7;
-        le_entrada();
-        PORTBbits.RB0 = 0x01;
     }
 }
 
 void main(void) {
+
     ADCON1 = 0x0F;
-    TRISB = 0xF0;
-    PORTB = 0xF0;
+
+
+
+
+    TRISB = 0x0F;
+
+
+    PORTB = 0x00;
+
+
     TRISD = 0x00;
 
 
-    INTCONbits.INT0IF = 0;
-    INTCONbits.INT0IE = 1;
-
-    T0CON = 0x07;
-    TMR0 = 0xC2F7;
+    T0CON = 0x47;
 
 
+    TMR0L = 0x63;
+
+
+    INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 1;
     INTCONbits.GIE = 1;
 
@@ -4835,11 +4839,26 @@ void main(void) {
     display_onoff_control(lcd, 1, 1, 0);
     entry_mode_set(lcd, 1,0);
 
-
     T0CONbits.TMR0ON = 1;
-     _delay((unsigned long)((1000)*(16000000/4000.0)));
 
     while(1){
-
+        if(botoes->U){
+            goto_XY(lcd, 3, 2);
+            write_char(lcd,'*');
+        }
+        if(botoes->D){
+            goto_XY(lcd, 2, 2);
+            write_char(lcd,'*');
+        }
+        if(botoes->L){
+            goto_XY(lcd, 1, 2);
+            write_char(lcd,'*');
+        }
+        if(botoes->R){
+            goto_XY(lcd, 1, 3);
+            write_char(lcd,'*');
+        }
+        _delay((unsigned long)((80)*(16000000/4000.0)));
+        clear_display(lcd);
     }
 }
