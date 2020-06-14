@@ -15,8 +15,7 @@ void pulso(t_display_port *lcd){
     
     /* desabilita display */
     lcd->E = 0;                
-    __delay_ms(5);
-    lcd->data = 0x00;   
+    __delay_ms(1);    
 }
 
 void function_set(t_display_port *lcd, char data_lenght, 
@@ -73,8 +72,6 @@ void lcd_cmd(t_display_port *lcd, char a){
     pulso(lcd);        
 }
 
-
-
 //função para posicionar o cursor
 void goto_XY(t_display_port *lcd, unsigned char x, unsigned char y){
     unsigned char temp,z,a;
@@ -116,7 +113,6 @@ void goto_XY(t_display_port *lcd, unsigned char x, unsigned char y){
     } 
 }
 
-
 void entry_mode_set(t_display_port *lcd, char move_direction, char display_shift){
     lcd->E = 0;
     lcd->RS = 0;
@@ -134,23 +130,52 @@ void entry_mode_set(t_display_port *lcd, char move_direction, char display_shift
     pulso(lcd);            
 }
 
-void write_char(t_display_port *lcd, char c){
-    lcd->E = 0;
-    lcd->RS = 1;
+
+//Le o status da busy flag
+void waitFlag(t_display_port *lcd){
+    
+    TRISD = 0xF0;//D0 a D3 como entrada
+    lcd->RS = 0;
+    lcd->R_W = 1;//Operacao de leitura
+    
+    
+    do{        
+       pulso(lcd);
+    } while(lcd->data&0x08);
+        
+    
     lcd->R_W = 0;
+    TRISD = 0x00;//Todos como saida 
+}
+
+void write_char(t_display_port *lcd, char c){
+    lcd->E = 0;    
+    lcd->RS = 1;
+    lcd->R_W = 0;    
     
     /* primeira parte do char */
-    lcd->data = (c>>4);
-    __delay_ms(1);
-    
-    pulso(lcd);
+    lcd->data = (c>>4);        
+    lcd->E = 1;    
+    lcd->E = 0;   
     
     /* segunda parte do char */
-    lcd->data = (c);
-    __delay_ms(1);
+    lcd->data = (c);    
+    lcd->E = 1;     
+    lcd->E = 0; 
     
-    pulso(lcd);    
-    lcd->RS = 0;       
+////////// check busy flag ///////////////
+    TRISD = 0xF0;//D7 a D4 como entrada
+    lcd->RS = 0;
+    lcd->R_W = 1;//Operacao de leitura        
+    do{        
+       lcd->E = 1;
+       lcd->E = 0;
+       lcd->E = 1;
+       lcd->E = 0;
+    } while(lcd->data&0x08); //             
+    lcd->R_W = 0;
+    TRISD = 0x00;//Todos como saida 
+////////////////////////
 }
 
 void clear_display(t_display_port *lcd){
@@ -188,3 +213,13 @@ void return_home(t_display_port *lcd){
     
     pulso(lcd);    
 }
+
+void print_mat(t_display_port *lcd){
+    for(int i = 0; i<4; i++){
+        goto_XY(lcd, i+1, 1);
+        for(int j=0; j<TAM; j++)
+            write_char(lcd, mat_disp[i][j]);
+    }        
+}
+
+

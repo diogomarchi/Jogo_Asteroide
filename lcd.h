@@ -24,6 +24,10 @@ typedef struct {
 }t_display_port;
 
 
+
+char mat_disp [4][TAM];
+
+
 /**      
     
     @Description: define a largura de dados, qtd de linhas e fonte
@@ -111,6 +115,9 @@ void clear_display(t_display_port *lcd);
     @Returns    :  Void      
  */
 void return_home(t_display_port *lcd);
+
+
+void print_mat(t_display_port *lcd);
 
 
 #endif	/* XC_HEADER_TEMPLATE_H */

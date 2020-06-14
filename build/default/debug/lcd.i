@@ -4525,7 +4525,205 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 15 "./lcd.h" 2
 
 # 1 "./config.h" 1
-# 12 "./config.h"
+# 11 "./config.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 11 "./config.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 12 "./config.h" 2
+
+
 #pragma config MCLRE = ON, WDT = OFF, OSC = HS
 # 16 "./lcd.h" 2
 
@@ -4537,21 +4735,25 @@ typedef struct {
     char NA:1;
     char data:4;
 }t_display_port;
-# 37 "./lcd.h"
+
+
+
+char mat_disp [4][16];
+# 41 "./lcd.h"
 void function_set(t_display_port *lcd, char data_lenght,
         char num_lines, char char_font);
-# 51 "./lcd.h"
+# 55 "./lcd.h"
 void display_onoff_control(t_display_port *lcd, char display_on,
         char cursor_on, char blink);
-# 63 "./lcd.h"
+# 67 "./lcd.h"
 void entry_mode_set(t_display_port *lcd,char move_direction,
         char display_shift);
-# 75 "./lcd.h"
+# 79 "./lcd.h"
 void goto_XY(t_display_port *lcd,
         unsigned char x, unsigned char y);
-# 86 "./lcd.h"
+# 90 "./lcd.h"
 void lcd_cmd(t_display_port *lcd, char c);
-# 96 "./lcd.h"
+# 100 "./lcd.h"
 void write_char(t_display_port *lcd, char c);
 
 
@@ -4561,8 +4763,11 @@ void write_char(t_display_port *lcd, char c);
 
 
 void clear_display(t_display_port *lcd);
-# 113 "./lcd.h"
+# 117 "./lcd.h"
 void return_home(t_display_port *lcd);
+
+
+void print_mat(t_display_port *lcd);
 # 9 "lcd.c" 2
 
 
@@ -4573,8 +4778,7 @@ void pulso(t_display_port *lcd){
 
 
     lcd->E = 0;
-    _delay((unsigned long)((5)*(16000000/4000.0)));
-    lcd->data = 0x00;
+    _delay((unsigned long)((1)*(16000000/4000.0)));
 }
 
 void function_set(t_display_port *lcd, char data_lenght,
@@ -4632,8 +4836,6 @@ void lcd_cmd(t_display_port *lcd, char a){
 }
 
 
-
-
 void goto_XY(t_display_port *lcd, unsigned char x, unsigned char y){
     unsigned char temp,z,a;
     if(x == 1)
@@ -4674,7 +4876,6 @@ void goto_XY(t_display_port *lcd, unsigned char x, unsigned char y){
     }
 }
 
-
 void entry_mode_set(t_display_port *lcd, char move_direction, char display_shift){
     lcd->E = 0;
     lcd->RS = 0;
@@ -4692,6 +4893,24 @@ void entry_mode_set(t_display_port *lcd, char move_direction, char display_shift
     pulso(lcd);
 }
 
+
+
+void waitFlag(t_display_port *lcd){
+
+    TRISD = 0xF0;
+    lcd->RS = 0;
+    lcd->R_W = 1;
+
+
+    do{
+       pulso(lcd);
+    } while(lcd->data&0x08);
+
+
+    lcd->R_W = 0;
+    TRISD = 0x00;
+}
+
 void write_char(t_display_port *lcd, char c){
     lcd->E = 0;
     lcd->RS = 1;
@@ -4699,16 +4918,27 @@ void write_char(t_display_port *lcd, char c){
 
 
     lcd->data = (c>>4);
-    _delay((unsigned long)((1)*(16000000/4000.0)));
-
-    pulso(lcd);
+    lcd->E = 1;
+    lcd->E = 0;
 
 
     lcd->data = (c);
-    _delay((unsigned long)((1)*(16000000/4000.0)));
+    lcd->E = 1;
+    lcd->E = 0;
 
-    pulso(lcd);
+
+    TRISD = 0xF0;
     lcd->RS = 0;
+    lcd->R_W = 1;
+    do{
+       lcd->E = 1;
+       lcd->E = 0;
+       lcd->E = 1;
+       lcd->E = 0;
+    } while(lcd->data&0x08);
+    lcd->R_W = 0;
+    TRISD = 0x00;
+
 }
 
 void clear_display(t_display_port *lcd){
@@ -4745,4 +4975,12 @@ void return_home(t_display_port *lcd){
     _delay((unsigned long)((1)*(16000000/4000.0)));
 
     pulso(lcd);
+}
+
+void print_mat(t_display_port *lcd){
+    for(int i = 0; i<4; i++){
+        goto_XY(lcd, i+1, 1);
+        for(int j=0; j<16; j++)
+            write_char(lcd, mat_disp[i][j]);
+    }
 }

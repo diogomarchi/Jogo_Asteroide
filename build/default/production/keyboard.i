@@ -4375,27 +4375,36 @@ typedef struct {
     char Enter:1;
     char Esc:1;
 }t_botoes;
-# 34 "./keyboard.h"
-void le_entrada(t_botoes *botoes);
+
+
+t_botoes botoes;
+
+
+
+
+
+
+
+void le_entrada();
 # 2 "keyboard.c" 2
 
 
-void le_entrada(t_botoes *botoes){
-    PORTBbits.RB4 = 1;
-    botoes->U = PORTBbits.RB1;
-    PORTBbits.RB4 = 0;
-
-    PORTBbits.RB5 = 1;
-    botoes->L = PORTBbits.RB0;
-    botoes->R = PORTBbits.RB2;
-    PORTBbits.RB5 = 0;
+void le_entrada(){
+    PORTBbits.RB7 = 1;
+    botoes.U = PORTBbits.RB1;
+    PORTBbits.RB7 = 0;
 
     PORTBbits.RB6 = 1;
-    botoes->D = PORTBbits.RB1;
+    botoes.L = PORTBbits.RB0;
+    botoes.R = PORTBbits.RB2;
     PORTBbits.RB6 = 0;
 
-    PORTBbits.RB7 = 1;
-    botoes->Enter = PORTBbits.RB0;
-    botoes->Esc = PORTBbits.RB2;
-    PORTBbits.RB7 = 0;
+    PORTBbits.RB5 = 1;
+    botoes.D = PORTBbits.RB1;
+    PORTBbits.RB5 = 0;
+
+    PORTBbits.RB4 = 1;
+    botoes.Enter = PORTBbits.RB0;
+    botoes.Esc = PORTBbits.RB2;
+    PORTBbits.RB4 = 0;
 }

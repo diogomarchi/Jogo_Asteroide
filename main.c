@@ -12,18 +12,20 @@
 #include "config.h"
 #include "keyboard.h"
 #include "lcd.h"
-#include "funcionamento.h"  
-#include <stdio.h>
-#include <string.h>
+#include "task_manager.h"
 
-t_display_port *lcd;
-t_botoes *botoes;
+/* precisa ser declarado aqui pra passar por parametro. 
+ tentei declarar no lcd.h para n precisar passar por parametro e deu 
+ o erro "Looping around allocGlobals" que parece ser um erro do compilador
+ quando tem muitos calculos de endereco para fazer
+ https://www.todopic.com.ar/foros/index.php?topic=42822.0*/
+t_display_port *lcd = &PORTD;
 
 void __interrupt() int_handler(void){
 
      if(INTCONbits.TMR0IF == 1){        
         TMR0L = 0x63;    //reinicia timer0
-        le_entrada(botoes);         
+        le_entrada();         
         INTCONbits.TMR0IF = 0;    //limpa flag
     }
 }
@@ -53,33 +55,33 @@ void main(void) {
     INTCONbits.TMR0IF = 0;    //limpa flag
     INTCONbits.TMR0IE = 1;
     INTCONbits.GIE = 1;
-    
-    lcd = &PORTD;
-            
+                    
     function_set(lcd, 0, 1, 0);
     display_onoff_control(lcd, 1, 1, 0);
     entry_mode_set(lcd, 1,0);
         
     ENABLE_TIMER = 1;
          
-    while(1){          
-        if(botoes->U){
+    gerenciador(lcd);
+    
+    /*while(1){          
+        if(botoes.U){
             goto_XY(lcd, 3, 2);
             write_char(lcd,'*');
         }
-        if(botoes->D){
+        if(botoes.D){
             goto_XY(lcd, 2, 2);
             write_char(lcd,'*');
         }        
-        if(botoes->L){
+        if(botoes.L){
             goto_XY(lcd, 1, 2);
             write_char(lcd,'*');
         }
-        if(botoes->R){
+        if(botoes.R){
             goto_XY(lcd, 1, 3);
             write_char(lcd,'*');
         }
         __delay_ms(80);
         clear_display(lcd);
-    }   
+    }   */
 }

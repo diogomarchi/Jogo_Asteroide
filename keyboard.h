@@ -10,10 +10,10 @@
 
 #include <pic18f4520.h>
 
-#define linha_4 PORTBbits.RB4
-#define linha_3 PORTBbits.RB5
-#define linha_2 PORTBbits.RB6
-#define linha_1 PORTBbits.RB7
+#define LINHA_4 PORTBbits.RB4
+#define LINHA_3 PORTBbits.RB5
+#define LINHA_2 PORTBbits.RB6
+#define LINHA_1 PORTBbits.RB7
 
 typedef struct {
     char U:1;
@@ -24,14 +24,17 @@ typedef struct {
     char Esc:1;
 }t_botoes;
 
+/** @Description: armazena os estados das entradas */
+t_botoes botoes;
+
 
 /**      
     
-    @Description: le qual botão foi pressionado  
+    @Description: le qual botão foi pressionado e atualiza a variavel botoes 
     @Parameters : nenhum
     @Returns    : Void      
  */
-void le_entrada(t_botoes *botoes);
+void le_entrada();
 
 #endif	/* KEYBOARD_H */
 

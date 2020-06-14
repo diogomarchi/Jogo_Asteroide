@@ -23,39 +23,56 @@
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"113 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\funcionamento.c
-[v _menu menu `(v  1 e 1 0 ]
 "4 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\keyboard.c
 [v _le_entrada le_entrada `(v  1 e 1 0 ]
 "11 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\lcd.c
 [v _pulso pulso `(v  1 e 1 0 ]
-"22
+"21
 [v _function_set function_set `(v  1 e 1 0 ]
-"48
+"47
 [v _display_onoff_control display_onoff_control `(v  1 e 1 0 ]
-"68
+"67
 [v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
-"79
+"76
 [v _goto_XY goto_XY `(v  1 e 1 0 ]
-"120
+"116
 [v _entry_mode_set entry_mode_set `(v  1 e 1 0 ]
-"137
+"151
 [v _write_char write_char `(v  1 e 1 0 ]
-"156
+"181
 [v _clear_display clear_display `(v  1 e 1 0 ]
-"22 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\main.c
+"217
+[v _print_mat print_mat `(v  1 e 1 0 ]
+"24 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\main.c
 [v _int_handler int_handler `IIH(v  1 e 1 0 ]
-"31
+"33
 [v _main main `(v  1 e 1 0 ]
+"15 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\task_manager.c
+[v _gerenciador gerenciador `(v  1 e 1 0 ]
+"126
+[v _menu menu `(uc  1 e 1 0 ]
+[s S24 . 1 `uc 1 U 1 0 :1:0 
+`uc 1 D 1 0 :1:1 
+`uc 1 L 1 0 :1:2 
+`uc 1 R 1 0 :1:3 
+`uc 1 Enter 1 0 :1:4 
+`uc 1 Esc 1 0 :1:5 
+]
+"28 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X/keyboard.h
+[v _botoes botoes `S24  1 e 1 0 ]
+"28 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X/lcd.h
+[v _mat_disp mat_disp `[4][16]uc  1 e 64 0 ]
 "271 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S387 . 1 `uc 1 RB0 1 0 :1:0 
+[s S309 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -65,7 +82,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "315
-[s S396 . 1 `uc 1 INT0 1 0 :1:0 
+[s S318 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -74,7 +91,7 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S405 . 1 `uc 1 AN12 1 0 :1:0 
+[s S327 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -83,13 +100,13 @@
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S414 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S336 . 1 `uc 1 FLT0 1 0 :1:0 
 ]
-[s S416 . 1 `uc 1 . 1 0 :3:0 
+[s S338 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S419 . 1 `S387 1 . 1 0 `S396 1 . 1 0 `S405 1 . 1 0 `S414 1 . 1 0 `S416 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES419  1 e 1 @3969 ]
+[u S341 . 1 `S309 1 . 1 0 `S318 1 . 1 0 `S327 1 . 1 0 `S336 1 . 1 0 `S338 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES341  1 e 1 @3969 ]
 "632
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 "1699
@@ -100,7 +117,7 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "6168
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S121 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S120 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -108,18 +125,18 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "6191
-[s S128 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S127 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 `uc 1 . 1 0 :2:4 
 `uc 1 T016BIT 1 0 :1:6 
 ]
-[u S135 . 1 `S121 1 . 1 0 `S128 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES135  1 e 1 @4053 ]
+[u S134 . 1 `S120 1 . 1 0 `S127 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES134  1 e 1 @4053 ]
 "6258
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
-[s S37 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S38 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -129,7 +146,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "6724
-[s S46 . 1 `uc 1 . 1 0 :1:0 
+[s S47 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -138,120 +155,182 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S55 . 1 `uc 1 . 1 0 :6:0 
+[s S56 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S59 . 1 `S37 1 . 1 0 `S46 1 . 1 0 `S55 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES59  1 e 1 @4082 ]
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
-`uc 1 R_W 1 0 :1:1 
-`uc 1 E 1 0 :1:2 
-`uc 1 NA 1 0 :1:3 
-`uc 1 data 1 0 :4:4 
-]
-"19 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\main.c
-[v _lcd lcd `*.39S24  1 e 2 0 ]
-[s S30 . 1 `uc 1 U 1 0 :1:0 
-`uc 1 D 1 0 :1:1 
-`uc 1 L 1 0 :1:2 
-`uc 1 R 1 0 :1:3 
-`uc 1 Enter 1 0 :1:4 
-`uc 1 Esc 1 0 :1:5 
-]
-"20
-[v _botoes botoes `*.2S30  1 e 2 0 ]
-"31
+[u S60 . 1 `S38 1 . 1 0 `S47 1 . 1 0 `S56 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES60  1 e 1 @4082 ]
+"12 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\task_manager.c
+[v _op op `uc  1 e 1 0 ]
+"33 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"70
+"87
 } 0
-"137 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\lcd.c
+"15 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\task_manager.c
+[v _gerenciador gerenciador `(v  1 e 1 0 ]
+{
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
+`uc 1 R_W 1 0 :1:1 
+`uc 1 E 1 0 :1:2 
+`uc 1 NA 1 0 :1:3 
+`uc 1 data 1 0 :4:4 
+]
+[v gerenciador@lcd lcd `*.39S31  1 p 2 27 ]
+"23
+} 0
+"126
+[v _menu menu `(uc  1 e 1 0 ]
+{
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
+`uc 1 R_W 1 0 :1:1 
+`uc 1 E 1 0 :1:2 
+`uc 1 NA 1 0 :1:3 
+`uc 1 data 1 0 :4:4 
+]
+[v menu@lcd lcd `*.39S31  1 p 2 25 ]
+"150
+} 0
+"3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+{
+"6
+[v strcpy@d d `*.39uc  1 a 2 6 ]
+"5
+[v strcpy@s s `*.32Cuc  1 a 2 4 ]
+"3
+[v strcpy@dest dest `*.39uc  1 p 2 0 ]
+[v strcpy@src src `*.32Cuc  1 p 2 2 ]
+"9
+} 0
+"217 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\lcd.c
+[v _print_mat print_mat `(v  1 e 1 0 ]
+{
+"220
+[v print_mat@j j `i  1 a 2 21 ]
+"218
+[v print_mat@i i `i  1 a 2 23 ]
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
+`uc 1 R_W 1 0 :1:1 
+`uc 1 E 1 0 :1:2 
+`uc 1 NA 1 0 :1:3 
+`uc 1 data 1 0 :4:4 
+]
+"217
+[v print_mat@lcd lcd `*.39S31  1 p 2 15 ]
+"223
+} 0
+"151
 [v _write_char write_char `(v  1 e 1 0 ]
 {
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v write_char@lcd lcd `*.39S24  1 p 2 7 ]
-[v write_char@c c `uc  1 p 1 9 ]
-"154
+[v write_char@lcd lcd `*.39S31  1 p 2 0 ]
+[v write_char@c c `uc  1 p 1 2 ]
+"179
 } 0
-"22
+"76
+[v _goto_XY goto_XY `(v  1 e 1 0 ]
+{
+"77
+[v goto_XY@temp temp `uc  1 a 1 14 ]
+[v goto_XY@a a `uc  1 a 1 13 ]
+[v goto_XY@z z `uc  1 a 1 12 ]
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
+`uc 1 R_W 1 0 :1:1 
+`uc 1 E 1 0 :1:2 
+`uc 1 NA 1 0 :1:3 
+`uc 1 data 1 0 :4:4 
+]
+"76
+[v goto_XY@lcd lcd `*.39S31  1 p 2 7 ]
+[v goto_XY@x x `uc  1 p 1 9 ]
+[v goto_XY@y y `uc  1 p 1 10 ]
+"114
+} 0
+"67
+[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
+{
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
+`uc 1 R_W 1 0 :1:1 
+`uc 1 E 1 0 :1:2 
+`uc 1 NA 1 0 :1:3 
+`uc 1 data 1 0 :4:4 
+]
+[v lcd_cmd@lcd lcd `*.39S31  1 p 2 3 ]
+[v lcd_cmd@a a `uc  1 p 1 5 ]
+"73
+} 0
+"21
 [v _function_set function_set `(v  1 e 1 0 ]
 {
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v function_set@lcd lcd `*.39S24  1 p 2 7 ]
-[v function_set@data_lenght data_lenght `uc  1 p 1 9 ]
-"23
-[v function_set@num_lines num_lines `uc  1 p 1 10 ]
-[v function_set@char_font char_font `uc  1 p 1 11 ]
-"46
+[v function_set@lcd lcd `*.39S31  1 p 2 3 ]
+[v function_set@data_lenght data_lenght `uc  1 p 1 5 ]
+"22
+[v function_set@num_lines num_lines `uc  1 p 1 6 ]
+[v function_set@char_font char_font `uc  1 p 1 7 ]
+"45
 } 0
-"120
+"116
 [v _entry_mode_set entry_mode_set `(v  1 e 1 0 ]
 {
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v entry_mode_set@lcd lcd `*.39S24  1 p 2 7 ]
-[v entry_mode_set@move_direction move_direction `uc  1 p 1 9 ]
-[v entry_mode_set@display_shift display_shift `uc  1 p 1 10 ]
-"135
+[v entry_mode_set@lcd lcd `*.39S31  1 p 2 3 ]
+[v entry_mode_set@move_direction move_direction `uc  1 p 1 5 ]
+[v entry_mode_set@display_shift display_shift `uc  1 p 1 6 ]
+"131
 } 0
-"48
+"47
 [v _display_onoff_control display_onoff_control `(v  1 e 1 0 ]
 {
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v display_onoff_control@lcd lcd `*.39S24  1 p 2 7 ]
-[v display_onoff_control@display_on display_on `uc  1 p 1 9 ]
-"49
-[v display_onoff_control@cursor_on cursor_on `uc  1 p 1 10 ]
-[v display_onoff_control@blink blink `uc  1 p 1 11 ]
-"66
+[v display_onoff_control@lcd lcd `*.39S31  1 p 2 3 ]
+[v display_onoff_control@display_on display_on `uc  1 p 1 5 ]
+"48
+[v display_onoff_control@cursor_on cursor_on `uc  1 p 1 6 ]
+[v display_onoff_control@blink blink `uc  1 p 1 7 ]
+"65
 } 0
 "11
 [v _pulso pulso `(v  1 e 1 0 ]
 {
-[s S24 . 1 `uc 1 RS 1 0 :1:0 
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-[v pulso@lcd lcd `*.39S24  1 p 2 4 ]
-"20
+[v pulso@lcd lcd `*.39S31  1 p 2 0 ]
+"19
 } 0
-"22 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\main.c
+"24 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\main.c
 [v _int_handler int_handler `IIH(v  1 e 1 0 ]
 {
-"29
+"31
 } 0
 "4 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\keyboard.c
 [v _le_entrada le_entrada `(v  1 e 1 0 ]
 {
-[s S30 . 1 `uc 1 U 1 0 :1:0 
-`uc 1 D 1 0 :1:1 
-`uc 1 L 1 0 :1:2 
-`uc 1 R 1 0 :1:3 
-`uc 1 Enter 1 0 :1:4 
-`uc 1 Esc 1 0 :1:5 
-]
-[v le_entrada@botoes botoes `*.2S30  1 p 2 0 ]
 "22
 } 0

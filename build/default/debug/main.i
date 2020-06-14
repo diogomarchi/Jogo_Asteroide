@@ -4516,87 +4516,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 11 "main.c" 2
 
 # 1 "./config.h" 1
-# 12 "./config.h"
-#pragma config MCLRE = ON, WDT = OFF, OSC = HS
-# 12 "main.c" 2
-
-# 1 "./keyboard.h" 1
-# 18 "./keyboard.h"
-typedef struct {
-    char U:1;
-    char D:1;
-    char L:1;
-    char R:1;
-    char Enter:1;
-    char Esc:1;
-}t_botoes;
-# 34 "./keyboard.h"
-void le_entrada(t_botoes *botoes);
-# 13 "main.c" 2
-
-# 1 "./lcd.h" 1
-# 18 "./lcd.h"
-typedef struct {
-    char RS:1;
-    char R_W:1;
-    char E:1;
-    char NA:1;
-    char data:4;
-}t_display_port;
-# 37 "./lcd.h"
-void function_set(t_display_port *lcd, char data_lenght,
-        char num_lines, char char_font);
-# 51 "./lcd.h"
-void display_onoff_control(t_display_port *lcd, char display_on,
-        char cursor_on, char blink);
-# 63 "./lcd.h"
-void entry_mode_set(t_display_port *lcd,char move_direction,
-        char display_shift);
-# 75 "./lcd.h"
-void goto_XY(t_display_port *lcd,
-        unsigned char x, unsigned char y);
-# 86 "./lcd.h"
-void lcd_cmd(t_display_port *lcd, char c);
-# 96 "./lcd.h"
-void write_char(t_display_port *lcd, char c);
-
-
-
-
-
-
-
-void clear_display(t_display_port *lcd);
-# 113 "./lcd.h"
-void return_home(t_display_port *lcd);
-# 14 "main.c" 2
-
-# 1 "./funcionamento.h" 1
-# 19 "./funcionamento.h"
-void menu(t_display_port *lcd);
-
-
-
-
-
-
-void instrucoes(t_display_port *lcd);
-
-
-
-
-
-
-void creditos(t_display_port *lcd);
-
-
-
-
-
-
-void jogar(t_display_port *lcd);
-# 15 "main.c" 2
-
+# 11 "./config.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4735,7 +4655,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 16 "main.c" 2
+# 11 "./config.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
@@ -4792,17 +4712,120 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 17 "main.c" 2
+# 12 "./config.h" 2
 
 
-t_display_port *lcd;
-t_botoes *botoes;
+#pragma config MCLRE = ON, WDT = OFF, OSC = HS
+# 12 "main.c" 2
+
+# 1 "./keyboard.h" 1
+# 18 "./keyboard.h"
+typedef struct {
+    char U:1;
+    char D:1;
+    char L:1;
+    char R:1;
+    char Enter:1;
+    char Esc:1;
+}t_botoes;
+
+
+t_botoes botoes;
+# 37 "./keyboard.h"
+void le_entrada();
+# 13 "main.c" 2
+
+# 1 "./lcd.h" 1
+# 18 "./lcd.h"
+typedef struct {
+    char RS:1;
+    char R_W:1;
+    char E:1;
+    char NA:1;
+    char data:4;
+}t_display_port;
+
+
+
+char mat_disp [4][16];
+# 41 "./lcd.h"
+void function_set(t_display_port *lcd, char data_lenght,
+        char num_lines, char char_font);
+# 55 "./lcd.h"
+void display_onoff_control(t_display_port *lcd, char display_on,
+        char cursor_on, char blink);
+# 67 "./lcd.h"
+void entry_mode_set(t_display_port *lcd,char move_direction,
+        char display_shift);
+# 79 "./lcd.h"
+void goto_XY(t_display_port *lcd,
+        unsigned char x, unsigned char y);
+# 90 "./lcd.h"
+void lcd_cmd(t_display_port *lcd, char c);
+# 100 "./lcd.h"
+void write_char(t_display_port *lcd, char c);
+
+
+
+
+
+
+
+void clear_display(t_display_port *lcd);
+# 117 "./lcd.h"
+void return_home(t_display_port *lcd);
+
+
+void print_mat(t_display_port *lcd);
+# 14 "main.c" 2
+
+# 1 "./task_manager.h" 1
+# 17 "./task_manager.h"
+void gerenciador(t_display_port *lcd);
+
+
+
+
+
+
+
+char menu(t_display_port *lcd);
+
+
+
+
+
+
+void instrucoes(t_display_port *lcd);
+
+
+
+
+
+
+void creditos(t_display_port *lcd);
+
+
+
+
+
+
+void jogar(t_display_port *lcd);
+# 15 "main.c" 2
+
+
+
+
+
+
+
+t_display_port *lcd = &PORTD;
 
 void __attribute__((picinterrupt(("")))) int_handler(void){
 
      if(INTCONbits.TMR0IF == 1){
         TMR0L = 0x63;
-        le_entrada(botoes);
+        le_entrada();
         INTCONbits.TMR0IF = 0;
     }
 }
@@ -4833,32 +4856,12 @@ void main(void) {
     INTCONbits.TMR0IE = 1;
     INTCONbits.GIE = 1;
 
-    lcd = &PORTD;
-
     function_set(lcd, 0, 1, 0);
     display_onoff_control(lcd, 1, 1, 0);
     entry_mode_set(lcd, 1,0);
 
     T0CONbits.TMR0ON = 1;
 
-    while(1){
-        if(botoes->U){
-            goto_XY(lcd, 3, 2);
-            write_char(lcd,'*');
-        }
-        if(botoes->D){
-            goto_XY(lcd, 2, 2);
-            write_char(lcd,'*');
-        }
-        if(botoes->L){
-            goto_XY(lcd, 1, 2);
-            write_char(lcd,'*');
-        }
-        if(botoes->R){
-            goto_XY(lcd, 1, 3);
-            write_char(lcd,'*');
-        }
-        _delay((unsigned long)((80)*(16000000/4000.0)));
-        clear_display(lcd);
-    }
+    gerenciador(lcd);
+# 87 "main.c"
 }

@@ -444,56 +444,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"28 ./keyboard.h
+[; ;./keyboard.h: 28: t_botoes botoes;
+[v _botoes `S276 ~T0 @X0 1 e ]
 "4 keyboard.c
-[; ;keyboard.c: 4: void le_entrada(t_botoes *botoes){
-[v _le_entrada `(v ~T0 @X0 1 ef1`*S276 ]
+[; ;keyboard.c: 4: void le_entrada(){
+[v _le_entrada `(v ~T0 @X0 1 ef ]
 {
 [e :U _le_entrada ]
-[v _botoes `*S276 ~T0 @X0 1 r1 ]
 [f ]
-"5
-[; ;keyboard.c: 5:     PORTBbits.RB7 = 1;
-[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
 "6
-[; ;keyboard.c: 6:     botoes->U = PORTBbits.RB1;
-[e = . *U _botoes 0 . . _PORTBbits 0 1 ]
+[; ;keyboard.c: 6:     PORTBbits.RB7 = 1;
+[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
 "7
-[; ;keyboard.c: 7:     PORTBbits.RB7 = 0;
+[; ;keyboard.c: 7:     botoes.U = PORTBbits.RB1;
+[e = . _botoes 0 . . _PORTBbits 0 1 ]
+"8
+[; ;keyboard.c: 8:     PORTBbits.RB7 = 0;
 [e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
-"9
-[; ;keyboard.c: 9:     PORTBbits.RB6 = 1;
-[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
 "10
-[; ;keyboard.c: 10:     botoes->L = PORTBbits.RB0;
-[e = . *U _botoes 2 . . _PORTBbits 0 0 ]
+[; ;keyboard.c: 10:     PORTBbits.RB6 = 1;
+[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
 "11
-[; ;keyboard.c: 11:     botoes->R = PORTBbits.RB2;
-[e = . *U _botoes 3 . . _PORTBbits 0 2 ]
+[; ;keyboard.c: 11:     botoes.L = PORTBbits.RB0;
+[e = . _botoes 2 . . _PORTBbits 0 0 ]
 "12
-[; ;keyboard.c: 12:     PORTBbits.RB6 = 0;
+[; ;keyboard.c: 12:     botoes.R = PORTBbits.RB2;
+[e = . _botoes 3 . . _PORTBbits 0 2 ]
+"13
+[; ;keyboard.c: 13:     PORTBbits.RB6 = 0;
 [e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
-"14
-[; ;keyboard.c: 14:     PORTBbits.RB5 = 1;
-[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
 "15
-[; ;keyboard.c: 15:     botoes->D = PORTBbits.RB1;
-[e = . *U _botoes 1 . . _PORTBbits 0 1 ]
+[; ;keyboard.c: 15:     PORTBbits.RB5 = 1;
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
 "16
-[; ;keyboard.c: 16:     PORTBbits.RB5 = 0;
+[; ;keyboard.c: 16:     botoes.D = PORTBbits.RB1;
+[e = . _botoes 1 . . _PORTBbits 0 1 ]
+"17
+[; ;keyboard.c: 17:     PORTBbits.RB5 = 0;
 [e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-"18
-[; ;keyboard.c: 18:     PORTBbits.RB4 = 1;
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
 "19
-[; ;keyboard.c: 19:     botoes->Enter = PORTBbits.RB0;
-[e = . *U _botoes 4 . . _PORTBbits 0 0 ]
+[; ;keyboard.c: 19:     PORTBbits.RB4 = 1;
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
 "20
-[; ;keyboard.c: 20:     botoes->Esc = PORTBbits.RB2;
-[e = . *U _botoes 5 . . _PORTBbits 0 2 ]
+[; ;keyboard.c: 20:     botoes.Enter = PORTBbits.RB0;
+[e = . _botoes 4 . . _PORTBbits 0 0 ]
 "21
-[; ;keyboard.c: 21:     PORTBbits.RB4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+[; ;keyboard.c: 21:     botoes.Esc = PORTBbits.RB2;
+[e = . _botoes 5 . . _PORTBbits 0 2 ]
 "22
-[; ;keyboard.c: 22: }
+[; ;keyboard.c: 22:     PORTBbits.RB4 = 0;
+[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+"23
+[; ;keyboard.c: 23: }
 [e :UE 277 ]
 }
