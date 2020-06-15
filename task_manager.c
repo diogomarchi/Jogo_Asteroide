@@ -12,41 +12,24 @@
 unsigned char op = 0;
 
 
-void gerenciador(t_display_port *lcd){
-                
-    menu(lcd);
-    
+void gerenciador(t_display_port *lcd){                        
     while(1){
+        menu(lcd);    
         
-    }
-    
+        if(op==2) creditos(lcd);
+        /* chamadas de funções a partir da opção selecionada */
+    }    
 }
 
 
 void creditos(t_display_port *lcd){    
-    char palavra[TAM] = "1.DIOGO MARCHI";
-    int tamanho = (int)strlen(palavra);   //pega quantidade de caracteres
     
-    char palavra2[TAM] = "2.GEORGE NARDES";
-    int tamanho2 = (int)strlen(palavra2); //pega quantidade de caracteres
-                        
-    goto_XY(lcd, 1, 1);                 //linha 1, coluna 1
-
-    for(int i = 0; i < tamanho; i ++)
-        write_char(lcd, palavra[i]);
-
-    goto_XY(lcd, 2, 1);                 //linha 2, coluna 1
-
-    for(int i = 0; i < tamanho2; i ++) 
-        write_char(lcd, palavra2[i]);
-
-    
-    __delay_ms(5000);
-    
-    //VERIFICA SE ESCAPE FOI APERTADO PARA VOLTAR PRO MENU
-    clear_display(lcd);
-    menu(lcd);
-    
+    strcpy(mat_disp[0], "1.DIOGO MARCHI.");
+    strcpy(mat_disp[1], "2.GEORGE NARDES");
+    strcpy(mat_disp[2], "               ");
+    strcpy(mat_disp[3], "               ");                                          
+    print_mat(lcd);    
+    while(!botoes.Esc);
 }
 
 void finaliza(t_display_port *lcd){
@@ -124,10 +107,10 @@ void instrucoes(t_display_port *lcd){
 }
 
 char menu(t_display_port *lcd){
-    strcpy(mat_disp[0], "1.JOGAR........");
-    strcpy(mat_disp[1], "2.INSTRUCOES...");
-    strcpy(mat_disp[2], "3.CREDITOS.....");
-    strcpy(mat_disp[3], "4.FINALIZAR....");                
+    strcpy(mat_disp[0], "1.JOGAR.........");
+    strcpy(mat_disp[1], "2.INSTRUCOES....");
+    strcpy(mat_disp[2], "3.CREDITOS......");
+    strcpy(mat_disp[3], "4.FINALIZAR.....");                
     
     // pos inicial
     mat_disp[op][15] = '<';
@@ -139,18 +122,15 @@ char menu(t_display_port *lcd){
             op--; 
             botoes.U = 0;
             mat_disp[op][15] = '<';
-            print_mat(lcd);
-            __delay_ms(100);
+            print_mat(lcd);            
         }
         if((botoes.D) && (op < 3)){
             mat_disp[op][15] = '.';
             op++; 
             botoes.D = 0;
             mat_disp[op][15] = '<';
-            print_mat(lcd);
-            __delay_ms(100);
+            print_mat(lcd);            
         }
-        
     }
     
     return op;    

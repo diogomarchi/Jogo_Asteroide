@@ -130,24 +130,6 @@ void entry_mode_set(t_display_port *lcd, char move_direction, char display_shift
     pulso(lcd);            
 }
 
-
-//Le o status da busy flag
-void waitFlag(t_display_port *lcd){
-    
-    TRISD = 0xF0;//D0 a D3 como entrada
-    lcd->RS = 0;
-    lcd->R_W = 1;//Operacao de leitura
-    
-    
-    do{        
-       pulso(lcd);
-    } while(lcd->data&0x08);
-        
-    
-    lcd->R_W = 0;
-    TRISD = 0x00;//Todos como saida 
-}
-
 void write_char(t_display_port *lcd, char c){
     lcd->E = 0;    
     lcd->RS = 1;
@@ -221,5 +203,3 @@ void print_mat(t_display_port *lcd){
             write_char(lcd, mat_disp[i][j]);
     }        
 }
-
-

@@ -22,9 +22,8 @@
 t_display_port *lcd = &PORTD;
 
 void __interrupt() int_handler(void){
-
      if(INTCONbits.TMR0IF == 1){        
-        TMR0L = 0x63;    //reinicia timer0
+        TMR0L = 0x63;             //reinicia timer0
         le_entrada();         
         INTCONbits.TMR0IF = 0;    //limpa flag
     }
@@ -62,26 +61,5 @@ void main(void) {
         
     ENABLE_TIMER = 1;
          
-    gerenciador(lcd);
-    
-    /*while(1){          
-        if(botoes.U){
-            goto_XY(lcd, 3, 2);
-            write_char(lcd,'*');
-        }
-        if(botoes.D){
-            goto_XY(lcd, 2, 2);
-            write_char(lcd,'*');
-        }        
-        if(botoes.L){
-            goto_XY(lcd, 1, 2);
-            write_char(lcd,'*');
-        }
-        if(botoes.R){
-            goto_XY(lcd, 1, 3);
-            write_char(lcd,'*');
-        }
-        __delay_ms(80);
-        clear_display(lcd);
-    }   */
+    gerenciador(lcd);        
 }

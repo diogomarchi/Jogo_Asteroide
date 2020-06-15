@@ -24,7 +24,6 @@ typedef struct {
 }t_display_port;
 
 
-
 char mat_disp [4][TAM];
 
 
