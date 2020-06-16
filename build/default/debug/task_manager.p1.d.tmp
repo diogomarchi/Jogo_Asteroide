@@ -1,0 +1,6 @@
+build/default/debug/task_manager.p1:  \
+task_manager.c  \
+task_manager.h  \
+config.h  \
+lcd.h  \
+keyboard.h 

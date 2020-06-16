@@ -11,38 +11,38 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Diogo\AppData\Local\Temp\s14s.o
+$C:\Users\Diogo\AppData\Local\Temp\salc.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 E E 4 1
 reset_vec CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
 $dist/default/debug\Jogo_Asteroide.X.debug.o
-cinit CODE 0 1318 1318 3C 1
-intcode_body CODE 0 138A 138A 1E 1
-text0 CODE 0 10E0 10E0 74 1
-text1 CODE 0 F38 F38 96 1
-text2 CODE 0 AFA AFA 114 1
-text3 CODE 0 6D8 6D8 24C 1
-text4 CODE 0 1154 1154 6C 1
-text5 CODE 0 11C0 11C0 6C 1
-text6 CODE 0 122C 122C 6C 1
-text7 CODE 0 1298 1298 40 1
-text8 CODE 0 E8C E8C AC 1
-text9 CODE 0 C0E C0E E8 1
-text10 CODE 0 DD0 DD0 BC 1
-text11 CODE 0 12D8 12D8 40 1
-text12 CODE 0 CF6 CF6 DA 1
-text13 CODE 0 105C 105C 84 1
-text14 CODE 0 FCE FCE 8E 1
-text15 CODE 0 1354 1354 36 1
-text17 CODE 0 924 924 1D6 1
-idataCOMRAM CODE 0 13A8 13A8 3 1
-cstackCOMRAM COMRAM 1 49 49 23 1
-temp COMRAM 1 6F 6F 1 1
+cinit CODE 0 D64 D64 38 1
+intcode_body CODE 0 DD2 DD2 1E 1
+text0 CODE 0 B2C B2C 74 1
+text1 CODE 0 984 984 96 1
+text2 CODE 0 546 546 114 1
+text3 CODE 0 12 12 35E 1
+text4 CODE 0 BA0 BA0 6C 1
+text5 CODE 0 C0C C0C 6C 1
+text6 CODE 0 C78 C78 6C 1
+text7 CODE 0 CE4 CE4 40 1
+text8 CODE 0 8D8 8D8 AC 1
+text9 CODE 0 65A 65A E8 1
+text10 CODE 0 81C 81C BC 1
+text11 CODE 0 D24 D24 40 1
+text12 CODE 0 742 742 DA 1
+text13 CODE 0 AA8 AA8 84 1
+text14 CODE 0 A1A A1A 8E 1
+text15 CODE 0 D9C D9C 36 1
+text17 CODE 0 370 370 1D6 1
+idataCOMRAM CODE 0 DF0 DF0 3 1
+cstackCOMRAM COMRAM 1 49 49 24 1
+temp COMRAM 1 70 70 1 1
 intcode CODE 0 8 8 6 1
-smallconst SMALLCONST 0 600 600 D8 1
-dataCOMRAM COMRAM 1 6C 6C 3 1
+dataCOMRAM COMRAM 1 6D 6D 3 1
 bssCOMRAM COMRAM 1 1 1 48 1
+mediumconst MEDIUMCONST 0 7EF4 7EF4 10C 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -58,17 +58,15 @@ BANK3 300-3FF 1
 BANK4 400-4FF 1
 BANK5 500-5FF 1
 CONST 4-7 1
-CONST 12-5FF 1
-CONST 13AB-7FFF 1
+CONST DF3-7EF3 1
 STACK 80-5FF 1
-SMALLCONST 13AB-7FFF 1
+SMALLCONST DF3-7EF3 1
 CODE 4-7 1
-CODE 12-5FF 1
-CODE 13AB-7FFF 1
-BIGRAM 70-5FF 1
-COMRAM 70-7F 1
+CODE DF3-7EF3 1
+BIGRAM 71-5FF 1
+COMRAM 71-7F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 13AB-7FFF 1
+MEDIUMCONST DF3-7EF3 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -83,291 +81,302 @@ MEDIUMCONST 13AB-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\Jogo_Asteroide.X.debug.o
-8 intcode CODE >4930:C:\Users\Diogo\AppData\Local\Temp\s14s.s
+8 intcode CODE >5172:C:\Users\Diogo\AppData\Local\Temp\salc.s
 8 intcode CODE >24:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-924 text17 CODE >12:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-924 text17 CODE >13:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-926 text17 CODE >14:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-952 text17 CODE >15:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-954 text17 CODE >16:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-956 text17 CODE >17:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-95A text17 CODE >18:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-97A text17 CODE >19:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-97C text17 CODE >20:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-982 text17 CODE >22:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-992 text17 CODE >23:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-994 text17 CODE >25:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-996 text17 CODE >26:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-9C2 text17 CODE >27:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-9C4 text17 CODE >28:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-9C6 text17 CODE >29:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-9CA text17 CODE >30:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-9EA text17 CODE >31:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-9EC text17 CODE >32:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-9F2 text17 CODE >34:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A02 text17 CODE >36:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A2E text17 CODE >37:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A30 text17 CODE >38:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A32 text17 CODE >39:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A36 text17 CODE >40:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A56 text17 CODE >41:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A58 text17 CODE >42:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A5E text17 CODE >44:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A6E text17 CODE >45:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A70 text17 CODE >47:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A72 text17 CODE >48:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-A9E text17 CODE >49:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AA0 text17 CODE >50:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AA2 text17 CODE >51:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AA6 text17 CODE >52:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AC6 text17 CODE >53:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AC8 text17 CODE >54:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-ACE text17 CODE >56:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-ADE text17 CODE >57:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AE0 text17 CODE >59:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AE2 text17 CODE >60:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AEC text17 CODE >61:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AF6 text17 CODE >62:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-AF8 text17 CODE >63:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
-138A intcode_body CODE >24:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-138C intcode_body CODE >25:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-139A intcode_body CODE >26:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-139E intcode_body CODE >27:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-13A2 intcode_body CODE >28:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-13A4 intcode_body CODE >30:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-1354 text15 CODE >11:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1354 text15 CODE >13:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-135E text15 CODE >14:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-136E text15 CODE >17:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1378 text15 CODE >18:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1388 text15 CODE >19:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-FCE text14 CODE >47:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-FCE text14 CODE >49:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-FD8 text14 CODE >50:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-FE2 text14 CODE >51:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-FEC text14 CODE >54:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-FF8 text14 CODE >55:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1008 text14 CODE >57:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1014 text14 CODE >61:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-103E text14 CODE >62:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-104E text14 CODE >64:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-105A text14 CODE >65:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-105C text13 CODE >116:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-105C text13 CODE >117:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1066 text13 CODE >118:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1070 text13 CODE >119:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-107A text13 CODE >121:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1086 text13 CODE >122:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1096 text13 CODE >124:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-10A2 text13 CODE >127:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-10C2 text13 CODE >128:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-10D2 text13 CODE >130:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-10DE text13 CODE >131:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CF6 text12 CODE >21:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CF6 text12 CODE >23:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-D00 text12 CODE >24:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-D0A text12 CODE >25:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-D14 text12 CODE >28:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-D24 text12 CODE >29:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-D34 text12 CODE >31:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-D40 text12 CODE >34:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-D5C text12 CODE >35:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-D6C text12 CODE >37:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-D78 text12 CODE >41:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-DB2 text12 CODE >42:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-DC2 text12 CODE >44:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-DCE text12 CODE >45:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-12D8 text11 CODE >67:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-12D8 text11 CODE >68:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-12E2 text11 CODE >69:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-12FA text11 CODE >70:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-130A text11 CODE >72:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1316 text11 CODE >73:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-DD0 text10 CODE >76:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-DD0 text10 CODE >78:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-DE0 text10 CODE >80:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-DE6 text10 CODE >81:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-DEC text10 CODE >82:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-DF0 text10 CODE >83:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E00 text10 CODE >84:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E10 text10 CODE >85:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E20 text10 CODE >86:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E24 text10 CODE >87:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E36 text10 CODE >89:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E3C text10 CODE >90:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E46 text10 CODE >96:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E58 text10 CODE >98:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E5E text10 CODE >99:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E68 text10 CODE >105:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E7A text10 CODE >107:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E80 text10 CODE >108:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E8A text10 CODE >113:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E8A text10 CODE >114:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C0E text9 CODE >133:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C0E text9 CODE >134:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C18 text9 CODE >135:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C22 text9 CODE >136:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C2C text9 CODE >139:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C4A text9 CODE >140:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C54 text9 CODE >141:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C5E text9 CODE >144:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C76 text9 CODE >145:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C80 text9 CODE >146:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C8A text9 CODE >149:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C8E text9 CODE >150:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-C98 text9 CODE >151:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CA2 text9 CODE >153:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CAC text9 CODE >154:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CB6 text9 CODE >155:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CC0 text9 CODE >156:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CCA text9 CODE >157:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CE6 text9 CODE >158:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CF0 text9 CODE >159:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-CF4 text9 CODE >161:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E8C text8 CODE >199:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E8C text8 CODE >200:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-E94 text8 CODE >201:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-EA8 text8 CODE >202:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-EB0 text8 CODE >203:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-F16 text8 CODE >204:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-F36 text8 CODE >205:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
-1298 text7 CODE >3:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
-1298 text7 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
-12A0 text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
-12A8 text7 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
-12D6 text7 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
-122C text6 CODE >27:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-122C text6 CODE >29:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1240 text6 CODE >30:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1254 text6 CODE >31:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1268 text6 CODE >32:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-127C text6 CODE >33:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1288 text6 CODE >34:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1296 text6 CODE >35:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-11C0 text5 CODE >37:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-11C0 text5 CODE >38:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-11D4 text5 CODE >39:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-11E8 text5 CODE >40:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-11FC text5 CODE >41:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1210 text5 CODE >42:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-121C text5 CODE >43:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-122A text5 CODE >44:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1154 text4 CODE >91:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1154 text4 CODE >92:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1168 text4 CODE >93:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-117C text4 CODE >94:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-1190 text4 CODE >95:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-11A4 text4 CODE >96:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-11B0 text4 CODE >97:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-11BE text4 CODE >98:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-6D8 text3 CODE >46:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-6D8 text3 CODE >47:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-6D8 text3 CODE >48:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-6E0 text3 CODE >51:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-6F4 text3 CODE >52:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-708 text3 CODE >53:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-71C text3 CODE >54:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-730 text3 CODE >55:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-734 text3 CODE >56:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-740 text3 CODE >58:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-744 text3 CODE >59:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-762 text3 CODE >60:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-786 text3 CODE >61:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-788 text3 CODE >62:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-78A text3 CODE >63:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-7AE text3 CODE >64:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-7BA text3 CODE >66:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-7D8 text3 CODE >67:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-7FC text3 CODE >68:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-7FE text3 CODE >69:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-800 text3 CODE >70:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-824 text3 CODE >71:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-830 text3 CODE >73:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-84E text3 CODE >74:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-872 text3 CODE >75:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-874 text3 CODE >76:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-876 text3 CODE >77:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-89A text3 CODE >78:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-8A6 text3 CODE >80:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-8C4 text3 CODE >81:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-8E8 text3 CODE >82:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-8EA text3 CODE >83:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-8EC text3 CODE >84:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-914 text3 CODE >58:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-922 text3 CODE >89:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-AFA text2 CODE >100:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-AFA text2 CODE >101:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-B0E text2 CODE >102:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-B22 text2 CODE >103:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-B36 text2 CODE >104:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-B4A text2 CODE >107:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-B5E text2 CODE >108:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-B6A text2 CODE >110:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-B6E text2 CODE >111:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-B8C text2 CODE >112:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-BA0 text2 CODE >113:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-BA2 text2 CODE >114:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-BA4 text2 CODE >115:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-BB8 text2 CODE >116:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-BC4 text2 CODE >118:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-BE2 text2 CODE >119:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-BF6 text2 CODE >120:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-BF8 text2 CODE >121:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-BFE text2 CODE >110:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-C0C text2 CODE >128:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-F38 text1 CODE >15:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-F38 text1 CODE >16:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-F38 text1 CODE >17:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-F44 text1 CODE >18:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-F64 text1 CODE >19:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-F84 text1 CODE >20:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-FA6 text1 CODE >21:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
-10E0 text0 CODE >32:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10E0 text0 CODE >34:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10E4 text0 CODE >39:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10E8 text0 CODE >42:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10EC text0 CODE >45:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10F0 text0 CODE >48:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10F4 text0 CODE >51:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10F8 text0 CODE >54:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10FA text0 CODE >55:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10FC text0 CODE >56:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-10FE text0 CODE >58:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-1116 text0 CODE >59:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-112E text0 CODE >60:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-1142 text0 CODE >62:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-1144 text0 CODE >64:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-1150 text0 CODE >65:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
-1318 cinit CODE >1550:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1318 cinit CODE >1552:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1318 cinit CODE >1555:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1318 cinit CODE >1606:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-131A cinit CODE >1607:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-131C cinit CODE >1608:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-131E cinit CODE >1609:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1320 cinit CODE >1610:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1322 cinit CODE >1611:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1324 cinit CODE >1612:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1326 cinit CODE >1613:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-132A cinit CODE >1614:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-132C cinit CODE >1615:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1330 cinit CODE >1616:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1332 cinit CODE >1617:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1336 cinit CODE >1621:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-133A cinit CODE >1622:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-133C cinit CODE >1623:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-133C cinit CODE >1624:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-133E cinit CODE >1625:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1340 cinit CODE >1626:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1342 cinit CODE >1632:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1342 cinit CODE >1634:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1344 cinit CODE >1635:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1346 cinit CODE >1637:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1348 cinit CODE >1638:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-134A cinit CODE >1639:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-134C cinit CODE >1640:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-134E cinit CODE >1641:C:\Users\Diogo\AppData\Local\Temp\s14s.s
-1350 cinit CODE >1642:C:\Users\Diogo\AppData\Local\Temp\s14s.s
+370 text17 CODE >12:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+370 text17 CODE >13:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+372 text17 CODE >14:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+39E text17 CODE >15:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+3A0 text17 CODE >16:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+3A2 text17 CODE >17:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+3A6 text17 CODE >18:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+3C6 text17 CODE >19:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+3C8 text17 CODE >20:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+3CE text17 CODE >22:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+3DE text17 CODE >23:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+3E0 text17 CODE >25:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+3E2 text17 CODE >26:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+40E text17 CODE >27:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+410 text17 CODE >28:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+412 text17 CODE >29:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+416 text17 CODE >30:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+436 text17 CODE >31:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+438 text17 CODE >32:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+43E text17 CODE >34:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+44E text17 CODE >36:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+47A text17 CODE >37:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+47C text17 CODE >38:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+47E text17 CODE >39:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+482 text17 CODE >40:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4A2 text17 CODE >41:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4A4 text17 CODE >42:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4AA text17 CODE >44:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4BA text17 CODE >45:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4BC text17 CODE >47:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4BE text17 CODE >48:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4EA text17 CODE >49:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4EC text17 CODE >50:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4EE text17 CODE >51:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+4F2 text17 CODE >52:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+512 text17 CODE >53:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+514 text17 CODE >54:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+51A text17 CODE >56:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+52A text17 CODE >57:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+52C text17 CODE >59:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+52E text17 CODE >60:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+538 text17 CODE >61:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+542 text17 CODE >62:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+544 text17 CODE >63:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+DD2 intcode_body CODE >24:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+DD4 intcode_body CODE >25:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+DE2 intcode_body CODE >26:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+DE6 intcode_body CODE >27:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+DEA intcode_body CODE >28:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+DEC intcode_body CODE >30:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+D9C text15 CODE >11:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+D9C text15 CODE >13:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+DA6 text15 CODE >14:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+DB6 text15 CODE >17:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+DC0 text15 CODE >18:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+DD0 text15 CODE >19:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A1A text14 CODE >47:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A1A text14 CODE >49:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A24 text14 CODE >50:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A2E text14 CODE >51:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A38 text14 CODE >54:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A44 text14 CODE >55:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A54 text14 CODE >57:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A60 text14 CODE >61:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A8A text14 CODE >62:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+A9A text14 CODE >64:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+AA6 text14 CODE >65:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+AA8 text13 CODE >116:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+AA8 text13 CODE >117:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+AB2 text13 CODE >118:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+ABC text13 CODE >119:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+AC6 text13 CODE >121:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+AD2 text13 CODE >122:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+AE2 text13 CODE >124:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+AEE text13 CODE >127:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+B0E text13 CODE >128:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+B1E text13 CODE >130:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+B2A text13 CODE >131:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+742 text12 CODE >21:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+742 text12 CODE >23:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+74C text12 CODE >24:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+756 text12 CODE >25:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+760 text12 CODE >28:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+770 text12 CODE >29:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+780 text12 CODE >31:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+78C text12 CODE >34:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+7A8 text12 CODE >35:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+7B8 text12 CODE >37:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+7C4 text12 CODE >41:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+7FE text12 CODE >42:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+80E text12 CODE >44:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+81A text12 CODE >45:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+D24 text11 CODE >67:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+D24 text11 CODE >68:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+D2E text11 CODE >69:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+D46 text11 CODE >70:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+D56 text11 CODE >72:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+D62 text11 CODE >73:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+81C text10 CODE >76:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+81C text10 CODE >78:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+82C text10 CODE >80:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+832 text10 CODE >81:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+838 text10 CODE >82:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+83C text10 CODE >83:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+84C text10 CODE >84:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+85C text10 CODE >85:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+86C text10 CODE >86:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+870 text10 CODE >87:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+882 text10 CODE >89:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+888 text10 CODE >90:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+892 text10 CODE >96:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8A4 text10 CODE >98:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8AA text10 CODE >99:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8B4 text10 CODE >105:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8C6 text10 CODE >107:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8CC text10 CODE >108:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8D6 text10 CODE >113:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8D6 text10 CODE >114:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+65A text9 CODE >133:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+65A text9 CODE >134:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+664 text9 CODE >135:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+66E text9 CODE >136:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+678 text9 CODE >139:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+696 text9 CODE >140:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+6A0 text9 CODE >141:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+6AA text9 CODE >144:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+6C2 text9 CODE >145:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+6CC text9 CODE >146:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+6D6 text9 CODE >149:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+6DA text9 CODE >150:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+6E4 text9 CODE >151:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+6EE text9 CODE >153:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+6F8 text9 CODE >154:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+702 text9 CODE >155:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+70C text9 CODE >156:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+716 text9 CODE >157:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+732 text9 CODE >158:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+73C text9 CODE >159:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+740 text9 CODE >161:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8D8 text8 CODE >199:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8D8 text8 CODE >200:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8E0 text8 CODE >201:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8F4 text8 CODE >202:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+8FC text8 CODE >203:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+962 text8 CODE >204:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+982 text8 CODE >205:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
+CE4 text7 CODE >3:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
+CE4 text7 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
+CEC text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
+CF4 text7 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
+D22 text7 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
+C78 text6 CODE >27:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C78 text6 CODE >29:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C8C text6 CODE >30:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+CA0 text6 CODE >31:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+CB4 text6 CODE >32:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+CC8 text6 CODE >33:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+CD4 text6 CODE >34:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+CE2 text6 CODE >35:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C0C text5 CODE >37:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C0C text5 CODE >38:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C20 text5 CODE >39:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C34 text5 CODE >40:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C48 text5 CODE >41:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C5C text5 CODE >42:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C68 text5 CODE >43:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C76 text5 CODE >44:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+BA0 text4 CODE >105:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+BA0 text4 CODE >106:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+BB4 text4 CODE >107:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+BC8 text4 CODE >108:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+BDC text4 CODE >109:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+BF0 text4 CODE >110:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+BFC text4 CODE >111:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+C0A text4 CODE >112:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+12 text3 CODE >46:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+12 text3 CODE >47:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+12 text3 CODE >48:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+1A text3 CODE >51:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+2E text3 CODE >52:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+42 text3 CODE >53:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+56 text3 CODE >54:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+6A text3 CODE >55:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+6E text3 CODE >56:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+72 text3 CODE >57:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+76 text3 CODE >58:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+82 text3 CODE >60:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+86 text3 CODE >61:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+F2 text3 CODE >62:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+FA text3 CODE >63:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+118 text3 CODE >64:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+13C text3 CODE >65:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+13E text3 CODE >66:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+140 text3 CODE >67:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+164 text3 CODE >68:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+170 text3 CODE >70:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+18E text3 CODE >71:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+1B2 text3 CODE >72:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+1B4 text3 CODE >73:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+1B6 text3 CODE >74:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+1DA text3 CODE >75:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+1E6 text3 CODE >77:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+204 text3 CODE >78:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+228 text3 CODE >79:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+22A text3 CODE >80:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+22C text3 CODE >81:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+250 text3 CODE >82:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+25C text3 CODE >84:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+27A text3 CODE >85:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+29E text3 CODE >86:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+2A0 text3 CODE >87:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+2A2 text3 CODE >88:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+2CA text3 CODE >60:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+2EA text3 CODE >92:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+2FC text3 CODE >93:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+310 text3 CODE >94:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+324 text3 CODE >95:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+338 text3 CODE >96:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+34C text3 CODE >97:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+358 text3 CODE >98:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+366 text3 CODE >101:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+36A text3 CODE >102:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+36E text3 CODE >103:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+546 text2 CODE >114:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+546 text2 CODE >115:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+55A text2 CODE >116:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+56E text2 CODE >117:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+582 text2 CODE >118:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+596 text2 CODE >121:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+5AA text2 CODE >122:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+5B6 text2 CODE >124:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+5BA text2 CODE >125:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+5D8 text2 CODE >126:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+5EC text2 CODE >127:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+5EE text2 CODE >128:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+5F0 text2 CODE >129:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+604 text2 CODE >130:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+610 text2 CODE >132:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+62E text2 CODE >133:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+642 text2 CODE >134:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+644 text2 CODE >135:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+64A text2 CODE >124:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+658 text2 CODE >142:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+984 text1 CODE >15:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+984 text1 CODE >16:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+984 text1 CODE >17:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+990 text1 CODE >18:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+9B0 text1 CODE >19:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+9D0 text1 CODE >20:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+9F2 text1 CODE >21:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+B2C text0 CODE >32:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B2C text0 CODE >34:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B30 text0 CODE >39:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B34 text0 CODE >42:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B38 text0 CODE >45:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B3C text0 CODE >48:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B40 text0 CODE >51:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B44 text0 CODE >54:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B46 text0 CODE >55:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B48 text0 CODE >56:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B4A text0 CODE >58:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B62 text0 CODE >59:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B7A text0 CODE >60:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B8E text0 CODE >62:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B90 text0 CODE >64:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+B9C text0 CODE >65:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+D64 cinit CODE >1608:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D64 cinit CODE >1610:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D64 cinit CODE >1613:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D64 cinit CODE >1664:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D66 cinit CODE >1665:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D68 cinit CODE >1666:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D6A cinit CODE >1667:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D6C cinit CODE >1668:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D6E cinit CODE >1669:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D70 cinit CODE >1670:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D72 cinit CODE >1671:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D76 cinit CODE >1672:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D78 cinit CODE >1673:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D7C cinit CODE >1674:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D7E cinit CODE >1675:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D82 cinit CODE >1679:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D86 cinit CODE >1680:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D88 cinit CODE >1681:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D88 cinit CODE >1682:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D8A cinit CODE >1683:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D8C cinit CODE >1684:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D8E cinit CODE >1690:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D8E cinit CODE >1692:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D90 cinit CODE >1693:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D92 cinit CODE >1695:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D94 cinit CODE >1696:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D96 cinit CODE >1697:C:\Users\Diogo\AppData\Local\Temp\salc.s
+D98 cinit CODE >1698:C:\Users\Diogo\AppData\Local\Temp\salc.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -380,88 +389,88 @@ FA6 text1 CODE >21:C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_x 6E 0 COMRAM 1 dataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
+_x 6F 0 COMRAM 1 dataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 _y 1 0 COMRAM 1 bssCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\Jogo_Asteroide.X.debug.o
+__Lmediumconst 7EF4 0 MEDIUMCONST 0 mediumconst dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hspace_0 30000E 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-__Hspace_1 70 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
+__Hspace_1 71 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hspace_2 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_lcd_cmd 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 _mat_disp 9 0 COMRAM 1 bssCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_write_char CF6 0 CODE 0 text9 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_write_char 742 0 CODE 0 text9 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\Jogo_Asteroide.X.debug.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Diogo\AppData\Local\Temp\s14s.o
+__mediumconst 7EF4 0 MEDIUMCONST 0 mediumconst C:\Users\Diogo\AppData\Local\Temp\salc.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\Jogo_Asteroide.X.debug.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 _op 2 0 COMRAM 1 bssCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-__Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/debug\Jogo_Asteroide.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\Diogo\AppData\Local\Temp\s14s.o
-_main 10E0 0 CODE 0 text0 dist/default/debug\Jogo_Asteroide.X.debug.o
-_menu AFA 0 CODE 0 text2 dist/default/debug\Jogo_Asteroide.X.debug.o
-btemp 6F 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
-start E 0 CODE 0 init C:\Users\Diogo\AppData\Local\Temp\s14s.o
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\Jogo_Asteroide.X.debug.o
+___sp 0 0 STACK 2 stack C:\Users\Diogo\AppData\Local\Temp\salc.o
+_main B2C 0 CODE 0 text0 dist/default/debug\Jogo_Asteroide.X.debug.o
+_menu 546 0 CODE 0 text2 dist/default/debug\Jogo_Asteroide.X.debug.o
+btemp 70 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
+start E 0 CODE 0 init C:\Users\Diogo\AppData\Local\Temp\salc.o
 __size_of_main 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_menu 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hpowerup E 0 CODE 0 powerup dist/default/debug\Jogo_Asteroide.X.debug.o
 entry_mode_set@move_direction 4E 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 _T0CONbits FD5 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-ttemp5 70 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
-ttemp6 73 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
-ttemp7 77 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
+ttemp5 71 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
+ttemp6 74 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
+ttemp7 78 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
 display_onoff_control@blink 50 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-__accesstop 80 0 ABS 0 - C:\Users\Diogo\AppData\Local\Temp\s14s.o
-intlevel0 0 0 CODE 0 text C:\Users\Diogo\AppData\Local\Temp\s14s.o
-intlevel1 0 0 CODE 0 text C:\Users\Diogo\AppData\Local\Temp\s14s.o
-intlevel2 0 0 CODE 0 text C:\Users\Diogo\AppData\Local\Temp\s14s.o
-intlevel3 0 0 CODE 0 text C:\Users\Diogo\AppData\Local\Temp\s14s.o
+__accesstop 80 0 ABS 0 - C:\Users\Diogo\AppData\Local\Temp\salc.o
+intlevel0 0 0 CODE 0 text C:\Users\Diogo\AppData\Local\Temp\salc.o
+intlevel1 0 0 CODE 0 text C:\Users\Diogo\AppData\Local\Temp\salc.o
+intlevel2 0 0 CODE 0 text C:\Users\Diogo\AppData\Local\Temp\salc.o
+intlevel3 0 0 CODE 0 text C:\Users\Diogo\AppData\Local\Temp\salc.o
 print_mat@i 60 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 print_mat@j 5E 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-wtemp8 70 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
-_le_entrada 924 0 CODE 0 text17 dist/default/debug\Jogo_Asteroide.X.debug.o
+wtemp8 71 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
+_le_entrada 370 0 CODE 0 text17 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\Jogo_Asteroide.X.debug.o
-jogar@bateu 68 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
+jogar@bateu 69 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/debug\Jogo_Asteroide.X.debug.o
 goto_XY@temp 57 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 goto_XY@a 56 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 goto_XY@x 52 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 goto_XY@y 53 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 goto_XY@z 55 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-_goto_XY DD0 0 CODE 0 text10 dist/default/debug\Jogo_Asteroide.X.debug.o
-__pidataCOMRAM 13A8 0 CODE 0 idataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
+_goto_XY 81C 0 CODE 0 text10 dist/default/debug\Jogo_Asteroide.X.debug.o
+__pidataCOMRAM DF0 0 CODE 0 idataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 _ADCON1 FC1 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_lcd_cmd 1318 0 CODE 0 text11 dist/default/debug\Jogo_Asteroide.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\Diogo\AppData\Local\Temp\s14s.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\Diogo\AppData\Local\Temp\s14s.o
-_instrucoes 1154 0 CODE 0 text4 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_lcd_cmd D64 0 CODE 0 text11 dist/default/debug\Jogo_Asteroide.X.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\Diogo\AppData\Local\Temp\salc.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\Diogo\AppData\Local\Temp\salc.o
+_instrucoes BA0 0 CODE 0 text4 dist/default/debug\Jogo_Asteroide.X.debug.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\Jogo_Asteroide.X.debug.o
-__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\Jogo_Asteroide.X.debug.o
+__Hmediumconst 8000 0 MEDIUMCONST 0 mediumconst dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hintcodelo E 0 CODE 0 intcodelo dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_gerenciador FCE 0 CODE 0 text1 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_gerenciador A1A 0 CODE 0 text1 dist/default/debug\Jogo_Asteroide.X.debug.o
 function_set@data_lenght 4E 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_int_handler 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 function_set@lcd 4C 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_le_entrada AFA 0 CODE 0 text17 dist/default/debug\Jogo_Asteroide.X.debug.o
-_entry_mode_set 105C 0 CODE 0 text13 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_le_entrada 546 0 CODE 0 text17 dist/default/debug\Jogo_Asteroide.X.debug.o
+_entry_mode_set AA8 0 CODE 0 text13 dist/default/debug\Jogo_Asteroide.X.debug.o
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_jogar 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_pulso 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lintcodelo E 0 CODE 0 intcodelo dist/default/debug\Jogo_Asteroide.X.debug.o
-start_initialization 1318 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
+start_initialization D64 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
 display_onoff_control@lcd 4C 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_write_char 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_instrucoes 11C0 0 CODE 0 text4 dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_display_onoff_control 105C 0 CODE 0 text14 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_instrucoes C0C 0 CODE 0 text4 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_display_onoff_control AA8 0 CODE 0 text14 dist/default/debug\Jogo_Asteroide.X.debug.o
 ___rparam_used 1 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 function_set@char_font 50 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-_display_onoff_control FCE 0 CODE 0 text14 dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_entry_mode_set 10E0 0 CODE 0 text13 dist/default/debug\Jogo_Asteroide.X.debug.o
+_display_onoff_control A1A 0 CODE 0 text14 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_entry_mode_set B2C 0 CODE 0 text13 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -470,7 +479,7 @@ __Hbank4 0 0 ABS 0 bank4 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hbank5 0 0 ABS 0 bank5 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hcinit 0 0 ABS 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hconst 0 0 CONST 0 const dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_strcpy 12D8 0 CODE 0 text7 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_strcpy D24 0 CODE 0 text7 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hidata 0 0 CODE 0 idata dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hidloc 200008 0 IDLOC 0 idloc dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -490,10 +499,10 @@ __Htext9 0 0 ABS 0 text9 dist/default/debug\Jogo_Asteroide.X.debug.o
 lcd_cmd@a 4E 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\Jogo_Asteroide.X.debug.o
-__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\Diogo\AppData\Local\Temp\s14s.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Diogo\AppData\Local\Temp\salc.o
 __Hcomram 0 0 ABS 0 comram dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_print_mat F38 0 CODE 0 text8 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_print_mat 984 0 CODE 0 text8 dist/default/debug\Jogo_Asteroide.X.debug.o
 pulso@lcd 49 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_print_mat 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -530,25 +539,25 @@ __Hdata 0 0 ABS 0 data dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hinit 12 0 CODE 0 init dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hrbit 0 0 COMRAM 1 rbit dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hrbss 0 0 COMRAM 1 rbss dist/default/debug\Jogo_Asteroide.X.debug.o
-__Htemp 70 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
+__Htemp 71 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
 __Htext 0 0 ABS 0 text dist/default/debug\Jogo_Asteroide.X.debug.o
 __Labs1 0 0 ABS 0 abs1 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Ldata 0 0 ABS 0 data dist/default/debug\Jogo_Asteroide.X.debug.o
 __Linit E 0 CODE 0 init dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lrbit 0 0 COMRAM 1 rbit dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/debug\Jogo_Asteroide.X.debug.o
-__Ltemp 6F 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
+__Ltemp 70 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
 __Ltext 0 0 ABS 0 text dist/default/debug\Jogo_Asteroide.X.debug.o
-int$flags 6F 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
+int$flags 70 0 COMRAM 1 temp dist/default/debug\Jogo_Asteroide.X.debug.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 menu@lcd 62 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hintret 0 0 ABS 0 intret dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hirdata 0 0 CODE 0 irdata dist/default/debug\Jogo_Asteroide.X.debug.o
 __S0 30000E 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-__S1 70 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
+__S1 71 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __S2 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-_lcd 6C 0 COMRAM 1 dataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-_print_mat E8C 0 CODE 0 text8 dist/default/debug\Jogo_Asteroide.X.debug.o
+_lcd 6D 0 COMRAM 1 dataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
+_print_mat 8D8 0 CODE 0 text8 dist/default/debug\Jogo_Asteroide.X.debug.o
 _botoes 8 0 COMRAM 1 bssCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 jogar@lcd 62 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 entry_mode_set@lcd 4C 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -561,14 +570,14 @@ __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\Jogo_Asteroide.X.debug.o
 print_mat@lcd 58 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-int_func 138A 0 CODE 0 intcode_body dist/default/debug\Jogo_Asteroide.X.debug.o
+int_func DD2 0 CODE 0 intcode_body dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lintentry 0 0 ABS 0 intentry dist/default/debug\Jogo_Asteroide.X.debug.o
 strcpy@d 4F 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 strcpy@s 4D 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-_lcd_cmd 12D8 0 CODE 0 text11 dist/default/debug\Jogo_Asteroide.X.debug.o
+_lcd_cmd D24 0 CODE 0 text11 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hramtop 600 0 RAM 0 ramtop dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/debug\Jogo_Asteroide.X.debug.o
-__activetblptr 1 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
+__activetblptr 2 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/debug\Jogo_Asteroide.X.debug.o
 __Htext10 0 0 ABS 0 text10 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Htext11 0 0 ABS 0 text11 dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -581,16 +590,16 @@ entry_mode_set@display_shift 4F 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_
 creditos@lcd 62 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 _int_handler 8 0 CODE 0 intcode dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_le_entrada 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-gerenciador@lcd 6A 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
+gerenciador@lcd 6B 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 instrucoes@lcd 62 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext10 DD0 0 CODE 0 text10 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext11 12D8 0 CODE 0 text11 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext12 CF6 0 CODE 0 text12 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext13 105C 0 CODE 0 text13 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext14 FCE 0 CODE 0 text14 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext15 1354 0 CODE 0 text15 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext17 924 0 CODE 0 text17 dist/default/debug\Jogo_Asteroide.X.debug.o
-__pintcode_body 138A 0 CODE 0 intcode_body dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext10 81C 0 CODE 0 text10 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext11 D24 0 CODE 0 text11 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext12 742 0 CODE 0 text12 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext13 AA8 0 CODE 0 text13 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext14 A1A 0 CODE 0 text14 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext15 D9C 0 CODE 0 text15 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext17 370 0 CODE 0 text17 dist/default/debug\Jogo_Asteroide.X.debug.o
+__pintcode_body DD2 0 CODE 0 intcode_body dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lbigram 0 0 ABS 0 bigram dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_goto_XY 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -600,10 +609,10 @@ write_char@c 4B 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debu
 __size_of_creditos 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_instrucoes 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\Jogo_Asteroide.X.debug.o
-_strcpy 1298 0 CODE 0 text7 dist/default/debug\Jogo_Asteroide.X.debug.o
+_strcpy CE4 0 CODE 0 text7 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\Jogo_Asteroide.X.debug.o
-stackhi 5FF 0 ABS 0 - C:\Users\Diogo\AppData\Local\Temp\s14s.o
-stacklo 80 0 ABS 0 - C:\Users\Diogo\AppData\Local\Temp\s14s.o
+stackhi 5FF 0 ABS 0 - C:\Users\Diogo\AppData\Local\Temp\salc.o
+stacklo 80 0 ABS 0 - C:\Users\Diogo\AppData\Local\Temp\salc.o
 __Lintcode 8 0 CODE 0 intcode dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lintret 0 0 ABS 0 intret dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -614,26 +623,26 @@ __Lspace_2 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 lcd_cmd@lcd 4C 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-end_of_initialization 1342 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
+end_of_initialization D8E 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hintentry 0 0 ABS 0 intentry dist/default/debug\Jogo_Asteroide.X.debug.o
 __CFG_OSC$HS 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lramtop 600 0 RAM 0 ramtop dist/default/debug\Jogo_Asteroide.X.debug.o
-_creditos 122C 0 CODE 0 text6 dist/default/debug\Jogo_Asteroide.X.debug.o
+_creditos C78 0 CODE 0 text6 dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_strcpy 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/debug\Jogo_Asteroide.X.debug.o
-__pcinit 1318 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext0 10E0 0 CODE 0 text0 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext1 F38 0 CODE 0 text1 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext2 AFA 0 CODE 0 text2 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext3 6D8 0 CODE 0 text3 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext4 1154 0 CODE 0 text4 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext5 11C0 0 CODE 0 text5 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext6 122C 0 CODE 0 text6 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext7 1298 0 CODE 0 text7 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext8 E8C 0 CODE 0 text8 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ptext9 C0E 0 CODE 0 text9 dist/default/debug\Jogo_Asteroide.X.debug.o
+__pcinit D64 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext0 B2C 0 CODE 0 text0 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext1 984 0 CODE 0 text1 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext2 546 0 CODE 0 text2 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext3 12 0 CODE 0 text3 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext4 BA0 0 CODE 0 text4 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext5 C0C 0 CODE 0 text5 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext6 C78 0 CODE 0 text6 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext7 CE4 0 CODE 0 text7 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext8 8D8 0 CODE 0 text8 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ptext9 65A 0 CODE 0 text9 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\Jogo_Asteroide.X.debug.o
 __Ltext10 0 0 ABS 0 text10 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Ltext11 0 0 ABS 0 text11 dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -643,15 +652,14 @@ __Ltext14 0 0 ABS 0 text14 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Ltext15 0 0 ABS 0 text15 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Ltext17 0 0 ABS 0 text17 dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_finaliza 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-_function_set CF6 0 CODE 0 text12 dist/default/debug\Jogo_Asteroide.X.debug.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\Diogo\AppData\Local\Temp\s14s.o
-__end_of_creditos 1298 0 CODE 0 text6 dist/default/debug\Jogo_Asteroide.X.debug.o
+_function_set 742 0 CODE 0 text12 dist/default/debug\Jogo_Asteroide.X.debug.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\Diogo\AppData\Local\Temp\salc.o
+__end_of_creditos CE4 0 CODE 0 text6 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lpowerup E 0 CODE 0 powerup dist/default/debug\Jogo_Asteroide.X.debug.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_display_onoff_control 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 finaliza@lcd 62 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_goto_XY E8C 0 CODE 0 text10 dist/default/debug\Jogo_Asteroide.X.debug.o
-__psmallconst 600 0 SMALLCONST 0 smallconst dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_goto_XY 8D8 0 CODE 0 text10 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\Jogo_Asteroide.X.debug.o
 write_char@lcd 49 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 function_set@num_lines 4F 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -660,26 +668,27 @@ __CFG_WDT$OFF 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_entry_mode_set 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 strcpy@src 4B 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of__initialization 1342 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of__initialization D8E 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/debug\Jogo_Asteroide.X.debug.o
 _botoes_ant 7 0 COMRAM 1 bssCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-_gerenciador F38 0 CODE 0 text1 dist/default/debug\Jogo_Asteroide.X.debug.o
+_gerenciador 984 0 CODE 0 text1 dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/debug\Jogo_Asteroide.X.debug.o
 __pcstackCOMRAM 49 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __size_of_function_set 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-_write_char C0E 0 CODE 0 text9 dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_main 1154 0 CODE 0 text0 dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_menu C0E 0 CODE 0 text2 dist/default/debug\Jogo_Asteroide.X.debug.o
+_write_char 65A 0 CODE 0 text9 dist/default/debug\Jogo_Asteroide.X.debug.o
+__pmediumconst 7EF4 0 MEDIUMCONST 0 mediumconst dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_main BA0 0 CODE 0 text0 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_menu 65A 0 CODE 0 text2 dist/default/debug\Jogo_Asteroide.X.debug.o
 __pintcode 8 0 CODE 0 intcode dist/default/debug\Jogo_Asteroide.X.debug.o
-_finaliza 11C0 0 CODE 0 text5 dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_jogar 924 0 CODE 0 text3 dist/default/debug\Jogo_Asteroide.X.debug.o
+_finaliza C0C 0 CODE 0 text5 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_jogar 370 0 CODE 0 text3 dist/default/debug\Jogo_Asteroide.X.debug.o
 _PORTB F81 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 _PORTD F83 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 _T0CON FD5 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 _TMR0L FD6 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 _TRISB F93 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 _TRISD F95 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_pulso 138A 0 CODE 0 text15 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_pulso DD2 0 CODE 0 text15 dist/default/debug\Jogo_Asteroide.X.debug.o
 __HRAM 0 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hbss 0 0 RAM 1 bss dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hram 0 0 ABS 0 ram dist/default/debug\Jogo_Asteroide.X.debug.o
@@ -688,18 +697,18 @@ __LRAM 1 0 ABS 0 - dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lbss 0 0 RAM 1 bss dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lram 0 0 ABS 0 ram dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lsfr 0 0 ABS 0 sfr dist/default/debug\Jogo_Asteroide.X.debug.o
-_jogar 6D8 0 CODE 0 text3 dist/default/debug\Jogo_Asteroide.X.debug.o
-_pulso 1354 0 CODE 0 text15 dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_finaliza 122C 0 CODE 0 text5 dist/default/debug\Jogo_Asteroide.X.debug.o
+_jogar 12 0 CODE 0 text3 dist/default/debug\Jogo_Asteroide.X.debug.o
+_pulso D9C 0 CODE 0 text15 dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_finaliza C78 0 CODE 0 text5 dist/default/debug\Jogo_Asteroide.X.debug.o
 goto_XY@lcd 50 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_function_set DD0 0 CODE 0 text12 dist/default/debug\Jogo_Asteroide.X.debug.o
-__initialization 1318 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
-__pdataCOMRAM 6C 0 COMRAM 1 dataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_function_set 81C 0 CODE 0 text12 dist/default/debug\Jogo_Asteroide.X.debug.o
+__initialization D64 0 CODE 0 cinit dist/default/debug\Jogo_Asteroide.X.debug.o
+__pdataCOMRAM 6D 0 COMRAM 1 dataCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 display_onoff_control@cursor_on 4F 0 COMRAM 1 cstackCOMRAM dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/debug\Jogo_Asteroide.X.debug.o
-__Hsmallconst 6D8 0 SMALLCONST 0 smallconst dist/default/debug\Jogo_Asteroide.X.debug.o
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\Jogo_Asteroide.X.debug.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/debug\Jogo_Asteroide.X.debug.o
-__end_of_int_handler 13A8 0 CODE 0 intcode_body dist/default/debug\Jogo_Asteroide.X.debug.o
+__end_of_int_handler DF0 0 CODE 0 intcode_body dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\Jogo_Asteroide.X.debug.o
 __Hintcode E 0 CODE 0 intcode dist/default/debug\Jogo_Asteroide.X.debug.o
 # %SPLITSTAB Section
@@ -727,11 +736,10 @@ __Hintcode E 0 CODE 0 intcode dist/default/debug\Jogo_Asteroide.X.debug.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 idloc 0 200000 200000 8 1
-text3 0 6D8 6D8 CD3 1
 reset_vec 0 0 0 4 1
-intcode 0 8 8 A 1
-smallconst 0 600 600 D8 1
-bssCOMRAM 1 1 1 6F 1
+intcode 0 8 8 DEB 1
+bssCOMRAM 1 1 1 70 1
+mediumconst 0 7EF4 7EF4 10C 1
 config 0 300000 300000 E 1
 # OTES Section
 # This section contains data of all the note-psects.  The beginning of the section

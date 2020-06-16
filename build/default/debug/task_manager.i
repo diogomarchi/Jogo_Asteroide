@@ -4874,9 +4874,13 @@ void jogar(t_display_port *lcd){
     strcpy(mat_disp[2], "                ");
     strcpy(mat_disp[3], "                ");
     mat_disp[1][0] = '>';
+    mat_disp[1][10] = '*';
+    mat_disp[2][5] = '*';
     print_mat(lcd);
 
-    while(!botoes.Esc){
+    while(!botoes.Esc && bateu == 0){
+        if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')
+            bateu = 1;
         if((botoes.U) && (x > 1)){
             mat_disp[x][y] = ' ';
             x--;
@@ -4906,7 +4910,17 @@ void jogar(t_display_port *lcd){
             print_mat(lcd);
         }
     }
+    if(bateu == 1){
+        strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
+            strcpy(mat_disp[1], "APERTE ESC      ");
+            strcpy(mat_disp[2], "PARA SAIR       ");
+            strcpy(mat_disp[3], "                ");
+            print_mat(lcd);
+        while(!botoes.Esc);
+    }
 
+    x = 1;
+    y = 0;
 }
 
 void instrucoes(t_display_port *lcd){
