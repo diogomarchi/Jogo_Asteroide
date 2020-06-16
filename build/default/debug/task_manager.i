@@ -4861,7 +4861,7 @@ void finaliza(t_display_port *lcd){
     strcpy(mat_disp[2], "               ");
     strcpy(mat_disp[3], "               ");
     print_mat(lcd);
-    while(!botoes.Esc);
+    __asm(" sleep");
 }
 
 void jogar(t_display_port *lcd){
@@ -4911,7 +4911,7 @@ void jogar(t_display_port *lcd){
         }
     }
     if(bateu == 1){
-        strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
+            strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
             strcpy(mat_disp[1], "APERTE ESC      ");
             strcpy(mat_disp[2], "PARA SAIR       ");
             strcpy(mat_disp[3], "                ");

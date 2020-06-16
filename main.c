@@ -22,7 +22,7 @@
 t_display_port *lcd = &PORTD;
 
 void __interrupt() int_handler(void){
-     if(INTCONbits.TMR0IF == 1){        
+    if(INTCONbits.TMR0IF == 1){        
         TMR0L = 0x63;             //reinicia timer0
         le_entrada();         
         INTCONbits.TMR0IF = 0;    //limpa flag
@@ -36,7 +36,7 @@ void main(void) {
     //linha como saida e coluna como entrada
     // RB7 -> RB0
     // 0000 1111
-    TRISB = 0x0F;      
+    TRISB = 0x0F; 
     
     //Iniciando
     PORTB = 0x00;

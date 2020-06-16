@@ -4413,7 +4413,7 @@ void le_entrada(){
         botoes.L = 0;
         botoes_ant.L = 0;
         cont_l = 0;
-    }else if(PORTBbits.RB1==1) cont_l++;
+    }else if(PORTBbits.RB0==1) cont_l++;
 
     if((botoes_ant.R==0 && PORTBbits.RB2==1) || cont_r > 50){
         botoes.R = 1;

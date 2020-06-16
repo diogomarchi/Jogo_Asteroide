@@ -484,8 +484,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 13:     PORTBbits.RB7 = 1;
 [e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
 "14
-[; ;keyboard.c: 14:     if((botoes_ant.U==0 && PORTBbits.RB1==1) || cont_u > 50){
-[e $ ! || && == -> . _botoes_ant 0 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 1 `i > -> _cont_u `i -> 50 `i 278  ]
+[; ;keyboard.c: 14:     if((botoes_ant.U==0 && PORTBbits.RB2==1) || cont_u > 50){
+[e $ ! || && == -> . _botoes_ant 0 `i -> 0 `i == -> . . _PORTBbits 0 2 `i -> 1 `i > -> _cont_u `i -> 50 `i 278  ]
 {
 "15
 [; ;keyboard.c: 15:         botoes.U = 1;
@@ -497,11 +497,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 17:         cont_u = 0;
 [e = _cont_u -> -> 0 `i `uc ]
 "18
-[; ;keyboard.c: 18:     }else if(botoes_ant.U==1 && PORTBbits.RB1==0){
+[; ;keyboard.c: 18:     }else if(botoes_ant.U==1 && PORTBbits.RB2==0){
 }
 [e $U 279  ]
 [e :U 278 ]
-[e $ ! && == -> . _botoes_ant 0 `i -> 1 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 280  ]
+[e $ ! && == -> . _botoes_ant 0 `i -> 1 `i == -> . . _PORTBbits 0 2 `i -> 0 `i 280  ]
 {
 "19
 [; ;keyboard.c: 19:         botoes.U = 0;
@@ -513,11 +513,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 21:         cont_u = 0;
 [e = _cont_u -> -> 0 `i `uc ]
 "22
-[; ;keyboard.c: 22:     }else if(PORTBbits.RB1==1) cont_u++;
+[; ;keyboard.c: 22:     }else if(PORTBbits.RB2==1) cont_u++;
 }
 [e $U 281  ]
 [e :U 280 ]
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 282  ]
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 282  ]
 [e ++ _cont_u -> -> 1 `i `uc ]
 [e :U 282 ]
 [e :U 281 ]
@@ -529,8 +529,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 25:     PORTBbits.RB6 = 1;
 [e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
 "26
-[; ;keyboard.c: 26:     if((botoes_ant.L==0 && PORTBbits.RB0==1) || cont_l > 50){
-[e $ ! || && == -> . _botoes_ant 2 `i -> 0 `i == -> . . _PORTBbits 0 0 `i -> 1 `i > -> _cont_l `i -> 50 `i 283  ]
+[; ;keyboard.c: 26:     if((botoes_ant.L==0 && PORTBbits.RB1==1) || cont_l > 50){
+[e $ ! || && == -> . _botoes_ant 2 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 1 `i > -> _cont_l `i -> 50 `i 283  ]
 {
 "27
 [; ;keyboard.c: 27:         botoes.L = 1;
@@ -542,11 +542,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 29:         cont_l = 0;
 [e = _cont_l -> -> 0 `i `uc ]
 "30
-[; ;keyboard.c: 30:     }else if(botoes_ant.L==1 && PORTBbits.RB0==0){
+[; ;keyboard.c: 30:     }else if(botoes_ant.L==1 && PORTBbits.RB1==0){
 }
 [e $U 284  ]
 [e :U 283 ]
-[e $ ! && == -> . _botoes_ant 2 `i -> 1 `i == -> . . _PORTBbits 0 0 `i -> 0 `i 285  ]
+[e $ ! && == -> . _botoes_ant 2 `i -> 1 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 285  ]
 {
 "31
 [; ;keyboard.c: 31:         botoes.L = 0;
@@ -558,18 +558,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 33:         cont_l = 0;
 [e = _cont_l -> -> 0 `i `uc ]
 "34
-[; ;keyboard.c: 34:     }else if(PORTBbits.RB0==1) cont_l++;
+[; ;keyboard.c: 34:     }else if(PORTBbits.RB1==1) cont_l++;
 }
 [e $U 286  ]
 [e :U 285 ]
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 287  ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 287  ]
 [e ++ _cont_l -> -> 1 `i `uc ]
 [e :U 287 ]
 [e :U 286 ]
 [e :U 284 ]
 "36
-[; ;keyboard.c: 36:     if((botoes_ant.R==0 && PORTBbits.RB2==1) || cont_r > 50){
-[e $ ! || && == -> . _botoes_ant 3 `i -> 0 `i == -> . . _PORTBbits 0 2 `i -> 1 `i > -> _cont_r `i -> 50 `i 288  ]
+[; ;keyboard.c: 36:     if((botoes_ant.R==0 && PORTBbits.RB3==1) || cont_r > 50){
+[e $ ! || && == -> . _botoes_ant 3 `i -> 0 `i == -> . . _PORTBbits 0 3 `i -> 1 `i > -> _cont_r `i -> 50 `i 288  ]
 {
 "37
 [; ;keyboard.c: 37:         botoes.R = 1;
@@ -581,11 +581,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 39:         cont_r = 0;
 [e = _cont_r -> -> 0 `i `uc ]
 "40
-[; ;keyboard.c: 40:     }else if(botoes_ant.R==1 && PORTBbits.RB2==0){
+[; ;keyboard.c: 40:     }else if(botoes_ant.R==1 && PORTBbits.RB3==0){
 }
 [e $U 289  ]
 [e :U 288 ]
-[e $ ! && == -> . _botoes_ant 3 `i -> 1 `i == -> . . _PORTBbits 0 2 `i -> 0 `i 290  ]
+[e $ ! && == -> . _botoes_ant 3 `i -> 1 `i == -> . . _PORTBbits 0 3 `i -> 0 `i 290  ]
 {
 "41
 [; ;keyboard.c: 41:         botoes.R = 0;
@@ -597,11 +597,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 43:         cont_r = 0;
 [e = _cont_r -> -> 0 `i `uc ]
 "44
-[; ;keyboard.c: 44:     }else if(PORTBbits.RB2==1) cont_r++;
+[; ;keyboard.c: 44:     }else if(PORTBbits.RB3==1) cont_r++;
 }
 [e $U 291  ]
 [e :U 290 ]
-[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 292  ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 292  ]
 [e ++ _cont_r -> -> 1 `i `uc ]
 [e :U 292 ]
 [e :U 291 ]
@@ -613,8 +613,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 47:     PORTBbits.RB5 = 1;
 [e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
 "48
-[; ;keyboard.c: 48:     if((botoes_ant.D==0 && PORTBbits.RB1==1) || cont_d > 50){
-[e $ ! || && == -> . _botoes_ant 1 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 1 `i > -> _cont_d `i -> 50 `i 293  ]
+[; ;keyboard.c: 48:     if((botoes_ant.D==0 && PORTBbits.RB2==1) || cont_d > 50){
+[e $ ! || && == -> . _botoes_ant 1 `i -> 0 `i == -> . . _PORTBbits 0 2 `i -> 1 `i > -> _cont_d `i -> 50 `i 293  ]
 {
 "49
 [; ;keyboard.c: 49:         botoes.D = 1;
@@ -626,11 +626,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 51:         cont_d = 0;
 [e = _cont_d -> -> 0 `i `uc ]
 "52
-[; ;keyboard.c: 52:     }else if(botoes_ant.D==1 && PORTBbits.RB1==0){
+[; ;keyboard.c: 52:     }else if(botoes_ant.D==1 && PORTBbits.RB2==0){
 }
 [e $U 294  ]
 [e :U 293 ]
-[e $ ! && == -> . _botoes_ant 1 `i -> 1 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 295  ]
+[e $ ! && == -> . _botoes_ant 1 `i -> 1 `i == -> . . _PORTBbits 0 2 `i -> 0 `i 295  ]
 {
 "53
 [; ;keyboard.c: 53:         botoes.D = 0;
@@ -642,11 +642,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 55:         cont_d = 0;
 [e = _cont_d -> -> 0 `i `uc ]
 "56
-[; ;keyboard.c: 56:     }else if(PORTBbits.RB1==1) cont_d++;
+[; ;keyboard.c: 56:     }else if(PORTBbits.RB2==1) cont_d++;
 }
 [e $U 296  ]
 [e :U 295 ]
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 297  ]
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 297  ]
 [e ++ _cont_d -> -> 1 `i `uc ]
 [e :U 297 ]
 [e :U 296 ]
@@ -658,11 +658,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 59:     PORTBbits.RB4 = 1;
 [e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
 "60
-[; ;keyboard.c: 60:     botoes.Enter = PORTBbits.RB0;
-[e = . _botoes 4 . . _PORTBbits 0 0 ]
+[; ;keyboard.c: 60:     botoes.Enter = PORTBbits.RB1;
+[e = . _botoes 4 . . _PORTBbits 0 1 ]
 "61
-[; ;keyboard.c: 61:     botoes.Esc = PORTBbits.RB2;
-[e = . _botoes 5 . . _PORTBbits 0 2 ]
+[; ;keyboard.c: 61:     botoes.Esc = PORTBbits.RB3;
+[e = . _botoes 5 . . _PORTBbits 0 3 ]
 "62
 [; ;keyboard.c: 62:     PORTBbits.RB4 = 0;
 [e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]

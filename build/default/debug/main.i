@@ -4828,7 +4828,7 @@ void finaliza(t_display_port *lcd);
 t_display_port *lcd = &PORTD;
 
 void __attribute__((picinterrupt(("")))) int_handler(void){
-     if(INTCONbits.TMR0IF == 1){
+    if(INTCONbits.TMR0IF == 1){
         TMR0L = 0x63;
         le_entrada();
         INTCONbits.TMR0IF = 0;

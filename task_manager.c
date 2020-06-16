@@ -39,8 +39,8 @@ void finaliza(t_display_port *lcd){
     strcpy(mat_disp[1], "               ");
     strcpy(mat_disp[2], "               ");
     strcpy(mat_disp[3], "               ");                                          
-    print_mat(lcd);    
-    while(!botoes.Esc);
+    print_mat(lcd); 
+    Sleep();
 }
 
 void jogar(t_display_port *lcd){

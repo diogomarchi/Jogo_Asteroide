@@ -558,11 +558,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keyboard.c: 33:         cont_l = 0;
 [e = _cont_l -> -> 0 `i `uc ]
 "34
-[; ;keyboard.c: 34:     }else if(PORTBbits.RB1==1) cont_l++;
+[; ;keyboard.c: 34:     }else if(PORTBbits.RB0==1) cont_l++;
 }
 [e $U 286  ]
 [e :U 285 ]
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 287  ]
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 287  ]
 [e ++ _cont_l -> -> 1 `i `uc ]
 [e :U 287 ]
 [e :U 286 ]

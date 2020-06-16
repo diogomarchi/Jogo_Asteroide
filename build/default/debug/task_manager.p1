@@ -571,12 +571,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;task_manager.c: 42:     print_mat(lcd);
 [e ( _print_mat (1 _lcd ]
 "43
-[; ;task_manager.c: 43:     while(!botoes.Esc);
-[e $U 302  ]
-[e :U 303 ]
-[e :U 302 ]
-[e $ ! != -> . _botoes 5 `i -> 0 `i 303  ]
-[e :U 304 ]
+[; ;task_manager.c: 43:     __asm(" sleep");
+[; <"  sleep ;# ">
 "44
 [; ;task_manager.c: 44: }
 [e :UE 301 ]
@@ -622,19 +618,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _print_mat (1 _lcd ]
 "60
 [; ;task_manager.c: 60:     while(!botoes.Esc && bateu == 0){
-[e $U 306  ]
-[e :U 307 ]
+[e $U 303  ]
+[e :U 304 ]
 {
 "61
 [; ;task_manager.c: 61:         if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')
-[e $ ! && == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 62 `ui == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> + -> _y `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 42 `ui 309  ]
+[e $ ! && == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 62 `ui == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> + -> _y `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 42 `ui 306  ]
 "62
 [; ;task_manager.c: 62:             bateu = 1;
 [e = _bateu -> 1 `i ]
-[e :U 309 ]
+[e :U 306 ]
 "63
 [; ;task_manager.c: 63:         if((botoes.U) && (x > 1)){
-[e $ ! && != -> . _botoes 0 `i -> 0 `i > -> _x `i -> 1 `i 310  ]
+[e $ ! && != -> . _botoes 0 `i -> 0 `i > -> _x `i -> 1 `i 307  ]
 {
 "64
 [; ;task_manager.c: 64:             mat_disp[x][y] = ' ';
@@ -654,10 +650,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "69
 [; ;task_manager.c: 69:         }
 }
-[e :U 310 ]
+[e :U 307 ]
 "70
 [; ;task_manager.c: 70:         if((botoes.D) && (x < 3)){
-[e $ ! && != -> . _botoes 1 `i -> 0 `i < -> _x `i -> 3 `i 311  ]
+[e $ ! && != -> . _botoes 1 `i -> 0 `i < -> _x `i -> 3 `i 308  ]
 {
 "71
 [; ;task_manager.c: 71:             mat_disp[x][y] = ' ';
@@ -677,10 +673,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "76
 [; ;task_manager.c: 76:         }
 }
-[e :U 311 ]
+[e :U 308 ]
 "77
 [; ;task_manager.c: 77:         if((botoes.R) && (y < 15)){
-[e $ ! && != -> . _botoes 3 `i -> 0 `i < -> _y `i -> 15 `i 312  ]
+[e $ ! && != -> . _botoes 3 `i -> 0 `i < -> _y `i -> 15 `i 309  ]
 {
 "78
 [; ;task_manager.c: 78:             mat_disp[x][y] = ' ';
@@ -700,10 +696,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "83
 [; ;task_manager.c: 83:         }
 }
-[e :U 312 ]
+[e :U 309 ]
 "84
 [; ;task_manager.c: 84:         if((botoes.L) && (y > 0)){
-[e $ ! && != -> . _botoes 2 `i -> 0 `i > -> _y `i -> 0 `i 313  ]
+[e $ ! && != -> . _botoes 2 `i -> 0 `i > -> _y `i -> 0 `i 310  ]
 {
 "85
 [; ;task_manager.c: 85:             mat_disp[x][y] = ' ';
@@ -723,21 +719,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "90
 [; ;task_manager.c: 90:         }
 }
-[e :U 313 ]
+[e :U 310 ]
 "91
 [; ;task_manager.c: 91:     }
 }
-[e :U 306 ]
+[e :U 303 ]
 "60
 [; ;task_manager.c: 60:     while(!botoes.Esc && bateu == 0){
-[e $ && ! != -> . _botoes 5 `i -> 0 `i == _bateu -> 0 `i 307  ]
-[e :U 308 ]
+[e $ && ! != -> . _botoes 5 `i -> 0 `i == _bateu -> 0 `i 304  ]
+[e :U 305 ]
 "92
 [; ;task_manager.c: 92:     if(bateu == 1){
-[e $ ! == _bateu -> 1 `i 314  ]
+[e $ ! == _bateu -> 1 `i 311  ]
 {
 "93
-[; ;task_manager.c: 93:         strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
+[; ;task_manager.c: 93:             strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
 [e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 13C ]
 "94
 [; ;task_manager.c: 94:             strcpy(mat_disp[1], "APERTE ESC      ");
@@ -753,15 +749,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _print_mat (1 _lcd ]
 "98
 [; ;task_manager.c: 98:         while(!botoes.Esc);
-[e $U 315  ]
-[e :U 316 ]
-[e :U 315 ]
-[e $ ! != -> . _botoes 5 `i -> 0 `i 316  ]
-[e :U 317 ]
+[e $U 312  ]
+[e :U 313 ]
+[e :U 312 ]
+[e $ ! != -> . _botoes 5 `i -> 0 `i 313  ]
+[e :U 314 ]
 "99
 [; ;task_manager.c: 99:     }
 }
-[e :U 314 ]
+[e :U 311 ]
 "101
 [; ;task_manager.c: 101:     x = 1;
 [e = _x -> -> 1 `i `uc ]
@@ -770,7 +766,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _y -> -> 0 `i `uc ]
 "103
 [; ;task_manager.c: 103: }
-[e :UE 305 ]
+[e :UE 302 ]
 }
 "105
 [; ;task_manager.c: 105: void instrucoes(t_display_port *lcd){
@@ -796,14 +792,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _print_mat (1 _lcd ]
 "111
 [; ;task_manager.c: 111:     while(!botoes.Esc);
-[e $U 319  ]
-[e :U 320 ]
-[e :U 319 ]
-[e $ ! != -> . _botoes 5 `i -> 0 `i 320  ]
-[e :U 321 ]
+[e $U 316  ]
+[e :U 317 ]
+[e :U 316 ]
+[e $ ! != -> . _botoes 5 `i -> 0 `i 317  ]
+[e :U 318 ]
 "112
 [; ;task_manager.c: 112: }
-[e :UE 318 ]
+[e :UE 315 ]
 }
 "114
 [; ;task_manager.c: 114: char menu(t_display_port *lcd){
@@ -832,12 +828,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _print_mat (1 _lcd ]
 "124
 [; ;task_manager.c: 124:     while(!botoes.Enter){
-[e $U 323  ]
-[e :U 324 ]
+[e $U 320  ]
+[e :U 321 ]
 {
 "125
 [; ;task_manager.c: 125:         if((botoes.U) && (op > 0)){
-[e $ ! && != -> . _botoes 0 `i -> 0 `i > -> _op `i -> 0 `i 326  ]
+[e $ ! && != -> . _botoes 0 `i -> 0 `i > -> _op `i -> 0 `i 323  ]
 {
 "126
 [; ;task_manager.c: 126:             mat_disp[op][15] = '.';
@@ -857,10 +853,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "131
 [; ;task_manager.c: 131:         }
 }
-[e :U 326 ]
+[e :U 323 ]
 "132
 [; ;task_manager.c: 132:         if((botoes.D) && (op < 3)){
-[e $ ! && != -> . _botoes 1 `i -> 0 `i < -> _op `i -> 3 `i 327  ]
+[e $ ! && != -> . _botoes 1 `i -> 0 `i < -> _op `i -> 3 `i 324  ]
 {
 "133
 [; ;task_manager.c: 133:             mat_disp[op][15] = '.';
@@ -880,22 +876,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "138
 [; ;task_manager.c: 138:         }
 }
-[e :U 327 ]
+[e :U 324 ]
 "139
 [; ;task_manager.c: 139:     }
 }
-[e :U 323 ]
+[e :U 320 ]
 "124
 [; ;task_manager.c: 124:     while(!botoes.Enter){
-[e $ ! != -> . _botoes 4 `i -> 0 `i 324  ]
-[e :U 325 ]
+[e $ ! != -> . _botoes 4 `i -> 0 `i 321  ]
+[e :U 322 ]
 "141
 [; ;task_manager.c: 141:     return op;
 [e ) -> _op `uc ]
-[e $UE 322  ]
+[e $UE 319  ]
 "142
 [; ;task_manager.c: 142: }
-[e :UE 322 ]
+[e :UE 319 ]
 }
 [a 2C 50 46 71 69 79 82 71 69 32 78 65 82 68 69 83 0 ]
 [a 17C 49 46 83 69 84 65 83 32 77 79 86 69 77 32 65 0 ]

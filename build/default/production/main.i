@@ -4810,6 +4810,13 @@ void creditos(t_display_port *lcd);
 
 
 void jogar(t_display_port *lcd);
+
+
+
+
+
+
+void finaliza(t_display_port *lcd);
 # 15 "main.c" 2
 
 
