@@ -45,6 +45,13 @@ void creditos(t_display_port *lcd);
  */
 void jogar(t_display_port *lcd);
 
+/**      
+    @Description:  deixa pic dormindo
+    @Parameters :  ponteiro do tipo t_display_port,       
+    @Returns    :  Void      
+ */
+void finaliza(t_display_port *lcd);
+
 
 #endif	/* TASK_MANAGER_H */
 

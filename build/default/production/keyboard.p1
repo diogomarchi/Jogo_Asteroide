@@ -447,55 +447,226 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 ./keyboard.h
 [; ;./keyboard.h: 28: t_botoes botoes;
 [v _botoes `S276 ~T0 @X0 1 e ]
-"4 keyboard.c
-[; ;keyboard.c: 4: void le_entrada(){
+"5 keyboard.c
+[; ;keyboard.c: 5: t_botoes botoes_ant;
+[v _botoes_ant `S276 ~T0 @X0 1 e ]
+"7
+[; ;keyboard.c: 7: unsigned char cont_u = 0;
+[v _cont_u `uc ~T0 @X0 1 e ]
+[i _cont_u
+-> -> 0 `i `uc
+]
+"8
+[; ;keyboard.c: 8: unsigned char cont_d = 0;
+[v _cont_d `uc ~T0 @X0 1 e ]
+[i _cont_d
+-> -> 0 `i `uc
+]
+"9
+[; ;keyboard.c: 9: unsigned char cont_l = 0;
+[v _cont_l `uc ~T0 @X0 1 e ]
+[i _cont_l
+-> -> 0 `i `uc
+]
+"10
+[; ;keyboard.c: 10: unsigned char cont_r = 0;
+[v _cont_r `uc ~T0 @X0 1 e ]
+[i _cont_r
+-> -> 0 `i `uc
+]
+"12
+[; ;keyboard.c: 12: void le_entrada(){
 [v _le_entrada `(v ~T0 @X0 1 ef ]
 {
 [e :U _le_entrada ]
 [f ]
-"5
-[; ;keyboard.c: 5:     PORTBbits.RB7 = 1;
+"13
+[; ;keyboard.c: 13:     PORTBbits.RB7 = 1;
 [e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
-"6
-[; ;keyboard.c: 6:     botoes.U = PORTBbits.RB1;
-[e = . _botoes 0 . . _PORTBbits 0 1 ]
-"7
-[; ;keyboard.c: 7:     PORTBbits.RB7 = 0;
-[e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
-"9
-[; ;keyboard.c: 9:     PORTBbits.RB6 = 1;
-[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
-"10
-[; ;keyboard.c: 10:     botoes.L = PORTBbits.RB0;
-[e = . _botoes 2 . . _PORTBbits 0 0 ]
-"11
-[; ;keyboard.c: 11:     botoes.R = PORTBbits.RB2;
-[e = . _botoes 3 . . _PORTBbits 0 2 ]
-"12
-[; ;keyboard.c: 12:     PORTBbits.RB6 = 0;
-[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
 "14
-[; ;keyboard.c: 14:     PORTBbits.RB5 = 1;
-[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+[; ;keyboard.c: 14:     if((botoes_ant.U==0 && PORTBbits.RB1==1) || cont_u > 50){
+[e $ ! || && == -> . _botoes_ant 0 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 1 `i > -> _cont_u `i -> 50 `i 278  ]
+{
 "15
-[; ;keyboard.c: 15:     botoes.D = PORTBbits.RB1;
-[e = . _botoes 1 . . _PORTBbits 0 1 ]
+[; ;keyboard.c: 15:         botoes.U = 1;
+[e = . _botoes 0 -> -> 1 `i `uc ]
 "16
-[; ;keyboard.c: 16:     PORTBbits.RB5 = 0;
-[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+[; ;keyboard.c: 16:         botoes_ant.U = 1;
+[e = . _botoes_ant 0 -> -> 1 `i `uc ]
+"17
+[; ;keyboard.c: 17:         cont_u = 0;
+[e = _cont_u -> -> 0 `i `uc ]
 "18
-[; ;keyboard.c: 18:     PORTBbits.RB4 = 1;
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;keyboard.c: 18:     }else if(botoes_ant.U==1 && PORTBbits.RB1==0){
+}
+[e $U 279  ]
+[e :U 278 ]
+[e $ ! && == -> . _botoes_ant 0 `i -> 1 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 280  ]
+{
 "19
-[; ;keyboard.c: 19:     botoes.Enter = PORTBbits.RB0;
-[e = . _botoes 4 . . _PORTBbits 0 0 ]
+[; ;keyboard.c: 19:         botoes.U = 0;
+[e = . _botoes 0 -> -> 0 `i `uc ]
 "20
-[; ;keyboard.c: 20:     botoes.Esc = PORTBbits.RB2;
-[e = . _botoes 5 . . _PORTBbits 0 2 ]
+[; ;keyboard.c: 20:         botoes_ant.U = 0;
+[e = . _botoes_ant 0 -> -> 0 `i `uc ]
 "21
-[; ;keyboard.c: 21:     PORTBbits.RB4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+[; ;keyboard.c: 21:         cont_u = 0;
+[e = _cont_u -> -> 0 `i `uc ]
 "22
-[; ;keyboard.c: 22: }
+[; ;keyboard.c: 22:     }else if(PORTBbits.RB1==1) cont_u++;
+}
+[e $U 281  ]
+[e :U 280 ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 282  ]
+[e ++ _cont_u -> -> 1 `i `uc ]
+[e :U 282 ]
+[e :U 281 ]
+[e :U 279 ]
+"23
+[; ;keyboard.c: 23:     PORTBbits.RB7 = 0;
+[e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
+"25
+[; ;keyboard.c: 25:     PORTBbits.RB6 = 1;
+[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
+"26
+[; ;keyboard.c: 26:     if((botoes_ant.L==0 && PORTBbits.RB0==1) || cont_l > 50){
+[e $ ! || && == -> . _botoes_ant 2 `i -> 0 `i == -> . . _PORTBbits 0 0 `i -> 1 `i > -> _cont_l `i -> 50 `i 283  ]
+{
+"27
+[; ;keyboard.c: 27:         botoes.L = 1;
+[e = . _botoes 2 -> -> 1 `i `uc ]
+"28
+[; ;keyboard.c: 28:         botoes_ant.L = 1;
+[e = . _botoes_ant 2 -> -> 1 `i `uc ]
+"29
+[; ;keyboard.c: 29:         cont_l = 0;
+[e = _cont_l -> -> 0 `i `uc ]
+"30
+[; ;keyboard.c: 30:     }else if(botoes_ant.L==1 && PORTBbits.RB0==0){
+}
+[e $U 284  ]
+[e :U 283 ]
+[e $ ! && == -> . _botoes_ant 2 `i -> 1 `i == -> . . _PORTBbits 0 0 `i -> 0 `i 285  ]
+{
+"31
+[; ;keyboard.c: 31:         botoes.L = 0;
+[e = . _botoes 2 -> -> 0 `i `uc ]
+"32
+[; ;keyboard.c: 32:         botoes_ant.L = 0;
+[e = . _botoes_ant 2 -> -> 0 `i `uc ]
+"33
+[; ;keyboard.c: 33:         cont_l = 0;
+[e = _cont_l -> -> 0 `i `uc ]
+"34
+[; ;keyboard.c: 34:     }else if(PORTBbits.RB1==1) cont_l++;
+}
+[e $U 286  ]
+[e :U 285 ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 287  ]
+[e ++ _cont_l -> -> 1 `i `uc ]
+[e :U 287 ]
+[e :U 286 ]
+[e :U 284 ]
+"36
+[; ;keyboard.c: 36:     if((botoes_ant.R==0 && PORTBbits.RB2==1) || cont_r > 50){
+[e $ ! || && == -> . _botoes_ant 3 `i -> 0 `i == -> . . _PORTBbits 0 2 `i -> 1 `i > -> _cont_r `i -> 50 `i 288  ]
+{
+"37
+[; ;keyboard.c: 37:         botoes.R = 1;
+[e = . _botoes 3 -> -> 1 `i `uc ]
+"38
+[; ;keyboard.c: 38:         botoes_ant.R = 1;
+[e = . _botoes_ant 3 -> -> 1 `i `uc ]
+"39
+[; ;keyboard.c: 39:         cont_r = 0;
+[e = _cont_r -> -> 0 `i `uc ]
+"40
+[; ;keyboard.c: 40:     }else if(botoes_ant.R==1 && PORTBbits.RB2==0){
+}
+[e $U 289  ]
+[e :U 288 ]
+[e $ ! && == -> . _botoes_ant 3 `i -> 1 `i == -> . . _PORTBbits 0 2 `i -> 0 `i 290  ]
+{
+"41
+[; ;keyboard.c: 41:         botoes.R = 0;
+[e = . _botoes 3 -> -> 0 `i `uc ]
+"42
+[; ;keyboard.c: 42:         botoes_ant.R = 0;
+[e = . _botoes_ant 3 -> -> 0 `i `uc ]
+"43
+[; ;keyboard.c: 43:         cont_r = 0;
+[e = _cont_r -> -> 0 `i `uc ]
+"44
+[; ;keyboard.c: 44:     }else if(PORTBbits.RB2==1) cont_r++;
+}
+[e $U 291  ]
+[e :U 290 ]
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 292  ]
+[e ++ _cont_r -> -> 1 `i `uc ]
+[e :U 292 ]
+[e :U 291 ]
+[e :U 289 ]
+"45
+[; ;keyboard.c: 45:     PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
+"47
+[; ;keyboard.c: 47:     PORTBbits.RB5 = 1;
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+"48
+[; ;keyboard.c: 48:     if((botoes_ant.D==0 && PORTBbits.RB1==1) || cont_d > 50){
+[e $ ! || && == -> . _botoes_ant 1 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 1 `i > -> _cont_d `i -> 50 `i 293  ]
+{
+"49
+[; ;keyboard.c: 49:         botoes.D = 1;
+[e = . _botoes 1 -> -> 1 `i `uc ]
+"50
+[; ;keyboard.c: 50:         botoes_ant.D = 1;
+[e = . _botoes_ant 1 -> -> 1 `i `uc ]
+"51
+[; ;keyboard.c: 51:         cont_d = 0;
+[e = _cont_d -> -> 0 `i `uc ]
+"52
+[; ;keyboard.c: 52:     }else if(botoes_ant.D==1 && PORTBbits.RB1==0){
+}
+[e $U 294  ]
+[e :U 293 ]
+[e $ ! && == -> . _botoes_ant 1 `i -> 1 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 295  ]
+{
+"53
+[; ;keyboard.c: 53:         botoes.D = 0;
+[e = . _botoes 1 -> -> 0 `i `uc ]
+"54
+[; ;keyboard.c: 54:         botoes_ant.D = 0;
+[e = . _botoes_ant 1 -> -> 0 `i `uc ]
+"55
+[; ;keyboard.c: 55:         cont_d = 0;
+[e = _cont_d -> -> 0 `i `uc ]
+"56
+[; ;keyboard.c: 56:     }else if(PORTBbits.RB1==1) cont_d++;
+}
+[e $U 296  ]
+[e :U 295 ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 297  ]
+[e ++ _cont_d -> -> 1 `i `uc ]
+[e :U 297 ]
+[e :U 296 ]
+[e :U 294 ]
+"57
+[; ;keyboard.c: 57:     PORTBbits.RB5 = 0;
+[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+"59
+[; ;keyboard.c: 59:     PORTBbits.RB4 = 1;
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+"60
+[; ;keyboard.c: 60:     botoes.Enter = PORTBbits.RB0;
+[e = . _botoes 4 . . _PORTBbits 0 0 ]
+"61
+[; ;keyboard.c: 61:     botoes.Esc = PORTBbits.RB2;
+[e = . _botoes 5 . . _PORTBbits 0 2 ]
+"62
+[; ;keyboard.c: 62:     PORTBbits.RB4 = 0;
+[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+"63
+[; ;keyboard.c: 63: }
 [e :UE 277 ]
 }

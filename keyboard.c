@@ -11,7 +11,7 @@ unsigned char cont_r = 0;
 
 void le_entrada(){   
     LINHA_1 = 1;    
-    if((botoes_ant.U==0 && PORTBbits.RB1==1) || cont_u > 50){
+    if((botoes_ant.U==0 && PORTBbits.RB1==1) || cont_u > 50){//botao de subida
         botoes.U = 1; 
         botoes_ant.U = 1; 
         cont_u = 0;
@@ -23,7 +23,7 @@ void le_entrada(){
     LINHA_1 = 0; 
     
     LINHA_2 = 1;
-    if((botoes_ant.L==0 && PORTBbits.RB0==1) || cont_l > 50){
+    if((botoes_ant.L==0 && PORTBbits.RB0==1) || cont_l > 50){//botao esquerda
         botoes.L = 1; 
         botoes_ant.L = 1; 
         cont_l = 0;
@@ -31,7 +31,7 @@ void le_entrada(){
         botoes.L = 0; 
         botoes_ant.L = 0; 
         cont_l = 0;
-    }else if(PORTBbits.RB1==1) cont_l++;        
+    }else if(PORTBbits.RB0==1) cont_l++;        
        
     if((botoes_ant.R==0 && PORTBbits.RB2==1) || cont_r > 50){
         botoes.R = 1; 

@@ -4378,29 +4378,64 @@ typedef struct {
 
 
 t_botoes botoes;
-
-
-
-
-
-
-
+# 37 "./keyboard.h"
 void le_entrada();
 # 2 "keyboard.c" 2
 
 
+
+t_botoes botoes_ant;
+
+unsigned char cont_u = 0;
+unsigned char cont_d = 0;
+unsigned char cont_l = 0;
+unsigned char cont_r = 0;
+
 void le_entrada(){
     PORTBbits.RB7 = 1;
-    botoes.U = PORTBbits.RB1;
+    if((botoes_ant.U==0 && PORTBbits.RB1==1) || cont_u > 50){
+        botoes.U = 1;
+        botoes_ant.U = 1;
+        cont_u = 0;
+    }else if(botoes_ant.U==1 && PORTBbits.RB1==0){
+        botoes.U = 0;
+        botoes_ant.U = 0;
+        cont_u = 0;
+    }else if(PORTBbits.RB1==1) cont_u++;
     PORTBbits.RB7 = 0;
 
     PORTBbits.RB6 = 1;
-    botoes.L = PORTBbits.RB0;
-    botoes.R = PORTBbits.RB2;
+    if((botoes_ant.L==0 && PORTBbits.RB0==1) || cont_l > 50){
+        botoes.L = 1;
+        botoes_ant.L = 1;
+        cont_l = 0;
+    }else if(botoes_ant.L==1 && PORTBbits.RB0==0){
+        botoes.L = 0;
+        botoes_ant.L = 0;
+        cont_l = 0;
+    }else if(PORTBbits.RB1==1) cont_l++;
+
+    if((botoes_ant.R==0 && PORTBbits.RB2==1) || cont_r > 50){
+        botoes.R = 1;
+        botoes_ant.R = 1;
+        cont_r = 0;
+    }else if(botoes_ant.R==1 && PORTBbits.RB2==0){
+        botoes.R = 0;
+        botoes_ant.R = 0;
+        cont_r = 0;
+    }else if(PORTBbits.RB2==1) cont_r++;
     PORTBbits.RB6 = 0;
 
     PORTBbits.RB5 = 1;
-    botoes.D = PORTBbits.RB1;
+    if((botoes_ant.D==0 && PORTBbits.RB1==1) || cont_d > 50){
+        botoes.D = 1;
+        botoes_ant.D = 1;
+        cont_d = 0;
+    }else if(botoes_ant.D==1 && PORTBbits.RB1==0){
+        botoes.D = 0;
+        botoes_ant.D = 0;
+        cont_d = 0;
+    }else if(PORTBbits.RB1==1) cont_d++;
     PORTBbits.RB5 = 0;
 
     PORTBbits.RB4 = 1;

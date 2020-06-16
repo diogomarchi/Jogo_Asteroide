@@ -4731,13 +4731,7 @@ typedef struct {
 
 
 t_botoes botoes;
-
-
-
-
-
-
-
+# 37 "./keyboard.h"
 void le_entrada();
 # 13 "main.c" 2
 
@@ -4752,23 +4746,22 @@ typedef struct {
 }t_display_port;
 
 
-
 char mat_disp [4][16];
-# 41 "./lcd.h"
+# 40 "./lcd.h"
 void function_set(t_display_port *lcd, char data_lenght,
         char num_lines, char char_font);
-# 55 "./lcd.h"
+# 54 "./lcd.h"
 void display_onoff_control(t_display_port *lcd, char display_on,
         char cursor_on, char blink);
-# 67 "./lcd.h"
+# 66 "./lcd.h"
 void entry_mode_set(t_display_port *lcd,char move_direction,
         char display_shift);
-# 79 "./lcd.h"
+# 78 "./lcd.h"
 void goto_XY(t_display_port *lcd,
         unsigned char x, unsigned char y);
-# 90 "./lcd.h"
+# 89 "./lcd.h"
 void lcd_cmd(t_display_port *lcd, char c);
-# 100 "./lcd.h"
+# 99 "./lcd.h"
 void write_char(t_display_port *lcd, char c);
 
 
@@ -4778,7 +4771,7 @@ void write_char(t_display_port *lcd, char c);
 
 
 void clear_display(t_display_port *lcd);
-# 117 "./lcd.h"
+# 116 "./lcd.h"
 void return_home(t_display_port *lcd);
 
 
@@ -4828,7 +4821,6 @@ void jogar(t_display_port *lcd);
 t_display_port *lcd = &PORTD;
 
 void __attribute__((picinterrupt(("")))) int_handler(void){
-
      if(INTCONbits.TMR0IF == 1){
         TMR0L = 0x63;
         le_entrada();
@@ -4869,5 +4861,4 @@ void main(void) {
     T0CONbits.TMR0ON = 1;
 
     gerenciador(lcd);
-# 87 "main.c"
 }

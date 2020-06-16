@@ -4810,6 +4810,13 @@ void creditos(t_display_port *lcd);
 
 
 void jogar(t_display_port *lcd);
+
+
+
+
+
+
+void finaliza(t_display_port *lcd);
 # 15 "main.c" 2
 
 
@@ -4821,11 +4828,9 @@ void jogar(t_display_port *lcd);
 t_display_port *lcd = &PORTD;
 
 void __attribute__((picinterrupt(("")))) int_handler(void){
-
      if(INTCONbits.TMR0IF == 1){
         TMR0L = 0x63;
         le_entrada();
-        print_mat(lcd);
         INTCONbits.TMR0IF = 0;
     }
 }

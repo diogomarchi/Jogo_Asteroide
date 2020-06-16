@@ -31,9 +31,9 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"4 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\keyboard.c
+"12 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
 [v _le_entrada le_entrada `(v  1 e 1 0 ]
-"11 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\lcd.c
+"11 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
 [v _pulso pulso `(v  1 e 1 0 ]
 "21
 [v _function_set function_set `(v  1 e 1 0 ]
@@ -45,19 +45,21 @@
 [v _goto_XY goto_XY `(v  1 e 1 0 ]
 "116
 [v _entry_mode_set entry_mode_set `(v  1 e 1 0 ]
-"151
+"133
 [v _write_char write_char `(v  1 e 1 0 ]
-"181
+"163
 [v _clear_display clear_display `(v  1 e 1 0 ]
-"217
+"199
 [v _print_mat print_mat `(v  1 e 1 0 ]
-"24 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\main.c
+"24 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
 [v _int_handler int_handler `IIH(v  1 e 1 0 ]
-"33
+"32
 [v _main main `(v  1 e 1 0 ]
-"15 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\task_manager.c
+"15 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
 [v _gerenciador gerenciador `(v  1 e 1 0 ]
-"126
+"26
+[v _creditos creditos `(v  1 e 1 0 ]
+"110
 [v _menu menu `(uc  1 e 1 0 ]
 [s S24 . 1 `uc 1 U 1 0 :1:0 
 `uc 1 D 1 0 :1:1 
@@ -66,13 +68,13 @@
 `uc 1 Enter 1 0 :1:4 
 `uc 1 Esc 1 0 :1:5 
 ]
-"28 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X/keyboard.h
+"28 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X/keyboard.h
 [v _botoes botoes `S24  1 e 1 0 ]
-"28 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X/lcd.h
+"27 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X/lcd.h
 [v _mat_disp mat_disp `[4][16]uc  1 e 64 0 ]
 "271 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S309 . 1 `uc 1 RB0 1 0 :1:0 
+[s S302 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -82,7 +84,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "315
-[s S318 . 1 `uc 1 INT0 1 0 :1:0 
+[s S311 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -91,7 +93,7 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S327 . 1 `uc 1 AN12 1 0 :1:0 
+[s S320 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -100,13 +102,13 @@
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S336 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S329 . 1 `uc 1 FLT0 1 0 :1:0 
 ]
-[s S338 . 1 `uc 1 . 1 0 :3:0 
+[s S331 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S341 . 1 `S309 1 . 1 0 `S318 1 . 1 0 `S327 1 . 1 0 `S336 1 . 1 0 `S338 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES341  1 e 1 @3969 ]
+[u S334 . 1 `S302 1 . 1 0 `S311 1 . 1 0 `S320 1 . 1 0 `S329 1 . 1 0 `S331 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES334  1 e 1 @3969 ]
 "632
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 "1699
@@ -161,14 +163,24 @@
 ]
 [u S60 . 1 `S38 1 . 1 0 `S47 1 . 1 0 `S56 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES60  1 e 1 @4082 ]
-"12 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\task_manager.c
+"5 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
+[v _botoes_ant botoes_ant `S24  1 e 1 0 ]
+"7
+[v _cont_u cont_u `uc  1 e 1 0 ]
+"8
+[v _cont_d cont_d `uc  1 e 1 0 ]
+"9
+[v _cont_l cont_l `uc  1 e 1 0 ]
+"10
+[v _cont_r cont_r `uc  1 e 1 0 ]
+"12 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
 [v _op op `uc  1 e 1 0 ]
-"33 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\main.c
+"32 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"87
+"65
 } 0
-"15 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\task_manager.c
+"15 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
 [v _gerenciador gerenciador `(v  1 e 1 0 ]
 {
 [s S31 . 1 `uc 1 RS 1 0 :1:0 
@@ -180,7 +192,7 @@
 [v gerenciador@lcd lcd `*.39S31  1 p 2 27 ]
 "23
 } 0
-"126
+"110
 [v _menu menu `(uc  1 e 1 0 ]
 {
 [s S31 . 1 `uc 1 RS 1 0 :1:0 
@@ -190,7 +202,19 @@
 `uc 1 data 1 0 :4:4 
 ]
 [v menu@lcd lcd `*.39S31  1 p 2 25 ]
-"150
+"138
+} 0
+"26
+[v _creditos creditos `(v  1 e 1 0 ]
+{
+[s S31 . 1 `uc 1 RS 1 0 :1:0 
+`uc 1 R_W 1 0 :1:1 
+`uc 1 E 1 0 :1:2 
+`uc 1 NA 1 0 :1:3 
+`uc 1 data 1 0 :4:4 
+]
+[v creditos@lcd lcd `*.39S31  1 p 2 25 ]
+"34
 } 0
 "3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strcpy.c
 [v _strcpy strcpy `(*.39uc  1 e 2 0 ]
@@ -204,12 +228,12 @@
 [v strcpy@src src `*.32Cuc  1 p 2 2 ]
 "9
 } 0
-"217 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\lcd.c
+"199 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
 [v _print_mat print_mat `(v  1 e 1 0 ]
 {
-"220
+"202
 [v print_mat@j j `i  1 a 2 21 ]
-"218
+"200
 [v print_mat@i i `i  1 a 2 23 ]
 [s S31 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
@@ -217,11 +241,11 @@
 `uc 1 NA 1 0 :1:3 
 `uc 1 data 1 0 :4:4 
 ]
-"217
+"199
 [v print_mat@lcd lcd `*.39S31  1 p 2 15 ]
-"223
+"205
 } 0
-"151
+"133
 [v _write_char write_char `(v  1 e 1 0 ]
 {
 [s S31 . 1 `uc 1 RS 1 0 :1:0 
@@ -232,7 +256,7 @@
 ]
 [v write_char@lcd lcd `*.39S31  1 p 2 0 ]
 [v write_char@c c `uc  1 p 1 2 ]
-"179
+"161
 } 0
 "76
 [v _goto_XY goto_XY `(v  1 e 1 0 ]
@@ -324,13 +348,13 @@
 [v pulso@lcd lcd `*.39S31  1 p 2 0 ]
 "19
 } 0
-"24 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\main.c
+"24 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
 [v _int_handler int_handler `IIH(v  1 e 1 0 ]
 {
-"31
+"30
 } 0
-"4 C:\Users\George\MPLABXProjects\Jogo_Asteroide.X\keyboard.c
+"12 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
 [v _le_entrada le_entrada `(v  1 e 1 0 ]
 {
-"22
+"63
 } 0

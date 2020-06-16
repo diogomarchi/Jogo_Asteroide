@@ -4738,23 +4738,22 @@ typedef struct {
 }t_display_port;
 
 
-
 char mat_disp [4][16];
-# 41 "./lcd.h"
+# 40 "./lcd.h"
 void function_set(t_display_port *lcd, char data_lenght,
         char num_lines, char char_font);
-# 55 "./lcd.h"
+# 54 "./lcd.h"
 void display_onoff_control(t_display_port *lcd, char display_on,
         char cursor_on, char blink);
-# 67 "./lcd.h"
+# 66 "./lcd.h"
 void entry_mode_set(t_display_port *lcd,char move_direction,
         char display_shift);
-# 79 "./lcd.h"
+# 78 "./lcd.h"
 void goto_XY(t_display_port *lcd,
         unsigned char x, unsigned char y);
-# 90 "./lcd.h"
+# 89 "./lcd.h"
 void lcd_cmd(t_display_port *lcd, char c);
-# 100 "./lcd.h"
+# 99 "./lcd.h"
 void write_char(t_display_port *lcd, char c);
 
 
@@ -4764,7 +4763,7 @@ void write_char(t_display_port *lcd, char c);
 
 
 void clear_display(t_display_port *lcd);
-# 117 "./lcd.h"
+# 116 "./lcd.h"
 void return_home(t_display_port *lcd);
 
 
@@ -4784,13 +4783,7 @@ typedef struct {
 
 
 t_botoes botoes;
-
-
-
-
-
-
-
+# 37 "./keyboard.h"
 void le_entrada();
 # 14 "./task_manager.h" 2
 
@@ -4834,40 +4827,24 @@ unsigned char op = 0;
 
 
 void gerenciador(t_display_port *lcd){
-
-    menu(lcd);
-
     while(1){
+        menu(lcd);
+
+        if(op == 2) creditos(lcd);
+
 
     }
-
 }
 
 
 void creditos(t_display_port *lcd){
-    char palavra[16] = "1.DIOGO MARCHI";
-    int tamanho = (int)strlen(palavra);
 
-    char palavra2[16] = "2.GEORGE NARDES";
-    int tamanho2 = (int)strlen(palavra2);
-
-    goto_XY(lcd, 1, 1);
-
-    for(int i = 0; i < tamanho; i ++)
-        write_char(lcd, palavra[i]);
-
-    goto_XY(lcd, 2, 1);
-
-    for(int i = 0; i < tamanho2; i ++)
-        write_char(lcd, palavra2[i]);
-
-
-    _delay((unsigned long)((5000)*(16000000/4000.0)));
-
-
-    clear_display(lcd);
-    menu(lcd);
-
+    strcpy(mat_disp[0], "1.DIOGO MARCHI.");
+    strcpy(mat_disp[1], "2.GEORGE NARDES");
+    strcpy(mat_disp[2], "               ");
+    strcpy(mat_disp[3], "               ");
+    print_mat(lcd);
+    while(!botoes.Esc);
 }
 
 void finaliza(t_display_port *lcd){
@@ -4945,26 +4922,30 @@ void instrucoes(t_display_port *lcd){
 }
 
 char menu(t_display_port *lcd){
-    strcpy(mat_disp[0], "1.JOGAR........");
-    strcpy(mat_disp[1], "2.INSTRUCOES...");
-    strcpy(mat_disp[2], "3.CREDITOS.....");
-    strcpy(mat_disp[3], "4.FINALIZAR....");
-    print_mat(lcd);
+    strcpy(mat_disp[0], "1.JOGAR.........");
+    strcpy(mat_disp[1], "2.INSTRUCOES....");
+    strcpy(mat_disp[2], "3.CREDITOS......");
+    strcpy(mat_disp[3], "4.FINALIZAR.....");
 
+
+    mat_disp[op][15] = '<';
+    print_mat(lcd);
 
     while(!botoes.Enter){
         if((botoes.U) && (op > 0)){
             mat_disp[op][15] = '.';
             op--;
             botoes.U = 0;
+            mat_disp[op][15] = '<';
+            print_mat(lcd);
         }
         if((botoes.D) && (op < 3)){
             mat_disp[op][15] = '.';
             op++;
             botoes.D = 0;
+            mat_disp[op][15] = '<';
+            print_mat(lcd);
         }
-        mat_disp[op][15] = '<';
-        print_mat(lcd);
     }
 
     return op;
