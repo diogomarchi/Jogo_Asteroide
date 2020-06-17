@@ -62,7 +62,7 @@ void main(void) {
     INTCONbits.GIE = 1;
      
     function_set(lcd, 0, 1, 0);
-    display_onoff_control(lcd, 1, 1, 0);
+    display_onoff_control(lcd, 1, 0, 0);
     entry_mode_set(lcd, 1,0);
         
     ENABLE_TIMER = 1;

@@ -595,8 +595,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 64:     function_set(lcd, 0, 1, 0);
 [e ( _function_set (4 , , , _lcd -> -> 0 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
 "65
-[; ;main.c: 65:     display_onoff_control(lcd, 1, 1, 0);
-[e ( _display_onoff_control (4 , , , _lcd -> -> 1 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 65:     display_onoff_control(lcd, 1, 0, 0);
+[e ( _display_onoff_control (4 , , , _lcd -> -> 1 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "66
 [; ;main.c: 66:     entry_mode_set(lcd, 1,0);
 [e ( _entry_mode_set (3 , , _lcd -> -> 1 `i `uc -> -> 0 `i `uc ]
