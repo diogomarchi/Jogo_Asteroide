@@ -27,6 +27,10 @@ void __interrupt() int_handler(void){
         le_entrada();         
         INTCONbits.TMR0IF = 0;    //limpa flag
     }
+    if(INTCONbits.INT0IF == 1){
+        INTCONbits.INT0IF = 0;
+        Reset();
+    }
 }
 
 void main(void) {
@@ -53,8 +57,10 @@ void main(void) {
     // habilita interrupção global e timer0
     INTCONbits.TMR0IF = 0;    //limpa flag
     INTCONbits.TMR0IE = 1;
+    INTCONbits.INT0IE = 1;
+    INTCONbits.INT0IF = 0;
     INTCONbits.GIE = 1;
-                    
+     
     function_set(lcd, 0, 1, 0);
     display_onoff_control(lcd, 1, 1, 0);
     entry_mode_set(lcd, 1,0);

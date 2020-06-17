@@ -4833,6 +4833,10 @@ void __attribute__((picinterrupt(("")))) int_handler(void){
         le_entrada();
         INTCONbits.TMR0IF = 0;
     }
+    if(INTCONbits.INT0IF == 1){
+        INTCONbits.INT0IF = 0;
+        __asm(" reset");
+    }
 }
 
 void main(void) {
@@ -4859,6 +4863,8 @@ void main(void) {
 
     INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 1;
+    INTCONbits.INT0IE = 1;
+    INTCONbits.INT0IF = 0;
     INTCONbits.GIE = 1;
 
     function_set(lcd, 0, 1, 0);

@@ -49,7 +49,7 @@
 [v _print_mat print_mat `(v  1 e 1 0 ]
 "24 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
 [v _int_handler int_handler `IIH(v  1 e 1 0 ]
-"32
+"36
 [v _main main `(v  1 e 1 0 ]
 "15 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
 [v _gerenciador gerenciador `(v  1 e 1 0 ]
@@ -179,10 +179,10 @@
 [v _op op `uc  1 e 1 0 ]
 [v _x x `uc  1 e 1 0 ]
 [v _y y `uc  1 e 1 0 ]
-"32 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
+"36 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"65
+"71
 } 0
 "15 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
 [v _gerenciador gerenciador `(v  1 e 1 0 ]
@@ -394,7 +394,7 @@
 "24 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\main.c
 [v _int_handler int_handler `IIH(v  1 e 1 0 ]
 {
-"30
+"34
 } 0
 "12 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\keyboard.c
 [v _le_entrada le_entrada `(v  1 e 1 0 ]
