@@ -67,9 +67,9 @@
 [v _finaliza finaliza `(v  1 e 1 0 ]
 "47
 [v _jogar jogar `(v  1 e 1 0 ]
-"126
+"131
 [v _instrucoes instrucoes `(v  1 e 1 0 ]
-"135
+"140
 [v _menu menu `(uc  1 e 1 0 ]
 [s S24 . 1 `uc 1 U 1 0 :1:0 
 `uc 1 D 1 0 :1:1 
@@ -207,7 +207,7 @@
 [v gerenciador@lcd lcd `*.39S31  1 p 2 59 ]
 "25
 } 0
-"135
+"140
 [v _menu menu `(uc  1 e 1 0 ]
 {
 [s S31 . 1 `uc 1 RS 1 0 :1:0 
@@ -217,21 +217,21 @@
 `uc 1 data 1 0 :4:4 
 ]
 [v menu@lcd lcd `*.39S31  1 p 2 25 ]
-"163
+"167
 } 0
 "47
 [v _jogar jogar `(v  1 e 1 0 ]
 {
-"67
+"68
 [v jogar@j j `i  1 a 2 55 ]
-"66
+"67
 [v jogar@i_485 i `i  1 a 2 57 ]
 "50
 [v jogar@bateu bateu `i  1 a 2 53 ]
 "51
-[v jogar@i i `i  1 a 2 51 ]
+[v jogar@i i `i  1 a 2 50 ]
 "49
-[v jogar@score score `uc  1 a 1 50 ]
+[v jogar@score score `uc  1 a 1 52 ]
 [s S31 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
@@ -240,7 +240,7 @@
 ]
 "47
 [v jogar@lcd lcd `*.39S31  1 p 2 40 ]
-"124
+"129
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\time.c
 [v _time time `(o  1 e 8 0 ]
@@ -280,7 +280,7 @@
 [v ___awmod@divisor divisor `i  1 p 2 36 ]
 "34
 } 0
-"126 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
+"131 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\task_manager.c
 [v _instrucoes instrucoes `(v  1 e 1 0 ]
 {
 [s S31 . 1 `uc 1 RS 1 0 :1:0 
@@ -290,7 +290,7 @@
 `uc 1 data 1 0 :4:4 
 ]
 [v instrucoes@lcd lcd `*.39S31  1 p 2 25 ]
-"133
+"138
 } 0
 "38
 [v _finaliza finaliza `(v  1 e 1 0 ]
@@ -322,10 +322,10 @@
 "6
 [v strcpy@d d `*.39uc  1 a 2 6 ]
 "5
-[v strcpy@s s `*.25Cuc  1 a 2 4 ]
+[v strcpy@s s `*.32Cuc  1 a 2 4 ]
 "3
 [v strcpy@dest dest `*.39uc  1 p 2 0 ]
-[v strcpy@src src `*.25Cuc  1 p 2 2 ]
+[v strcpy@src src `*.32Cuc  1 p 2 2 ]
 "9
 } 0
 "199 C:\Users\Diogo\Documents\FACULDADE-MATERIAS\MICROCONTROLADOR\Jogo_Asteroide.X\lcd.c
