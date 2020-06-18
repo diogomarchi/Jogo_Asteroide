@@ -45,41 +45,71 @@ void finaliza(t_display_port *lcd){
 }
 
 void jogar(t_display_port *lcd){
-    srand(time(NULL));
-    char score = 0x31;//1
+    srand(time(NULL));    
     int bateu = 0;
-    int i = 0;
+    int linha_aleatoria = 0;
     
     //tela inicial
-    strcpy(mat_disp[0], "                ");
+    strcpy(mat_disp[0], "     SCORE:     ");
     strcpy(mat_disp[1], "                ");
     strcpy(mat_disp[2], "                ");
     strcpy(mat_disp[3], "                ");
-    mat_disp[0][2] = score;
+    
+    // pontuações iniciais 
+    mat_disp[0][15-1] = 0x30;
+    mat_disp[0][14-1] = 0x30;
+    mat_disp[0][13-1] = 0x30;
+    mat_disp[0][12-1] = 0x30;
+    
     print_mat(lcd); 
     
-    while(!botoes.Esc && bateu == 0){//enquanto nao apertar esc e nao bater, fica no jogo 
+    //enquanto nao apertar esc e nao bater, fica no jogo 
+    while(!botoes.Esc && bateu == 0){
         contador ++;
-        if(contador%10 == 0){//pra nao vir um seguido do outro
-            i = rand()%3;  //cria linha aleatoria pra aparecer o asteroide
-            mat_disp[i+1][15] = '*';//na ultima coluna da linha randomica, cria o asteroide
+        if(contador%20 == 0){//pra nao vir um seguido do outro
+            linha_aleatoria = (rand()%3) + 1 ;  //cria linha aleatoria pra aparecer o asteroide
+            mat_disp[linha_aleatoria][15] = '*';//na ultima coluna da linha randomica, cria o asteroide
         }
-        for(int i = 1; i <= 3; i++){//passa todas as casas 1 para o aldo esquerd
-            for(int j = 0; j < 15; j++)
-                mat_disp[i][j] = mat_disp[i][j+1];
-            mat_disp[i][15] = ' ';
+        if(contador%4 == 0){
+            for(int i = 1; i <= 3; i++){//passa todas as casas 1 para o aldo esquerd
+                for(int j = 0; j < 15; j++)
+                    mat_disp[i][j] = mat_disp[i][j+1];
+                mat_disp[i][15] = ' ';
+            }
+            mat_disp[x][y-1] = ' '; //nave continua no lugar dela
+            mat_disp[x][y] = '>';   //nave continua no lugar dela
         }
-        mat_disp[x][y-1] = ' ';//nave continua no lugar dela
-        mat_disp[x][y] = '>';//nave continua no lugar dela
-        
+                
         if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')//se na coluna zero tiver asteroide, pontuação ++
-            score++;
+        {
+            mat_disp[0][15-1]++;
+            if(mat_disp[0][15-1]==0x3A)
+            {
+                mat_disp[0][15-1] = 0x30;
+                mat_disp[0][14-1]++;
+                
+                if(mat_disp[0][14-1]==0x3A)
+                {
+                    mat_disp[0][14-1] = 0x30;
+                    mat_disp[0][13-1]++;
+                
+                    if(mat_disp[0][13-1]==0x3A)
+                    {
+                        mat_disp[0][13-1] = 0x30;
+                        mat_disp[0][12-1]++;
+                        
+                        if(mat_disp[0][12-1]==0x3A)
+                            mat_disp[0][12-1] = 0x30;
+                    }
+                }
+            }
+        }
         
-        mat_disp[0][2] = score;
+        // printa matriz de elementos apos deslocamento
         print_mat(lcd);
-        
-        
-        if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')//se colidiu
+                
+        //se colidiu
+        if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')
             bateu = 1;
          
         if((botoes.U) && (x > 1)){//se apertou para cima
@@ -88,8 +118,7 @@ void jogar(t_display_port *lcd){
             mat_disp[x][y] = ' ';
             x--; 
             botoes.U = 0;
-            mat_disp[x][y] = '>';
-            //print_mat(lcd);            
+            mat_disp[x][y] = '>';           
         }
         if((botoes.D) && (x < 3)){//se apertou para baixo
             if(mat_disp[x][y] == '>' && mat_disp[x+1][y] == '*')//quando ele clica, e na linha de baixo tem asteroide = bateu
@@ -97,22 +126,19 @@ void jogar(t_display_port *lcd){
             mat_disp[x][y] = ' ';
             x++; 
             botoes.D = 0;
-            mat_disp[x][y] = '>';
-            //print_mat(lcd);            
+            mat_disp[x][y] = '>';            
         }
         if((botoes.R) && (y < 15)){//se apertou para direita
             mat_disp[x][y] = ' ';
             y++; 
             botoes.R = 0;
-            mat_disp[x][y] = '>';
-            //print_mat(lcd);            
+            mat_disp[x][y] = '>';            
         }
         if((botoes.L) && (y > 0)){//se apertou para esquerda
             mat_disp[x][y] = ' ';
             y--; 
             botoes.L = 0;
-            mat_disp[x][y] = '>';
-            //print_mat(lcd);            
+            mat_disp[x][y] = '>';                     
         }
     }
     if(bateu == 1){//se bateu, mostra frase no display
@@ -166,4 +192,5 @@ char menu(t_display_port *lcd){
     
     return op;    
 }
+
 

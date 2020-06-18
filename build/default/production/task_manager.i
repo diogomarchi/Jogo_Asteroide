@@ -4828,9 +4828,108 @@ void jogar(t_display_port *lcd);
 void finaliza(t_display_port *lcd);
 # 9 "task_manager.c" 2
 
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\time.h" 1 3
+# 33 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\time.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 76 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long time_t;
+# 293 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef void * timer_t;
 
 
-unsigned char op = 0,x = 1, y = 0;
+
+
+typedef int clockid_t;
+
+
+
+
+typedef long clock_t;
+# 313 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+struct timespec { time_t tv_sec; long tv_nsec; };
+
+
+
+
+
+typedef int pid_t;
+# 33 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\time.h" 2 3
+
+
+
+
+
+
+
+struct tm {
+ int tm_sec;
+ int tm_min;
+ int tm_hour;
+ int tm_mday;
+ int tm_mon;
+ int tm_year;
+ int tm_wday;
+ int tm_yday;
+ int tm_isdst;
+ long __tm_gmtoff;
+ const char *__tm_zone;
+};
+
+clock_t clock (void);
+time_t time (time_t *);
+double difftime (time_t, time_t);
+time_t mktime (struct tm *);
+size_t strftime (char *restrict, size_t, const char *restrict, const struct tm *restrict);
+struct tm *gmtime (const time_t *);
+struct tm *localtime (const time_t *);
+char *asctime (const struct tm *);
+char *ctime (const time_t *);
+int timespec_get(struct timespec *, int);
+# 73 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\time.h" 3
+size_t strftime_l (char * restrict, size_t, const char * restrict, const struct tm * restrict, locale_t);
+
+struct tm *gmtime_r (const time_t *restrict, struct tm *restrict);
+struct tm *localtime_r (const time_t *restrict, struct tm *restrict);
+char *asctime_r (const struct tm *restrict, char *restrict);
+char *ctime_r (const time_t *, char *);
+
+void tzset (void);
+
+struct itimerspec {
+ struct timespec it_interval;
+ struct timespec it_value;
+};
+# 102 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\time.h" 3
+int nanosleep (const struct timespec *, struct timespec *);
+int clock_getres (clockid_t, struct timespec *);
+int clock_gettime (clockid_t, struct timespec *);
+int clock_settime (clockid_t, const struct timespec *);
+int clock_nanosleep (clockid_t, int, const struct timespec *, struct timespec *);
+int clock_getcpuclockid (pid_t, clockid_t *);
+
+struct sigevent;
+int timer_create (clockid_t, struct sigevent *restrict, timer_t *restrict);
+int timer_delete (timer_t);
+int timer_settime (timer_t, int, const struct itimerspec *restrict, struct itimerspec *restrict);
+int timer_gettime (timer_t, struct itimerspec *);
+int timer_getoverrun (timer_t);
+
+extern char *tzname[2];
+
+
+
+
+
+char *strptime (const char *restrict, const char *restrict, struct tm *restrict);
+extern int daylight;
+extern long timezone;
+extern int getdate_err;
+struct tm *getdate (const char *);
+# 10 "task_manager.c" 2
+
+
+
+unsigned char op = 0,x = 1, y = 0, contador = 0;
 
 
 void gerenciador(t_display_port *lcd){
@@ -4856,59 +4955,113 @@ void creditos(t_display_port *lcd){
 }
 
 void finaliza(t_display_port *lcd){
-    __asm(" sleep");
     strcpy(mat_disp[0], "HIBERNANDO.....");
     strcpy(mat_disp[1], "               ");
     strcpy(mat_disp[2], "               ");
     strcpy(mat_disp[3], "               ");
     print_mat(lcd);
-    while(!botoes.Esc);
+    __asm(" sleep");
 }
 
 void jogar(t_display_port *lcd){
-    int score = 0;
+    srand(time(((void*)0)));
     int bateu = 0;
+    int linha_aleatoria = 0;
 
 
-    strcpy(mat_disp[0], "       SCORE:   ");
+    strcpy(mat_disp[0], "      SCORE:    ");
     strcpy(mat_disp[1], "                ");
     strcpy(mat_disp[2], "                ");
     strcpy(mat_disp[3], "                ");
-    mat_disp[1][0] = '>';
-    mat_disp[1][10] = '*';
-    mat_disp[2][5] = '*';
+
+
+    mat_disp[0][15] = 0x30;
+    mat_disp[0][14] = 0x30;
+    mat_disp[0][13] = 0x30;
+    mat_disp[0][12] = 0x30;
+
     print_mat(lcd);
 
     while(!botoes.Esc && bateu == 0){
-        if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')
-            bateu = 1;
+        contador ++;
+        if(contador%20 == 0){
+            linha_aleatoria = (rand()%3) + 1 ;
+            mat_disp[linha_aleatoria][15] = '*';
+        }
+        if(contador%4 == 0){
+            for(int i = 1; i <= 3; i++){
+                for(int j = 0; j < 15; j++)
+                    mat_disp[i][j] = mat_disp[i][j+1];
+                mat_disp[i][15] = ' ';
+            }
+            mat_disp[x][y-1] = ' ';
+            mat_disp[x][y] = '>';
+        }
+
+
+        if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')
+        {
+            mat_disp[0][15]++;
+            if(mat_disp[0][15]==0x40)
+            {
+                mat_disp[0][15] = 0x30;
+                mat_disp[0][14]++;
+
+                if(mat_disp[0][14]==0x40)
+                {
+                    mat_disp[0][14] = 0x30;
+                    mat_disp[0][13]++;
+
+                    if(mat_disp[0][13]==0x40)
+                    {
+                        mat_disp[0][13] = 0x30;
+                        mat_disp[0][12]++;
+
+                        if(mat_disp[0][12]==0x40)
+                            mat_disp[0][12] = 0x30;
+                    }
+                }
+            }
+        }
+
+
+        print_mat(lcd);
+
+
+
+
+
         if((botoes.U) && (x > 1)){
+            if(mat_disp[x][y] == '>' && mat_disp[x-1][y] == '*')
+                bateu = 1;
             mat_disp[x][y] = ' ';
             x--;
             botoes.U = 0;
             mat_disp[x][y] = '>';
-            print_mat(lcd);
+
         }
         if((botoes.D) && (x < 3)){
+            if(mat_disp[x][y] == '>' && mat_disp[x+1][y] == '*')
+                bateu = 1;
             mat_disp[x][y] = ' ';
             x++;
             botoes.D = 0;
             mat_disp[x][y] = '>';
-            print_mat(lcd);
+
         }
         if((botoes.R) && (y < 15)){
             mat_disp[x][y] = ' ';
             y++;
             botoes.R = 0;
             mat_disp[x][y] = '>';
-            print_mat(lcd);
+
         }
         if((botoes.L) && (y > 0)){
             mat_disp[x][y] = ' ';
             y--;
             botoes.L = 0;
             mat_disp[x][y] = '>';
-            print_mat(lcd);
+
         }
     }
     if(bateu == 1){
@@ -4922,6 +5075,7 @@ void jogar(t_display_port *lcd){
 
     x = 1;
     y = 0;
+    contador = 0;
 }
 
 void instrucoes(t_display_port *lcd){
@@ -4942,7 +5096,6 @@ char menu(t_display_port *lcd){
 
     mat_disp[op][15] = '<';
     print_mat(lcd);
-
     while(!botoes.Enter){
         if((botoes.U) && (op > 0)){
             mat_disp[op][15] = '.';

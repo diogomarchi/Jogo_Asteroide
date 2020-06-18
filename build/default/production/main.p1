@@ -517,7 +517,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _int_handler ]
 [f ]
 "25
-[; ;main.c: 25:      if(INTCONbits.TMR0IF == 1){
+[; ;main.c: 25:     if(INTCONbits.TMR0IF == 1){
 [e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 287  ]
 {
 "26
@@ -534,59 +534,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 287 ]
 "30
-[; ;main.c: 30: }
+[; ;main.c: 30:     if(INTCONbits.INT0IF == 1){
+[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 288  ]
+{
+"31
+[; ;main.c: 31:         INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"32
+[; ;main.c: 32:         __asm(" reset");
+[; <"  reset ;# ">
+"33
+[; ;main.c: 33:     }
+}
+[e :U 288 ]
+"34
+[; ;main.c: 34: }
 [e :UE 286 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"32
-[; ;main.c: 32: void main(void) {
+"36
+[; ;main.c: 36: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"34
-[; ;main.c: 34:     ADCON1 = 0x0F;
+"38
+[; ;main.c: 38:     ADCON1 = 0x0F;
 [e = _ADCON1 -> -> 15 `i `uc ]
-"39
-[; ;main.c: 39:     TRISB = 0x0F;
+"43
+[; ;main.c: 43:     TRISB = 0x0F;
 [e = _TRISB -> -> 15 `i `uc ]
-"42
-[; ;main.c: 42:     PORTB = 0x00;
+"46
+[; ;main.c: 46:     PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"45
-[; ;main.c: 45:     TRISD = 0x00;
+"49
+[; ;main.c: 49:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"48
-[; ;main.c: 48:     T0CON = 0x47;
+"52
+[; ;main.c: 52:     T0CON = 0x47;
 [e = _T0CON -> -> 71 `i `uc ]
-"51
-[; ;main.c: 51:     TMR0L = 0x63;
-[e = _TMR0L -> -> 99 `i `uc ]
-"54
-[; ;main.c: 54:     INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "55
-[; ;main.c: 55:     INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"56
-[; ;main.c: 56:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;main.c: 55:     TMR0L = 0x63;
+[e = _TMR0L -> -> 99 `i `uc ]
 "58
-[; ;main.c: 58:     function_set(lcd, 0, 1, 0);
-[e ( _function_set (4 , , , _lcd -> -> 0 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 58:     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "59
-[; ;main.c: 59:     display_onoff_control(lcd, 1, 1, 0);
-[e ( _display_onoff_control (4 , , , _lcd -> -> 1 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 59:     INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
 "60
-[; ;main.c: 60:     entry_mode_set(lcd, 1,0);
-[e ( _entry_mode_set (3 , , _lcd -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 60:     INTCONbits.INT0IE = 1;
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+"61
+[; ;main.c: 61:     INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "62
-[; ;main.c: 62:     T0CONbits.TMR0ON = 1;
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 62:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "64
-[; ;main.c: 64:     gerenciador(lcd);
-[e ( _gerenciador (1 _lcd ]
+[; ;main.c: 64:     function_set(lcd, 0, 1, 0);
+[e ( _function_set (4 , , , _lcd -> -> 0 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
 "65
-[; ;main.c: 65: }
-[e :UE 288 ]
+[; ;main.c: 65:     display_onoff_control(lcd, 1, 0, 0);
+[e ( _display_onoff_control (4 , , , _lcd -> -> 1 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"66
+[; ;main.c: 66:     entry_mode_set(lcd, 1,0);
+[e ( _entry_mode_set (3 , , _lcd -> -> 1 `i `uc -> -> 0 `i `uc ]
+"68
+[; ;main.c: 68:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"70
+[; ;main.c: 70:     gerenciador(lcd);
+[e ( _gerenciador (1 _lcd ]
+"71
+[; ;main.c: 71: }
+[e :UE 289 ]
 }

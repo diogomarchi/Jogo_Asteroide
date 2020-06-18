@@ -4828,10 +4828,14 @@ void finaliza(t_display_port *lcd);
 t_display_port *lcd = &PORTD;
 
 void __attribute__((picinterrupt(("")))) int_handler(void){
-     if(INTCONbits.TMR0IF == 1){
+    if(INTCONbits.TMR0IF == 1){
         TMR0L = 0x63;
         le_entrada();
         INTCONbits.TMR0IF = 0;
+    }
+    if(INTCONbits.INT0IF == 1){
+        INTCONbits.INT0IF = 0;
+        __asm(" reset");
     }
 }
 
@@ -4859,10 +4863,12 @@ void main(void) {
 
     INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 1;
+    INTCONbits.INT0IE = 1;
+    INTCONbits.INT0IF = 0;
     INTCONbits.GIE = 1;
 
     function_set(lcd, 0, 1, 0);
-    display_onoff_control(lcd, 1, 1, 0);
+    display_onoff_control(lcd, 1, 0, 0);
     entry_mode_set(lcd, 1,0);
 
     T0CONbits.TMR0ON = 1;

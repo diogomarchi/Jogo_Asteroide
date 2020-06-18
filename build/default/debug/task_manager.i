@@ -4965,40 +4965,71 @@ void finaliza(t_display_port *lcd){
 
 void jogar(t_display_port *lcd){
     srand(time(((void*)0)));
-    char score = 0x31;
     int bateu = 0;
-    int i = 0;
+    int linha_aleatoria = 0;
 
 
-    strcpy(mat_disp[0], "                ");
+    strcpy(mat_disp[0], "     SCORE:     ");
     strcpy(mat_disp[1], "                ");
     strcpy(mat_disp[2], "                ");
     strcpy(mat_disp[3], "                ");
-    mat_disp[0][2] = score;
+
+
+    mat_disp[0][15-1] = 0x30;
+    mat_disp[0][14-1] = 0x30;
+    mat_disp[0][13-1] = 0x30;
+    mat_disp[0][12-1] = 0x30;
+
     print_mat(lcd);
 
     while(!botoes.Esc && bateu == 0){
         contador ++;
-        if(contador%10 == 0){
-            i = rand()%3;
-            mat_disp[i+1][15] = '*';
+        if(contador%20 == 0){
+            linha_aleatoria = (rand()%3) + 1 ;
+            mat_disp[linha_aleatoria][15] = '*';
         }
-        for(int i = 1; i <= 3; i++){
-            for(int j = 0; j < 15; j++)
-                mat_disp[i][j] = mat_disp[i][j+1];
-            mat_disp[i][15] = ' ';
+        if(contador%4 == 0){
+            for(int i = 1; i <= 3; i++){
+                for(int j = 0; j < 15; j++)
+                    mat_disp[i][j] = mat_disp[i][j+1];
+                mat_disp[i][15] = ' ';
+            }
+            mat_disp[x][y-1] = ' ';
+            mat_disp[x][y] = '>';
         }
-        mat_disp[x][y-1] = ' ';
-        mat_disp[x][y] = '>';
-        if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')
-            score++;
 
-        mat_disp[0][2] = score;
+
+        if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')
+        {
+            mat_disp[0][15-1]++;
+            if(mat_disp[0][15-1]==0x3A)
+            {
+                mat_disp[0][15-1] = 0x30;
+                mat_disp[0][14-1]++;
+
+                if(mat_disp[0][14-1]==0x3A)
+                {
+                    mat_disp[0][14-1] = 0x30;
+                    mat_disp[0][13-1]++;
+
+                    if(mat_disp[0][13-1]==0x3A)
+                    {
+                        mat_disp[0][13-1] = 0x30;
+                        mat_disp[0][12-1]++;
+
+                        if(mat_disp[0][12-1]==0x3A)
+                            mat_disp[0][12-1] = 0x30;
+                    }
+                }
+            }
+        }
+
+
         print_mat(lcd);
 
 
-        if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')
-            bateu = 1;
+
+
 
         if((botoes.U) && (x > 1)){
             if(mat_disp[x][y] == '>' && mat_disp[x-1][y] == '*')
