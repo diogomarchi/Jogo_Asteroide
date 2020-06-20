@@ -66,11 +66,11 @@ void jogar(t_display_port *lcd){
     //enquanto nao apertar esc e nao bater, fica no jogo 
     while(!botoes.Esc && bateu == 0){
         contador ++;
-        if(contador%20 == 0){//pra nao vir um seguido do outro
+        if(contador%10 == 0){//pra nao vir um seguido do outro
             linha_aleatoria = (rand()%3) + 1 ;  //cria linha aleatoria pra aparecer o asteroide
             mat_disp[linha_aleatoria][15] = '*';//na ultima coluna da linha randomica, cria o asteroide
         }
-        if(contador%4 == 0){
+        //if(contador%4 == 0){
             for(int i = 1; i <= 3; i++){//passa todas as casas 1 para o aldo esquerd
                 for(int j = 0; j < 15; j++)
                     mat_disp[i][j] = mat_disp[i][j+1];
@@ -78,7 +78,7 @@ void jogar(t_display_port *lcd){
             }
             mat_disp[x][y-1] = ' '; //nave continua no lugar dela
             mat_disp[x][y] = '>';   //nave continua no lugar dela
-        }
+        //}
                 
         if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')//se na coluna zero tiver asteroide, pontuação ++
         {
@@ -141,11 +141,17 @@ void jogar(t_display_port *lcd){
             mat_disp[x][y] = '>';                     
         }
     }
+    
+    char pont4 = mat_disp[0][14], pont3 = mat_disp[0][13], pont2 = mat_disp[0][12], pont1 = mat_disp[0][11];
     if(bateu == 1){//se bateu, mostra frase no display
             strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
-            strcpy(mat_disp[1], "APERTE ESC      ");
-            strcpy(mat_disp[2], "PARA SAIR       ");
-            strcpy(mat_disp[3], "                ");
+            strcpy(mat_disp[1], "SCORE:          ");
+            strcpy(mat_disp[2], "APERTE ESC      ");
+            strcpy(mat_disp[3], "PARA SAIR       ");
+            mat_disp[1][6] = pont1;
+            mat_disp[1][7] = pont2;
+            mat_disp[1][8] = pont3;
+            mat_disp[1][9] = pont4;
             print_mat(lcd);
         while(!botoes.Esc);
     }

@@ -4982,13 +4982,14 @@ void jogar(t_display_port *lcd){
 
     print_mat(lcd);
 
+
     while(!botoes.Esc && bateu == 0){
         contador ++;
-        if(contador%20 == 0){
+        if(contador%4 == 0){
             linha_aleatoria = (rand()%3) + 1 ;
             mat_disp[linha_aleatoria][15] = '*';
         }
-        if(contador%4 == 0){
+
             for(int i = 1; i <= 3; i++){
                 for(int j = 0; j < 15; j++)
                     mat_disp[i][j] = mat_disp[i][j+1];
@@ -4996,7 +4997,6 @@ void jogar(t_display_port *lcd){
             }
             mat_disp[x][y-1] = ' ';
             mat_disp[x][y] = '>';
-        }
 
 
         if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')
@@ -5028,8 +5028,8 @@ void jogar(t_display_port *lcd){
         print_mat(lcd);
 
 
-
-
+        if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')
+            bateu = 1;
 
         if((botoes.U) && (x > 1)){
             if(mat_disp[x][y] == '>' && mat_disp[x-1][y] == '*')
@@ -5038,7 +5038,6 @@ void jogar(t_display_port *lcd){
             x--;
             botoes.U = 0;
             mat_disp[x][y] = '>';
-
         }
         if((botoes.D) && (x < 3)){
             if(mat_disp[x][y] == '>' && mat_disp[x+1][y] == '*')
@@ -5047,28 +5046,31 @@ void jogar(t_display_port *lcd){
             x++;
             botoes.D = 0;
             mat_disp[x][y] = '>';
-
         }
         if((botoes.R) && (y < 15)){
             mat_disp[x][y] = ' ';
             y++;
             botoes.R = 0;
             mat_disp[x][y] = '>';
-
         }
         if((botoes.L) && (y > 0)){
             mat_disp[x][y] = ' ';
             y--;
             botoes.L = 0;
             mat_disp[x][y] = '>';
-
         }
     }
+
+    char pont4 = mat_disp[0][14], pont3 = mat_disp[0][13], pont2 = mat_disp[0][12], pont1 = mat_disp[0][11];
     if(bateu == 1){
             strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
-            strcpy(mat_disp[1], "APERTE ESC      ");
-            strcpy(mat_disp[2], "PARA SAIR       ");
-            strcpy(mat_disp[3], "                ");
+            strcpy(mat_disp[1], "SCORE:          ");
+            strcpy(mat_disp[2], "APERTE ESC      ");
+            strcpy(mat_disp[3], "PARA SAIR       ");
+            mat_disp[1][6] = pont1;
+            mat_disp[1][7] = pont2;
+            mat_disp[1][8] = pont3;
+            mat_disp[1][9] = pont4;
             print_mat(lcd);
         while(!botoes.Esc);
     }
