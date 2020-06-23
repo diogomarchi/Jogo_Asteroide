@@ -4931,7 +4931,6 @@ struct tm *getdate (const char *);
 
 unsigned char op = 0,x = 1, y = 0, contador = 0;
 
-
 void gerenciador(t_display_port *lcd){
     while(1){
         menu(lcd);
@@ -4943,9 +4942,7 @@ void gerenciador(t_display_port *lcd){
     }
 }
 
-
 void creditos(t_display_port *lcd){
-
     strcpy(mat_disp[0], "1.DIOGO MARCHI.");
     strcpy(mat_disp[1], "2.GEORGE NARDES");
     strcpy(mat_disp[2], "               ");
@@ -4963,10 +4960,48 @@ void finaliza(t_display_port *lcd){
     __asm(" sleep");
 }
 
+void instrucoes(t_display_port *lcd){
+    strcpy(mat_disp[0], "1.SETAS MOVEM A");
+    strcpy(mat_disp[1], "NAVE           ");
+    strcpy(mat_disp[2], "2.ESCAPE VOLTA ");
+    strcpy(mat_disp[3], "MENU           ");
+    print_mat(lcd);
+    while(!botoes.Esc);
+}
+
+char menu(t_display_port *lcd){
+    strcpy(mat_disp[0], "1.JOGAR.........");
+    strcpy(mat_disp[1], "2.INSTRUCOES....");
+    strcpy(mat_disp[2], "3.CREDITOS......");
+    strcpy(mat_disp[3], "4.FINALIZAR.....");
+
+
+    mat_disp[op][15] = '<';
+    print_mat(lcd);
+    while(!botoes.Enter){
+        if((botoes.U) && (op > 0)){
+            mat_disp[op][15] = '.';
+            op--;
+            botoes.U = 0;
+            mat_disp[op][15] = '<';
+            print_mat(lcd);
+        }
+        if((botoes.D) && (op < 3)){
+            mat_disp[op][15] = '.';
+            op++;
+            botoes.D = 0;
+            mat_disp[op][15] = '<';
+            print_mat(lcd);
+        }
+    }
+    return op;
+}
+
 void jogar(t_display_port *lcd){
     srand(time(((void*)0)));
-    int bateu = 0;
+    int bateu = 0, qtd_asteroide = 20, velocidade = 4;
     int linha_aleatoria = 0;
+    int nivel2 = 1;
 
 
     strcpy(mat_disp[0], "     SCORE:     ");
@@ -4985,11 +5020,11 @@ void jogar(t_display_port *lcd){
 
     while(!botoes.Esc && bateu == 0){
         contador ++;
-        if(contador%4 == 0){
+        if(contador%qtd_asteroide == 0){
             linha_aleatoria = (rand()%3) + 1 ;
             mat_disp[linha_aleatoria][15] = '*';
         }
-
+        if(contador%velocidade == 0){
             for(int i = 1; i <= 3; i++){
                 for(int j = 0; j < 15; j++)
                     mat_disp[i][j] = mat_disp[i][j+1];
@@ -4998,27 +5033,27 @@ void jogar(t_display_port *lcd){
             mat_disp[x][y-1] = ' ';
             mat_disp[x][y] = '>';
 
-
-        if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')
-        {
-            mat_disp[0][15-1]++;
-            if(mat_disp[0][15-1]==0x3A)
+            if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')
             {
-                mat_disp[0][15-1] = 0x30;
-                mat_disp[0][14-1]++;
-
-                if(mat_disp[0][14-1]==0x3A)
+                mat_disp[0][15-1]++;
+                if(mat_disp[0][15-1]==0x3A)
                 {
-                    mat_disp[0][14-1] = 0x30;
-                    mat_disp[0][13-1]++;
+                    mat_disp[0][15-1] = 0x30;
+                    mat_disp[0][14-1]++;
 
-                    if(mat_disp[0][13-1]==0x3A)
+                    if(mat_disp[0][14-1]==0x3A)
                     {
-                        mat_disp[0][13-1] = 0x30;
-                        mat_disp[0][12-1]++;
+                        mat_disp[0][14-1] = 0x30;
+                        mat_disp[0][13-1]++;
 
-                        if(mat_disp[0][12-1]==0x3A)
-                            mat_disp[0][12-1] = 0x30;
+                        if(mat_disp[0][13-1]==0x3A)
+                        {
+                            mat_disp[0][13-1] = 0x30;
+                            mat_disp[0][12-1]++;
+
+                            if(mat_disp[0][12-1]==0x3A)
+                                mat_disp[0][12-1] = 0x30;
+                        }
                     }
                 }
             }
@@ -5026,6 +5061,20 @@ void jogar(t_display_port *lcd){
 
 
         print_mat(lcd);
+
+        if(mat_disp[0][14-1] == 0x31 && mat_disp[0][15-1] == 0x30 && nivel2 == 1){
+            strcpy(mat_disp[1], "   NIVEL 2      ");
+            strcpy(mat_disp[2], "                ");
+            strcpy(mat_disp[3], "                ");
+            print_mat(lcd);
+            nivel2 = 0;
+            int cont = 0;
+            while(cont<50){
+                cont++;
+            }
+            velocidade = 2;
+            qtd_asteroide = 5;
+        }
 
 
         if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')
@@ -5078,42 +5127,4 @@ void jogar(t_display_port *lcd){
     x = 1;
     y = 0;
     contador = 0;
-}
-
-void instrucoes(t_display_port *lcd){
-    strcpy(mat_disp[0], "1.SETAS MOVEM A");
-    strcpy(mat_disp[1], "NAVE           ");
-    strcpy(mat_disp[2], "2.ESCAPE VOLTA ");
-    strcpy(mat_disp[3], "MENU           ");
-    print_mat(lcd);
-    while(!botoes.Esc);
-}
-
-char menu(t_display_port *lcd){
-    strcpy(mat_disp[0], "1.JOGAR.........");
-    strcpy(mat_disp[1], "2.INSTRUCOES....");
-    strcpy(mat_disp[2], "3.CREDITOS......");
-    strcpy(mat_disp[3], "4.FINALIZAR.....");
-
-
-    mat_disp[op][15] = '<';
-    print_mat(lcd);
-    while(!botoes.Enter){
-        if((botoes.U) && (op > 0)){
-            mat_disp[op][15] = '.';
-            op--;
-            botoes.U = 0;
-            mat_disp[op][15] = '<';
-            print_mat(lcd);
-        }
-        if((botoes.D) && (op < 3)){
-            mat_disp[op][15] = '.';
-            op++;
-            botoes.D = 0;
-            mat_disp[op][15] = '<';
-            print_mat(lcd);
-        }
-    }
-
-    return op;
 }
