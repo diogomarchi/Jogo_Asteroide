@@ -5001,7 +5001,7 @@ void jogar(t_display_port *lcd){
     srand(time(((void*)0)));
     int bateu = 0, qtd_asteroide = 20, velocidade = 4;
     int linha_aleatoria = 0;
-    int nivel2 = 1;
+    int nivel2 = 1, nivel3 = 1;
 
 
     strcpy(mat_disp[0], "     SCORE:     ");
@@ -5067,12 +5067,24 @@ void jogar(t_display_port *lcd){
             strcpy(mat_disp[2], "                ");
             strcpy(mat_disp[3], "                ");
             print_mat(lcd);
+
+            _delay((unsigned long)((2000)*(16000000/4000.0)));
+            strcpy(mat_disp[1], "                ");
             nivel2 = 0;
-            int cont = 0;
-            while(cont<50){
-                cont++;
-            }
             velocidade = 2;
+            qtd_asteroide = 15;
+        }
+
+        if(mat_disp[0][14-1] == 0x33 && mat_disp[0][15-1] == 0x30 && nivel3 == 1){
+            strcpy(mat_disp[1], "   NIVEL 3      ");
+            strcpy(mat_disp[2], "                ");
+            strcpy(mat_disp[3], "                ");
+            print_mat(lcd);
+
+            _delay((unsigned long)((2000)*(16000000/4000.0)));
+            strcpy(mat_disp[1], "                ");
+            nivel3 = 0;
+            velocidade = 1;
             qtd_asteroide = 5;
         }
 

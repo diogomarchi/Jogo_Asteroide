@@ -226,22 +226,20 @@
 [v jogar@j j `i  1 a 2 66 ]
 "109
 [v jogar@i i `i  1 a 2 68 ]
-"152
-[v jogar@cont cont `i  1 a 2 58 ]
 "83
 [v jogar@bateu bateu `i  1 a 2 64 ]
+[v jogar@velocidade velocidade `i  1 a 2 62 ]
+[v jogar@qtd_asteroide qtd_asteroide `i  1 a 2 60 ]
 "85
-[v jogar@nivel2 nivel2 `i  1 a 2 56 ]
+[v jogar@nivel3 nivel3 `i  1 a 2 54 ]
+[v jogar@nivel2 nivel2 `i  1 a 2 52 ]
 "84
-[v jogar@linha_aleatoria linha_aleatoria `i  1 a 2 54 ]
-"83
-[v jogar@velocidade velocidade `i  1 a 2 52 ]
-[v jogar@qtd_asteroide qtd_asteroide `i  1 a 2 50 ]
-"194
-[v jogar@pont1 pont1 `uc  1 a 1 63 ]
-[v jogar@pont2 pont2 `uc  1 a 1 62 ]
-[v jogar@pont3 pont3 `uc  1 a 1 61 ]
-[v jogar@pont4 pont4 `uc  1 a 1 60 ]
+[v jogar@linha_aleatoria linha_aleatoria `i  1 a 2 50 ]
+"206
+[v jogar@pont1 pont1 `uc  1 a 1 59 ]
+[v jogar@pont2 pont2 `uc  1 a 1 58 ]
+[v jogar@pont3 pont3 `uc  1 a 1 57 ]
+[v jogar@pont4 pont4 `uc  1 a 1 56 ]
 [s S31 . 1 `uc 1 RS 1 0 :1:0 
 `uc 1 R_W 1 0 :1:1 
 `uc 1 E 1 0 :1:2 
@@ -250,7 +248,7 @@
 ]
 "81
 [v jogar@lcd lcd `*.39S31  1 p 2 40 ]
-"211
+"223
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\time.c
 [v _time time `(o  1 e 8 0 ]

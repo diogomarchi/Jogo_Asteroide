@@ -82,7 +82,7 @@ void jogar(t_display_port *lcd){
     srand(time(NULL));    
     int bateu = 0, qtd_asteroide = 20, velocidade = 4;
     int linha_aleatoria = 0;
-    int nivel2 = 1;
+    int nivel2 = 1, nivel3 = 1;
     
     //tela inicial
     strcpy(mat_disp[0], "     SCORE:     ");
@@ -143,19 +143,30 @@ void jogar(t_display_port *lcd){
         // printa matriz de elementos apos deslocamento
         print_mat(lcd); 
         
-        if(mat_disp[0][14-1] == 0x31 && mat_disp[0][15-1] == 0x30 && nivel2 == 1){//se pontuação maior que 10, aumenta velocidade e quantidade de asteroides
+        if(mat_disp[0][14-1] == 0x31 && mat_disp[0][15-1] == 0x30 && nivel2 == 1){//se pontuação e igual a 10, aumenta velocidade e quantidade de asteroides
             strcpy(mat_disp[1], "   NIVEL 2      ");
             strcpy(mat_disp[2], "                ");
             strcpy(mat_disp[3], "                ");
             print_mat(lcd);
-            nivel2 = 0;
-            int cont = 0;
-            while(cont<50){//espera um pouco
-                cont++;
-            }
+            
+            __delay_ms(2000);
             strcpy(mat_disp[1], "                ");
+            nivel2 = 0;
             velocidade = 2;
             qtd_asteroide = 15;
+        }
+        
+        if(mat_disp[0][14-1] == 0x33 && mat_disp[0][15-1] == 0x30 && nivel3 == 1){//se pontuação e igual 30, aumenta velocidade e quantidade de asteroides
+            strcpy(mat_disp[1], "   NIVEL 3      ");
+            strcpy(mat_disp[2], "                ");
+            strcpy(mat_disp[3], "                ");
+            print_mat(lcd);
+            
+            __delay_ms(2000);
+            strcpy(mat_disp[1], "                ");
+            nivel3 = 0;
+            velocidade = 1;
+            qtd_asteroide = 4;
         }
                 
         //se colidiu

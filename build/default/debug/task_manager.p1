@@ -37,6 +37,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdlib.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdlib.h: 39: int rand (void);
 [v _rand `(i ~T0 @X0 0 ef ]
+[v F2518 `(v ~T0 @X0 1 tf1`ul ]
+"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v __delay `JF2518 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -738,9 +742,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _linha_aleatoria `i ~T0 @X0 1 a ]
 [e = _linha_aleatoria -> 0 `i ]
 "85
-[; ;task_manager.c: 85:     int nivel2 = 1;
+[; ;task_manager.c: 85:     int nivel2 = 1, nivel3 = 1;
 [v _nivel2 `i ~T0 @X0 1 a ]
 [e = _nivel2 -> 1 `i ]
+[v _nivel3 `i ~T0 @X0 1 a ]
+[e = _nivel3 -> 1 `i ]
 "88
 [; ;task_manager.c: 88:     strcpy(mat_disp[0], "     SCORE:     ");
 [e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 17C ]
@@ -925,150 +931,171 @@ Version 4.0 HI-TECH Software Intermediate Code
 "150
 [; ;task_manager.c: 150:             print_mat(lcd);
 [e ( _print_mat (1 _lcd ]
-"151
-[; ;task_manager.c: 151:             nivel2 = 0;
-[e = _nivel2 -> 0 `i ]
 "152
-[; ;task_manager.c: 152:             int cont = 0;
-[v _cont `i ~T0 @X0 1 a ]
-[e = _cont -> 0 `i ]
+[; ;task_manager.c: 152:             _delay((unsigned long)((2000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "153
-[; ;task_manager.c: 153:             while(cont<50){
-[e $U 334  ]
-[e :U 335 ]
-{
+[; ;task_manager.c: 153:             strcpy(mat_disp[1], "                ");
+[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 24C ]
 "154
-[; ;task_manager.c: 154:                 cont++;
-[e ++ _cont -> 1 `i ]
+[; ;task_manager.c: 154:             nivel2 = 0;
+[e = _nivel2 -> 0 `i ]
 "155
-[; ;task_manager.c: 155:             }
-}
-[e :U 334 ]
-"153
-[; ;task_manager.c: 153:             while(cont<50){
-[e $ < _cont -> 50 `i 335  ]
-[e :U 336 ]
-"156
-[; ;task_manager.c: 156:             velocidade = 2;
+[; ;task_manager.c: 155:             velocidade = 2;
 [e = _velocidade -> 2 `i ]
+"156
+[; ;task_manager.c: 156:             qtd_asteroide = 15;
+[e = _qtd_asteroide -> 15 `i ]
 "157
-[; ;task_manager.c: 157:             qtd_asteroide = 5;
-[e = _qtd_asteroide -> 5 `i ]
-"158
-[; ;task_manager.c: 158:         }
+[; ;task_manager.c: 157:         }
 }
 [e :U 333 ]
+"159
+[; ;task_manager.c: 159:         if(mat_disp[0][14-1] == 0x33 && mat_disp[0][15-1] == 0x30 && nivel3 == 1){
+[e $ ! && && == -> *U + &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> - -> 14 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `i -> 51 `i == -> *U + &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> - -> 15 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `i -> 48 `i == _nivel3 -> 1 `i 334  ]
+{
+"160
+[; ;task_manager.c: 160:             strcpy(mat_disp[1], "   NIVEL 3      ");
+[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 25C ]
 "161
-[; ;task_manager.c: 161:         if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')
-[e $ ! && == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 62 `ui == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> + -> _y `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 42 `ui 337  ]
+[; ;task_manager.c: 161:             strcpy(mat_disp[2], "                ");
+[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 26C ]
 "162
-[; ;task_manager.c: 162:             bateu = 1;
+[; ;task_manager.c: 162:             strcpy(mat_disp[3], "                ");
+[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 27C ]
+"163
+[; ;task_manager.c: 163:             print_mat(lcd);
+[e ( _print_mat (1 _lcd ]
+"165
+[; ;task_manager.c: 165:             _delay((unsigned long)((2000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"166
+[; ;task_manager.c: 166:             strcpy(mat_disp[1], "                ");
+[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 28C ]
+"167
+[; ;task_manager.c: 167:             nivel3 = 0;
+[e = _nivel3 -> 0 `i ]
+"168
+[; ;task_manager.c: 168:             velocidade = 1;
+[e = _velocidade -> 1 `i ]
+"169
+[; ;task_manager.c: 169:             qtd_asteroide = 5;
+[e = _qtd_asteroide -> 5 `i ]
+"170
+[; ;task_manager.c: 170:         }
+}
+[e :U 334 ]
+"173
+[; ;task_manager.c: 173:         if(mat_disp[x][y] == '>' && mat_disp[x][y+1] == '*')
+[e $ ! && == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 62 `ui == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> + -> _y `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 42 `ui 335  ]
+"174
+[; ;task_manager.c: 174:             bateu = 1;
+[e = _bateu -> 1 `i ]
+[e :U 335 ]
+"176
+[; ;task_manager.c: 176:         if((botoes.U) && (x > 1)){
+[e $ ! && != -> . _botoes 0 `i -> 0 `i > -> _x `i -> 1 `i 336  ]
+{
+"177
+[; ;task_manager.c: 177:             if(mat_disp[x][y] == '>' && mat_disp[x-1][y] == '*')
+[e $ ! && == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 62 `ui == -> *U + &U *U + &U _mat_disp * -> -> - -> _x `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> -> - -> _x `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 42 `ui 337  ]
+"178
+[; ;task_manager.c: 178:                 bateu = 1;
 [e = _bateu -> 1 `i ]
 [e :U 337 ]
-"164
-[; ;task_manager.c: 164:         if((botoes.U) && (x > 1)){
-[e $ ! && != -> . _botoes 0 `i -> 0 `i > -> _x `i -> 1 `i 338  ]
+"179
+[; ;task_manager.c: 179:             mat_disp[x][y] = ' ';
+[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 32 `ui `uc ]
+"180
+[; ;task_manager.c: 180:             x--;
+[e -- _x -> -> 1 `i `uc ]
+"181
+[; ;task_manager.c: 181:             botoes.U = 0;
+[e = . _botoes 0 -> -> 0 `i `uc ]
+"182
+[; ;task_manager.c: 182:             mat_disp[x][y] = '>';
+[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 62 `ui `uc ]
+"183
+[; ;task_manager.c: 183:         }
+}
+[e :U 336 ]
+"184
+[; ;task_manager.c: 184:         if((botoes.D) && (x < 3)){
+[e $ ! && != -> . _botoes 1 `i -> 0 `i < -> _x `i -> 3 `i 338  ]
 {
-"165
-[; ;task_manager.c: 165:             if(mat_disp[x][y] == '>' && mat_disp[x-1][y] == '*')
-[e $ ! && == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 62 `ui == -> *U + &U *U + &U _mat_disp * -> -> - -> _x `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> -> - -> _x `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 42 `ui 339  ]
-"166
-[; ;task_manager.c: 166:                 bateu = 1;
+"185
+[; ;task_manager.c: 185:             if(mat_disp[x][y] == '>' && mat_disp[x+1][y] == '*')
+[e $ ! && == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 62 `ui == -> *U + &U *U + &U _mat_disp * -> -> + -> _x `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> -> + -> _x `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 42 `ui 339  ]
+"186
+[; ;task_manager.c: 186:                 bateu = 1;
 [e = _bateu -> 1 `i ]
 [e :U 339 ]
-"167
-[; ;task_manager.c: 167:             mat_disp[x][y] = ' ';
-[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 32 `ui `uc ]
-"168
-[; ;task_manager.c: 168:             x--;
-[e -- _x -> -> 1 `i `uc ]
-"169
-[; ;task_manager.c: 169:             botoes.U = 0;
-[e = . _botoes 0 -> -> 0 `i `uc ]
-"170
-[; ;task_manager.c: 170:             mat_disp[x][y] = '>';
-[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 62 `ui `uc ]
-"171
-[; ;task_manager.c: 171:         }
-}
-[e :U 338 ]
-"172
-[; ;task_manager.c: 172:         if((botoes.D) && (x < 3)){
-[e $ ! && != -> . _botoes 1 `i -> 0 `i < -> _x `i -> 3 `i 340  ]
-{
-"173
-[; ;task_manager.c: 173:             if(mat_disp[x][y] == '>' && mat_disp[x+1][y] == '*')
-[e $ ! && == -> *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 62 `ui == -> *U + &U *U + &U _mat_disp * -> -> + -> _x `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> -> + -> _x `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux `ui -> 42 `ui 341  ]
-"174
-[; ;task_manager.c: 174:                 bateu = 1;
-[e = _bateu -> 1 `i ]
-[e :U 341 ]
-"175
-[; ;task_manager.c: 175:             mat_disp[x][y] = ' ';
-[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 32 `ui `uc ]
-"176
-[; ;task_manager.c: 176:             x++;
-[e ++ _x -> -> 1 `i `uc ]
-"177
-[; ;task_manager.c: 177:             botoes.D = 0;
-[e = . _botoes 1 -> -> 0 `i `uc ]
-"178
-[; ;task_manager.c: 178:             mat_disp[x][y] = '>';
-[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 62 `ui `uc ]
-"179
-[; ;task_manager.c: 179:         }
-}
-[e :U 340 ]
-"180
-[; ;task_manager.c: 180:         if((botoes.R) && (y < 15)){
-[e $ ! && != -> . _botoes 3 `i -> 0 `i < -> _y `i -> 15 `i 342  ]
-{
-"181
-[; ;task_manager.c: 181:             mat_disp[x][y] = ' ';
-[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 32 `ui `uc ]
-"182
-[; ;task_manager.c: 182:             y++;
-[e ++ _y -> -> 1 `i `uc ]
-"183
-[; ;task_manager.c: 183:             botoes.R = 0;
-[e = . _botoes 3 -> -> 0 `i `uc ]
-"184
-[; ;task_manager.c: 184:             mat_disp[x][y] = '>';
-[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 62 `ui `uc ]
-"185
-[; ;task_manager.c: 185:         }
-}
-[e :U 342 ]
-"186
-[; ;task_manager.c: 186:         if((botoes.L) && (y > 0)){
-[e $ ! && != -> . _botoes 2 `i -> 0 `i > -> _y `i -> 0 `i 343  ]
-{
 "187
 [; ;task_manager.c: 187:             mat_disp[x][y] = ' ';
 [e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 32 `ui `uc ]
 "188
-[; ;task_manager.c: 188:             y--;
-[e -- _y -> -> 1 `i `uc ]
+[; ;task_manager.c: 188:             x++;
+[e ++ _x -> -> 1 `i `uc ]
 "189
-[; ;task_manager.c: 189:             botoes.L = 0;
-[e = . _botoes 2 -> -> 0 `i `uc ]
+[; ;task_manager.c: 189:             botoes.D = 0;
+[e = . _botoes 1 -> -> 0 `i `uc ]
 "190
 [; ;task_manager.c: 190:             mat_disp[x][y] = '>';
 [e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 62 `ui `uc ]
 "191
 [; ;task_manager.c: 191:         }
 }
-[e :U 343 ]
+[e :U 338 ]
 "192
-[; ;task_manager.c: 192:     }
+[; ;task_manager.c: 192:         if((botoes.R) && (y < 15)){
+[e $ ! && != -> . _botoes 3 `i -> 0 `i < -> _y `i -> 15 `i 340  ]
+{
+"193
+[; ;task_manager.c: 193:             mat_disp[x][y] = ' ';
+[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 32 `ui `uc ]
+"194
+[; ;task_manager.c: 194:             y++;
+[e ++ _y -> -> 1 `i `uc ]
+"195
+[; ;task_manager.c: 195:             botoes.R = 0;
+[e = . _botoes 3 -> -> 0 `i `uc ]
+"196
+[; ;task_manager.c: 196:             mat_disp[x][y] = '>';
+[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 62 `ui `uc ]
+"197
+[; ;task_manager.c: 197:         }
+}
+[e :U 340 ]
+"198
+[; ;task_manager.c: 198:         if((botoes.L) && (y > 0)){
+[e $ ! && != -> . _botoes 2 `i -> 0 `i > -> _y `i -> 0 `i 341  ]
+{
+"199
+[; ;task_manager.c: 199:             mat_disp[x][y] = ' ';
+[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 32 `ui `uc ]
+"200
+[; ;task_manager.c: 200:             y--;
+[e -- _y -> -> 1 `i `uc ]
+"201
+[; ;task_manager.c: 201:             botoes.L = 0;
+[e = . _botoes 2 -> -> 0 `i `uc ]
+"202
+[; ;task_manager.c: 202:             mat_disp[x][y] = '>';
+[e = *U + &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> _y `ux -> -> # *U &U *U + &U _mat_disp * -> _x `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux -> -> 62 `ui `uc ]
+"203
+[; ;task_manager.c: 203:         }
+}
+[e :U 341 ]
+"204
+[; ;task_manager.c: 204:     }
 }
 [e :U 317 ]
 "102
 [; ;task_manager.c: 102:     while(!botoes.Esc && bateu == 0){
 [e $ && ! != -> . _botoes 5 `i -> 0 `i == _bateu -> 0 `i 318  ]
 [e :U 319 ]
-"194
-[; ;task_manager.c: 194:     char pont4 = mat_disp[0][14], pont3 = mat_disp[0][13], pont2 = mat_disp[0][12], pont1 = mat_disp[0][11];
+"206
+[; ;task_manager.c: 206:     char pont4 = mat_disp[0][14], pont3 = mat_disp[0][13], pont2 = mat_disp[0][12], pont1 = mat_disp[0][11];
 [v _pont4 `uc ~T0 @X0 1 a ]
 [e = _pont4 *U + &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 14 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux ]
 [v _pont3 `uc ~T0 @X0 1 a ]
@@ -1077,59 +1104,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _pont2 *U + &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 12 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux ]
 [v _pont1 `uc ~T0 @X0 1 a ]
 [e = _pont1 *U + &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 11 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux ]
-"195
-[; ;task_manager.c: 195:     if(bateu == 1){
-[e $ ! == _bateu -> 1 `i 344  ]
+"207
+[; ;task_manager.c: 207:     if(bateu == 1){
+[e $ ! == _bateu -> 1 `i 342  ]
 {
-"196
-[; ;task_manager.c: 196:             strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
-[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 24C ]
-"197
-[; ;task_manager.c: 197:             strcpy(mat_disp[1], "SCORE:          ");
-[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 25C ]
-"198
-[; ;task_manager.c: 198:             strcpy(mat_disp[2], "APERTE ESC      ");
-[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 26C ]
-"199
-[; ;task_manager.c: 199:             strcpy(mat_disp[3], "PARA SAIR       ");
-[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 27C ]
-"200
-[; ;task_manager.c: 200:             mat_disp[1][6] = pont1;
-[e = *U + &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 6 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux _pont1 ]
-"201
-[; ;task_manager.c: 201:             mat_disp[1][7] = pont2;
-[e = *U + &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 7 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux _pont2 ]
-"202
-[; ;task_manager.c: 202:             mat_disp[1][8] = pont3;
-[e = *U + &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 8 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux _pont3 ]
-"203
-[; ;task_manager.c: 203:             mat_disp[1][9] = pont4;
-[e = *U + &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 9 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux _pont4 ]
-"204
-[; ;task_manager.c: 204:             print_mat(lcd);
-[e ( _print_mat (1 _lcd ]
-"205
-[; ;task_manager.c: 205:         while(!botoes.Esc);
-[e $U 345  ]
-[e :U 346 ]
-[e :U 345 ]
-[e $ ! != -> . _botoes 5 `i -> 0 `i 346  ]
-[e :U 347 ]
-"206
-[; ;task_manager.c: 206:     }
-}
-[e :U 344 ]
 "208
-[; ;task_manager.c: 208:     x = 1;
-[e = _x -> -> 1 `i `uc ]
+[; ;task_manager.c: 208:             strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
+[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 29C ]
 "209
-[; ;task_manager.c: 209:     y = 0;
-[e = _y -> -> 0 `i `uc ]
+[; ;task_manager.c: 209:             strcpy(mat_disp[1], "SCORE:          ");
+[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 30C ]
 "210
-[; ;task_manager.c: 210:     contador = 0;
-[e = _contador -> -> 0 `i `uc ]
+[; ;task_manager.c: 210:             strcpy(mat_disp[2], "APERTE ESC      ");
+[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 31C ]
 "211
-[; ;task_manager.c: 211: }
+[; ;task_manager.c: 211:             strcpy(mat_disp[3], "PARA SAIR       ");
+[e ( _strcpy (2 , &U *U + &U _mat_disp * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux :s 32C ]
+"212
+[; ;task_manager.c: 212:             mat_disp[1][6] = pont1;
+[e = *U + &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 6 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux _pont1 ]
+"213
+[; ;task_manager.c: 213:             mat_disp[1][7] = pont2;
+[e = *U + &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 7 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux _pont2 ]
+"214
+[; ;task_manager.c: 214:             mat_disp[1][8] = pont3;
+[e = *U + &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 8 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux _pont3 ]
+"215
+[; ;task_manager.c: 215:             mat_disp[1][9] = pont4;
+[e = *U + &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux * -> -> -> 9 `i `ui `ux -> -> # *U &U *U + &U _mat_disp * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _mat_disp `ui -> -> 16 `i `ui `ux `ui `ux _pont4 ]
+"216
+[; ;task_manager.c: 216:             print_mat(lcd);
+[e ( _print_mat (1 _lcd ]
+"217
+[; ;task_manager.c: 217:         while(!botoes.Esc);
+[e $U 343  ]
+[e :U 344 ]
+[e :U 343 ]
+[e $ ! != -> . _botoes 5 `i -> 0 `i 344  ]
+[e :U 345 ]
+"218
+[; ;task_manager.c: 218:     }
+}
+[e :U 342 ]
+"220
+[; ;task_manager.c: 220:     x = 1;
+[e = _x -> -> 1 `i `uc ]
+"221
+[; ;task_manager.c: 221:     y = 0;
+[e = _y -> -> 0 `i `uc ]
+"222
+[; ;task_manager.c: 222:     contador = 0;
+[e = _contador -> -> 0 `i `uc ]
+"223
+[; ;task_manager.c: 223: }
 [e :UE 316 ]
 }
 [a 2C 50 46 71 69 79 82 71 69 32 78 65 82 68 69 83 0 ]
@@ -1140,13 +1167,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 5C 72 73 66 69 82 78 65 78 68 79 46 46 46 46 46 0 ]
 [a 15C 51 46 67 82 69 68 73 84 79 83 46 46 46 46 46 46 0 ]
 [a 13C 49 46 74 79 71 65 82 46 46 46 46 46 46 46 46 46 0 ]
-[a 24C 33 33 33 86 79 67 69 32 66 65 84 69 85 33 33 33 0 ]
+[a 29C 33 33 33 86 79 67 69 32 66 65 84 69 85 33 33 33 0 ]
 [a 11C 50 46 69 83 67 65 80 69 32 86 79 76 84 65 32 0 ]
 [a 17C 32 32 32 32 32 83 67 79 82 69 58 32 32 32 32 32 0 ]
-[a 26C 65 80 69 82 84 69 32 69 83 67 32 32 32 32 32 32 0 ]
+[a 31C 65 80 69 82 84 69 32 69 83 67 32 32 32 32 32 32 0 ]
+[a 25C 32 32 32 78 73 86 69 76 32 51 32 32 32 32 32 32 0 ]
 [a 21C 32 32 32 78 73 86 69 76 32 50 32 32 32 32 32 32 0 ]
-[a 27C 80 65 82 65 32 83 65 73 82 32 32 32 32 32 32 32 0 ]
-[a 25C 83 67 79 82 69 58 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 32C 80 65 82 65 32 83 65 73 82 32 32 32 32 32 32 32 0 ]
+[a 30C 83 67 79 82 69 58 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 12C 77 69 78 85 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 10C 78 65 86 69 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 18C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
@@ -1154,6 +1182,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 20C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 22C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 23C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 24C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 26C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 27C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 28C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 3C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 4C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 6C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
