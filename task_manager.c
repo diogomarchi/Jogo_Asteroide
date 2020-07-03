@@ -114,7 +114,8 @@ void jogar(t_display_port *lcd){
             mat_disp[x][y-1] = ' '; //nave continua no lugar dela
             mat_disp[x][y] = '>';   //nave continua no lugar dela
             
-            if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')//se na coluna zero tiver asteroide, pontuação ++
+            //se na coluna zero tiver asteroide, pontuação ++
+            if(mat_disp[1][0] == '*' || mat_disp[2][0] == '*' || mat_disp[3][0] == '*')
             {
                 mat_disp[0][15-1]++;
                 if(mat_disp[0][15-1]==0x3A)
@@ -143,7 +144,8 @@ void jogar(t_display_port *lcd){
         // printa matriz de elementos apos deslocamento
         print_mat(lcd); 
         
-        if(mat_disp[0][14-1] == 0x31 && mat_disp[0][15-1] == 0x30 && nivel2 == 1){//se pontuação e igual a 10, aumenta velocidade e quantidade de asteroides
+        //se pontuação e igual a 10, aumenta velocidade e quantidade de asteroides
+        if(mat_disp[0][14-1] == 0x31 && mat_disp[0][15-1] == 0x30 && nivel2 == 1){
             strcpy(mat_disp[1], "   NIVEL 2      ");
             strcpy(mat_disp[2], "                ");
             strcpy(mat_disp[3], "                ");
@@ -152,11 +154,12 @@ void jogar(t_display_port *lcd){
             __delay_ms(2000);
             strcpy(mat_disp[1], "                ");
             nivel2 = 0;
-            velocidade = 2;
+            velocidade = 3;
             qtd_asteroide = 15;
         }
         
-        if(mat_disp[0][14-1] == 0x33 && mat_disp[0][15-1] == 0x30 && nivel3 == 1){//se pontuação e igual 30, aumenta velocidade e quantidade de asteroides
+        //se pontuação e igual 30, aumenta velocidade e quantidade de asteroides
+        if(mat_disp[0][14-1] == 0x33 && mat_disp[0][15-1] == 0x30 && nivel3 == 1){
             strcpy(mat_disp[1], "   NIVEL 3      ");
             strcpy(mat_disp[2], "                ");
             strcpy(mat_disp[3], "                ");
@@ -165,7 +168,7 @@ void jogar(t_display_port *lcd){
             __delay_ms(2000);
             strcpy(mat_disp[1], "                ");
             nivel3 = 0;
-            velocidade = 1;
+            velocidade = 2;
             qtd_asteroide = 4;
         }
                 
@@ -174,7 +177,8 @@ void jogar(t_display_port *lcd){
             bateu = 1;
          
         if((botoes.U) && (x > 1)){//se apertou para cima
-            if(mat_disp[x][y] == '>' && mat_disp[x-1][y] == '*')//quando ele clica, e na linha de cima tem asteroide = bateu
+            //quando ele clica, e na linha de cima tem asteroide = bateu
+            if(mat_disp[x][y] == '>' && mat_disp[x-1][y] == '*')
                 bateu = 1;
             mat_disp[x][y] = ' ';
             x--; 
@@ -182,7 +186,8 @@ void jogar(t_display_port *lcd){
             mat_disp[x][y] = '>';           
         }
         if((botoes.D) && (x < 3)){//se apertou para baixo
-            if(mat_disp[x][y] == '>' && mat_disp[x+1][y] == '*')//quando ele clica, e na linha de baixo tem asteroide = bateu
+            //quando ele clica, e na linha de baixo tem asteroide = bateu
+            if(mat_disp[x][y] == '>' && mat_disp[x+1][y] == '*')
                 bateu = 1;
             mat_disp[x][y] = ' ';
             x++; 
@@ -203,7 +208,8 @@ void jogar(t_display_port *lcd){
         }
     }
     
-    char pont4 = mat_disp[0][14], pont3 = mat_disp[0][13], pont2 = mat_disp[0][12], pont1 = mat_disp[0][11];
+    char pont4 = mat_disp[0][14], pont3 = mat_disp[0][13], 
+            pont2 = mat_disp[0][12], pont1 = mat_disp[0][11];
     if(bateu == 1){//se bateu, mostra frase no display
             strcpy(mat_disp[0], "!!!VOCE BATEU!!!");
             strcpy(mat_disp[1], "SCORE:          ");
