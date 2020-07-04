@@ -80,7 +80,7 @@ char menu(t_display_port *lcd){
 
 void jogar(t_display_port *lcd){
     srand(time(NULL));    
-    int bateu = 0, qtd_asteroide = 20, velocidade = 4;
+    int bateu = 0, qtd_asteroide = 20, velocidade = 7;
     int linha_aleatoria = 0;
     int nivel2 = 1, nivel3 = 1;
     
@@ -154,7 +154,7 @@ void jogar(t_display_port *lcd){
             __delay_ms(2000);
             strcpy(mat_disp[1], "                ");
             nivel2 = 0;
-            velocidade = 3;
+            velocidade = 5;
             qtd_asteroide = 15;
         }
         
@@ -168,7 +168,7 @@ void jogar(t_display_port *lcd){
             __delay_ms(2000);
             strcpy(mat_disp[1], "                ");
             nivel3 = 0;
-            velocidade = 2;
+            velocidade = 3;
             qtd_asteroide = 4;
         }
                 
